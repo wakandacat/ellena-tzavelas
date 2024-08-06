@@ -1,0 +1,25 @@
+span {
+    display: flex;
+    padding: 1%;
+    background-color: aqua;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    z-index: 2000;
+    align-items: center;
+}
+
+#right-buttons {
+    margin-left: auto;
+}
+
+#left-buttons {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+    margin: 10px;
+}
