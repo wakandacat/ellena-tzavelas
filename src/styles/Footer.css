@@ -6,11 +6,13 @@
 }
 
 #social-bar {
-    background-color: aquamarine;
+    background-color: var(--detail-color);
     padding: 15px 32px;
     width: 100vw;
 }
 
 #footer-bottom {
     padding: 40px 32px;
+    width: 100vw;
+    background-color: var(--background-color);
 }

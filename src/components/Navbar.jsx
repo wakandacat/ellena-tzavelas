@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/Navbar.css'
+import ThemeController from './ThemeController.jsx';
 
 function Navbar() {
 
@@ -13,7 +14,7 @@ function Navbar() {
                 <button>about</button>
             </div>
             <div id="right-buttons">
-                <button>make this a cycle button for theme</button>
+                <ThemeController/>
             </div>
         </span>
     );
