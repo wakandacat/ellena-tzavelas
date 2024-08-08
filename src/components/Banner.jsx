@@ -7,8 +7,8 @@ function Banner() {
     <section>
         <img id="banner" src='src\assets\cat.jpg'/>
         <div id="main-content">
-            <h1>Ellena Tzavelas</h1>
-            <h2>Portfolio</h2>
+            <h1 id="name">ELLENA TZAVELAS</h1>
+            <h2 className="sub-title">Web Dev | Game Dev | other stufff</h2>
         </div>
     </section>);
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import '../styles/ThemeController.css';
 
 function ThemeController() {
 
@@ -31,7 +32,7 @@ function ThemeController() {
     }, []);
 
     return (
-        <button onClick={handleClick} value={localTheme}><p>&#9664;</p>{localTheme}<p>&#9658;</p></button>
+        <button id="theme-control" onClick={handleClick} value={localTheme}><p>&#9664;</p>{localTheme.toUpperCase()}<p>&#9658;</p></button>
     );
 }
 

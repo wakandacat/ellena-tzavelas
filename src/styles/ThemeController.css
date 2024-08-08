@@ -1,0 +1,25 @@
+#theme-control {
+    display: flex;
+    background-color: var(--background-color-3);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: filter 0.2s ease;
+}
+
+#theme-control:hover {
+    filter: brightness(2);
+    color: var(--detail-color);
+}
+
+#theme-control > p {
+    margin: 0px;
+    padding-left: 15px;
+}
+
+#theme-control > p:first-of-type {
+    margin: 0px;
+    padding-right: 15px;
+    padding-left: 0px;
+}

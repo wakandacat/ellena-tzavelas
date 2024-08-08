@@ -1,14 +1,13 @@
 import Navbar from './components/Navbar'
-import Banner from './components/Banner'
 import Footer from './components/Footer'
+import HomePage from './pageComponents/HomePage'
 
 function App() {
 
   return (
     <>
       <Navbar/>
-      <Banner/>
-      <h2>hey gamers</h2>
+      <HomePage/>
       <Footer/>
     </>
   )

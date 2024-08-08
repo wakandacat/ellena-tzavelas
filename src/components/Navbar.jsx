@@ -8,10 +8,10 @@ function Navbar() {
         <span>
             <div id="left-buttons">
                 <img id='logo' src="/e.png"/>
-                <button>home</button>
-                <button>academic</button>
-                <button>personal</button>
-                <button>about</button>
+                <button className="nav-button">HOME</button>
+                <button className="nav-button">ACADEMIC</button>
+                <button className="nav-button">PERSONAL</button>
+                <button className="nav-button">ABOUT</button>
             </div>
             <div id="right-buttons">
                 <ThemeController/>

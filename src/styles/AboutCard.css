@@ -1,0 +1,26 @@
+#about-card{
+    background-color: var(--background-color-2);
+    padding: 15px;
+    display: flex;
+}
+
+#about-card > img {
+    width: 40%;
+}
+
+.title {
+    letter-spacing: -2px;
+    font-size: 4em;
+    margin-bottom: 0px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--detail-color);
+}
+
+#flex-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items:start;
+    padding-left: 5%;
+}

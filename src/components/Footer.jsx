@@ -10,6 +10,7 @@ function Footer() {
                 <div>
                     <a>github logo</a>
                     <a>linkedin logo</a>
+                    <a>email logo</a>
                 </div>
             </div>
             <div id="footer-bottom">
