@@ -1,0 +1,22 @@
+.card {
+    background-color: var(--background-color-2);
+    padding: 2% 7%;
+    display: flex;
+}
+
+.card > img {
+    width: 40%;
+}
+
+.personal {
+    background-color: var(--background-color); 
+}
+
+#flex-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items:start;
+    margin: 2%;
+    text-align: start;
+}

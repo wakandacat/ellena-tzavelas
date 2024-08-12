@@ -3,7 +3,7 @@ import GlobalContext from "./GlobalContext";
 
 const GlobalProvider = ({children}) => {
     const [globalState, setGlobalState] = useState({
-        temp: 0,
+        currentPage: "HomePage",
     });
 
     return (
