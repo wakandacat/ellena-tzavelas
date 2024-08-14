@@ -2,6 +2,8 @@ import Navbar from './generalComponents/Navbar'
 import Footer from './generalComponents/Footer'
 import HomePage from './pageComponents/HomePage'
 import AboutPage from './pageComponents/AboutPage'
+import AcademicPage from './pageComponents/AcademicPage'
+import PersonalPage from './pageComponents/PersonalPage'
 import { useContext, useEffect, useState } from 'react'
 import GlobalContext from './generalComponents/GlobalContext';
 
@@ -15,11 +17,16 @@ function App() {
   const componentMapping = {
     HomePage: HomePage,
     About: AboutPage,
+    Academic: AcademicPage,
+    Personal: PersonalPage,
   };
 
   useEffect(() => {
     const PageComponent = componentMapping[globalState.currentPage];
     setLocalPage(<PageComponent/>);
+    //force page to top
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }, [globalState.currentPage]);
 
   return (

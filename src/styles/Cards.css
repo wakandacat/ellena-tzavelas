@@ -2,6 +2,7 @@
     background-color: var(--background-color-2);
     padding: 2% 7%;
     display: flex;
+    justify-content: space-between;
 }
 
 .card > img {
@@ -10,6 +11,7 @@
 
 .personal {
     background-color: var(--background-color); 
+    flex-direction: row-reverse;
 }
 
 #flex-container {

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import '../styles/Cards.css';
 import GlobalContext from "../generalComponents/GlobalContext.jsx";
 
-function PersonalCard() {
+function Card(props) {
 
     const {globalState, setGlobalState} = useContext(GlobalContext);
 
@@ -15,15 +15,15 @@ function PersonalCard() {
     }
 
     return(
-        <div className="card personal">
-            <img src='src\assets\cat.jpg'/>
+        <div className={`card ${props.class}`}>
             <div id="flex-container">
-                <h1 className="title">PERSONAL PROJECTS</h1>
-                <h2 className="sub-title">2020 - 2024</h2>
-                <button className="page-button" value='Personal' onClick={handleClick}>VIEW</button>
+                <h1 className="title">{props.title}</h1>
+                <h2 className="sub-title">{props.subtitle}</h2>
+                <button className="page-button" value={props.buttonVal} onClick={handleClick}>VIEW</button>
             </div>
+            <img src={`src/assets/${props.image}`}/>
         </div>
     );
 }
 
-export default PersonalCard;
+export default Card;

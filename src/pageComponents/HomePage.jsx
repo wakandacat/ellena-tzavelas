@@ -1,17 +1,15 @@
 import React from "react";
 import Banner from "../homepageComponents/Banner";
-import AboutCard from "../homepageComponents/AboutCard";
-import PersonalCard from "../homepageComponents/PersonalCard";
-import AcademicCard from "../homepageComponents/AcademicCard";
+import Card from "../homepageComponents/Card";
 
 function HomePage() {
 
     return (
         <>
             <Banner/>
-            <AcademicCard/>
-            <PersonalCard/>
-            <AboutCard/>
+            <Card class={''} title={"ACADEMIC PROJECTS"} subtitle={"Carleton University // Algonquin College"} image={'cat.jpg'} buttonVal={"Academic"}/>
+            <Card class={'personal'} title={"PERSONAL PROJECTS"} subtitle={"2020 - 2024"} image={'cat.jpg'} buttonVal={"Personal"}/>
+            <Card class={''} title={"ABOUT"} subtitle={"ELLENA TZAVELAS"} image={'cat.jpg'} buttonVal={"About"}/>
         </>
     );
 }

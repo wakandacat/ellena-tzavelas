@@ -24,6 +24,7 @@ function Footer() {
             </div>
             <div id="footer-bottom">
                 <img id='logo' src="/e.png"/>
+                <hr/>
                 <h4>Ellena Tzavelas 2024</h4>
             </div>
         </span>
