@@ -1,0 +1,46 @@
+.blurb {
+    color: var(--text-color);
+}
+  
+.project {
+    width: 100%;
+    pointer-events: none;
+}
+  
+.proj-image {
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+  
+.proj-button {
+    background-color: var(--detail-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 20%;
+    border: none;
+    position: relative;
+}
+  
+.proj-button:hover {
+    background-color: var(--detail-color-2);
+    color: var(--background-color);
+}
+
+.proj-button:focus {
+    background-color: var(--detail-color-2);
+    color: var(--background-color);
+}
+
+.proj-title{
+    text-align: start;
+    margin: 0px;
+    font-weight: 900;
+    font-size: 2em;
+    color: inherit;
+    letter-spacing: -2px;
+    line-height: 1;
+    position: absolute;
+    pointer-events: none;
+}

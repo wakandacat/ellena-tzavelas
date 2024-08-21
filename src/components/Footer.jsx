@@ -17,7 +17,7 @@ function Footer() {
                     <a href="https://www.linkedin.com/in/ellenatzavelas/" target="blank">
                         <FontAwesomeIcon className='icon' icon={faLinkedin} />
                     </a>
-                    <a href="https://github.com/" target="blank">
+                    <a href="mailto:wakandacat@gmail.com" target="blank">
                         <FontAwesomeIcon className='icon' icon={faEnvelope} />
                     </a>
                 </div>

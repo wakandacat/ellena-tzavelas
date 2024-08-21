@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import '../styles/Cards.css';
-import GlobalContext from "../generalComponents/GlobalContext.jsx";
+import GlobalContext from "./GlobalContext.jsx";
 
 function Card(props) {
 
@@ -16,7 +16,7 @@ function Card(props) {
 
     return(
         <div className={`card ${props.class}`}>
-            <div id="flex-container">
+            <div className="flex-container">
                 <h1 className="title">{props.title}</h1>
                 <h2 className="sub-title">{props.subtitle}</h2>
                 <button className="page-button" value={props.buttonVal} onClick={handleClick}>VIEW</button>

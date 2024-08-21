@@ -1,6 +1,6 @@
 import React from "react";
-import Banner from "../homepageComponents/Banner";
-import Card from "../homepageComponents/Card";
+import Banner from "../components/Banner";
+import Card from "../components/Card";
 
 function HomePage() {
 

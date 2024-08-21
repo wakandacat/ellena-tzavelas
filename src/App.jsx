@@ -1,11 +1,11 @@
-import Navbar from './generalComponents/Navbar'
-import Footer from './generalComponents/Footer'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import HomePage from './pageComponents/HomePage'
 import AboutPage from './pageComponents/AboutPage'
 import AcademicPage from './pageComponents/AcademicPage'
 import PersonalPage from './pageComponents/PersonalPage'
 import { useContext, useEffect, useState } from 'react'
-import GlobalContext from './generalComponents/GlobalContext';
+import GlobalContext from './components/GlobalContext';
 
 function App() {
 

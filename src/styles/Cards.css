@@ -14,7 +14,7 @@
     flex-direction: row-reverse;
 }
 
-#flex-container {
+.flex-container {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -23,6 +23,13 @@
     text-align: start;
 }
 
-#flex-container > button {
+.flex-container > button {
     margin-top: auto;
+}
+
+.main-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    width: 100%;
 }
