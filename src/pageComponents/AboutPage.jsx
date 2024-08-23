@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/Cards.css';
-import '../styles/AboutPage.css';
+import '../styles/ProjectPages.css';
 
 function AboutPage() {
 

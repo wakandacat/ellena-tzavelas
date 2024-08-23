@@ -31,6 +31,10 @@
   --detail-color-2: rgb(196, 0, 98);
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -39,7 +43,7 @@ body {
   min-height: 100vh;
   overflow-y: visible;
   overflow-x: hidden;
-  background-color: var(--background-color);
+  background-color: var(--background-color-2);
   color: var(--text-color);
 }
 
@@ -83,7 +87,7 @@ body {
 
 .title {
   letter-spacing: -2px;
-  font-size: 6em;
+  font-size: 6vw;
   margin: 0px;
   font-weight: 900;
   line-height: 1;
@@ -93,7 +97,7 @@ body {
 .sub-title{
   margin: 0px;
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 1.5vw;
   color: var(--detail-color-2);
 }
 
