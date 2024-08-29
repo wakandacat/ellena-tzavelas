@@ -27,7 +27,20 @@ function App() {
     //force page to top
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    
   }, [globalState.currentPage]);
+
+  useEffect(() => {
+    const allButtons = document.querySelectorAll(".nav-button");
+
+    for(let i=0;i<allButtons.length;i++){
+      allButtons[i].classList.remove("current-nav-button");
+    }
+
+    //ensure the nav button stays selected
+    const navButton = document.querySelector(`[value="${globalState.currentPage}"]`);
+    navButton.classList.add("current-nav-button");
+  });
 
   return (
     <>

@@ -1,13 +1,15 @@
 #footer-top {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     padding: 0%;
     display: flex;
     flex-direction: column;
+    height: 300px;
 }
 
 #social-bar {
     background-color: var(--detail-color);
-    padding: 0px 0px 15px;
+    height: 125px;
     width: 100vw;
 }
 
@@ -17,10 +19,10 @@
 }
 
 #footer-bottom {
-    padding: 10px 32px 50px;
-    width: 100vw;
+    padding-top: 10px;
     background-color: var(--background-color-3);
     color: white;
+    height: 165px;
 }
 
 hr {

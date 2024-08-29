@@ -59,7 +59,16 @@ function AcademicPage() {
 
     //change project view on button click
     const handleClick = (element, event) => {
-        event.target.focus();
+
+        let buttons = document.querySelector(".main-container").children;
+
+        for(let i=0;i<buttons.length;i++){
+            buttons[i].classList.remove("proj-selected");
+        }
+
+        //show selected project differently
+        event.target.classList.add("proj-selected");
+
         //force page to top
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -80,7 +89,7 @@ function AcademicPage() {
     }
 
     //change project view on button click with cycling
-    const handleCycle = (num,event) => {
+    const handleCycle = (num) => {
         let ImageArr = JSON.parse(projImageArr.current.value);
         let newIndex = 0;
         if(num === 0){
@@ -116,9 +125,9 @@ function AcademicPage() {
                 </div>
                 <div className="proj-image-container">
                     <div id="cycle-image">
-                        <button className="arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0,event)}><p>&#9664;</p></button>
+                        <button className="arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><p>&#9664;</p></button>
                         <img id="projIMG" ref={projImage} src='src\assets\cat.jpg'/>
-                        <button className="arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1,event)}><p>&#9658;</p></button>
+                        <button className="arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9658;</p></button>
                     </div>    
                     <h5 ref={projAlt} id="alt-text">hey guys this is a cat from google images</h5>
                 </div>

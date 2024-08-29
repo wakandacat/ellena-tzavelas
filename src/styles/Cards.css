@@ -2,17 +2,27 @@
     background-color: var(--background-color-2);
     padding: 2% 7%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .card > img {
     width: 40%;
+    object-fit: contain;
 }
 
 .personal {
     background-color: var(--background-color); 
     flex-direction: row-reverse;
     justify-content: space-between;
+}
+
+.personal > .flex-container{
+    text-align: end;
+    align-items:end;
+}
+
+.about-card {
+    padding-bottom: 0px;
 }
 
 .flex-container {
@@ -26,6 +36,7 @@
 
 .flex-container > button {
     margin-top: auto;
+    margin-bottom: auto;
 }
 
 .main-container {

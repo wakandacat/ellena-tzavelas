@@ -16,7 +16,7 @@ function Navbar() {
     }
 
     return (
-        <span>
+        <span id="nav">
             <div id="left-buttons">
                 <img id='logo' src="/e.png"/>
                 <button className="nav-button" value='HomePage' onClick={handleClick}>HOME</button>
