@@ -6,6 +6,8 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {
 
+    const currYear = new Date().getFullYear();
+
     return (
         <span id="footer-top">
             <div id="social-bar">
@@ -25,7 +27,7 @@ function Footer() {
             <div id="footer-bottom">
                 <img id='logo' src="/e.png"/>
                 <hr/>
-                <h4>Ellena Tzavelas 2024</h4>
+                <h4>Ellena Tzavelas {currYear}</h4>
             </div>
         </span>
     );

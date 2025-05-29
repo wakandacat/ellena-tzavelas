@@ -33,6 +33,23 @@
 
 html{
   scroll-behavior: smooth;
+  scrollbar-color: var(--detail-color);
+}
+
+/*scrollbar updates*/
+body::-webkit-scrollbar {
+  width: auto; 
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--detail-color); 
+  border-radius: 10px;
+  border: 4px solid transparent; /* padding effect */
+  background-clip: content-box;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 body {

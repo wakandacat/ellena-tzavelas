@@ -18,12 +18,7 @@ function AboutPage() {
                 <div className="flex-container">
                     <h2 className="sub-title">RESUME</h2>
                     <h3 className="blurb">hey guys its me this is temp text okkkkkkk teehee skjhgjk hjk hjkjkhjkhjhjjh fdbh gfhn fghn sg fg nfg hfgs hgfhn fgtsh gfhn gh gfh</h3>
-                </div>
-                <div className="flex-container">
-                    <h2 className="sub-title">RECORD OF GRADES</h2>
-                    <h3 className="blurb">Bachelor of Information Technology, Fourth Year Standing<br/>
-                    Interactive Multimedia Design<br/>
-                    Carleton University<br/><br/>Cumulative Grade Point Average: 10.31/12 (A-)<br/>Number of Academic (4 month) Terms Completed: 6<br/>Co-op (4 Month) Work Terms Completed: 3<br/>Graduation Date: April 2025</h3>
+                    <iframe className="pdf" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf"></iframe>
                 </div>
             </div>
         </>

@@ -8,6 +8,8 @@ function PersonalPage() {
     const [projArr, setProjArr] = useState([]); // Store the rendered JSX elements
     const [currProjImage, setCurrProjImage] = useState(0);
 
+    const currYear = new Date().getFullYear();
+
     //top page elements
     const projTitle = useRef();
     const projYear= useRef();
@@ -41,12 +43,10 @@ function PersonalPage() {
         if (jsonData !== null) {
 
             // Map over the Academic array and create JSX elements using index from map function
-            const newProjArr = jsonData['Personal'].map((element, index) => (
+            const newProjArr = jsonData['Projects'].map((element, index) => (
                 <button className="proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
-                    <div className="project">
-                        <h2 className="proj-title">{element.Title.toUpperCase()}</h2>
-                        <img className="proj-image" src={`src/assets/${element.Image[0].img}`}/>
-                    </div>
+                    <h2 className="proj-title">{element.Title.toUpperCase()}</h2>
+                    <img className="proj-image" src={`src/assets/${element.Image[0].img}`}/>
                 </button>
             ));
 
@@ -119,9 +119,9 @@ function PersonalPage() {
         <>
             <div className="page-top card">
                 <div className="flex-container">
-                    <h1 ref={projTitle} className="title">PERSONAL PROJECTS</h1>
-                    <h2 ref={projYear} className="sub-title">2022-2024</h2>
-                    <h3 ref={projBlurb} className="blurb">A collection of projects I made for fun or for learning purposes.</h3>
+                    <h1 ref={projTitle} className="title">PROJECTS</h1>
+                    <h2 ref={projYear} className="sub-title">2020-{currYear}</h2>
+                    <h3 ref={projBlurb} className="blurb">A collection of projects I made for fun or associated with school assignments.</h3>
                 </div>
                 <div className="proj-image-container">
                     <div id="cycle-image">

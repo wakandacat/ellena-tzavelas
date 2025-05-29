@@ -20,8 +20,8 @@ function Navbar() {
             <div id="left-buttons">
                 <img id='logo' src="/e.png"/>
                 <button className="nav-button" value='HomePage' onClick={handleClick}>HOME</button>
-                <button className="nav-button" value='Academic' onClick={handleClick}>ACADEMIC</button>
-                <button className="nav-button" value='Personal' onClick={handleClick}>PERSONAL</button>
+                {/* <button className="nav-button" value='Academic' onClick={handleClick}>ACADEMIC</button> */}
+                <button className="nav-button" value='Personal' onClick={handleClick}>PROJECTS</button>
                 <button className="nav-button" value='About' onClick={handleClick}>ABOUT</button>
             </div>
             <div id="right-buttons">

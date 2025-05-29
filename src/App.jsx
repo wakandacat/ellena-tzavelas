@@ -2,7 +2,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import HomePage from './pageComponents/HomePage'
 import AboutPage from './pageComponents/AboutPage'
-import AcademicPage from './pageComponents/AcademicPage'
+// import AcademicPage from './pageComponents/AcademicPage'
 import PersonalPage from './pageComponents/PersonalPage'
 import { useContext, useEffect, useState } from 'react'
 import GlobalContext from './components/GlobalContext';
@@ -17,7 +17,7 @@ function App() {
   const componentMapping = {
     HomePage: HomePage,
     About: AboutPage,
-    Academic: AcademicPage,
+    // Academic: AcademicPage,
     Personal: PersonalPage,
   };
 
