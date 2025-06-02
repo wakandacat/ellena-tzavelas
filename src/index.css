@@ -20,6 +20,7 @@
 [data-theme="dark"] {
   --background-color: #1d2a35;
   --background-color-2: #38444d;
+  --detail-color-2: rgb(127, 221, 224);
   --text-color: white;
   --text-color-2: black;
 }
@@ -125,7 +126,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--detail-color-2);
+  color: var(--detail-color);
   transition: 0.2s ease;
 }
 

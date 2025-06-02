@@ -11,8 +11,10 @@ function Footer() {
     return (
         <span id="footer-top">
             <div id="social-bar">
-                <h2>CONNECT WITH ME</h2>
-                <div>
+                <h2>CONNECT WITH ME</h2>            
+            </div>
+            <div id="footer-bottom">
+                 <div>
                     <a href="https://github.com/wakandacat" target="blank">
                         <FontAwesomeIcon className='icon' icon={faGithub} />
                     </a>
@@ -23,11 +25,11 @@ function Footer() {
                         <FontAwesomeIcon className='icon' icon={faEnvelope} />
                     </a>
                 </div>
-            </div>
-            <div id="footer-bottom">
-                <img id='logo' src="/e.png"/>
                 <hr/>
-                <h4>Ellena Tzavelas {currYear}</h4>
+                <div id="rightsBar">
+                    <img id='logo' src="/et.png"/>
+                    <h4>Ellena Tzavelas {currYear}</h4>
+                </div>
             </div>
         </span>
     );

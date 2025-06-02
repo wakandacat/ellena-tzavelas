@@ -18,7 +18,7 @@ function Navbar() {
     return (
         <span id="nav">
             <div id="left-buttons">
-                <img id='logo' src="/e.png"/>
+                <img id='logo' src="/et.png"/>
                 <button className="nav-button" value='HomePage' onClick={handleClick}>HOME</button>
                 {/* <button className="nav-button" value='Academic' onClick={handleClick}>ACADEMIC</button> */}
                 <button className="nav-button" value='Personal' onClick={handleClick}>PROJECTS</button>
