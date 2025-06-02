@@ -126,7 +126,7 @@ function PersonalPage() {
                 <div className="proj-image-container">
                     <div id="cycle-image">
                         <button className="arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><p>&#9664;</p></button>
-                        <img id="projIMG" ref={projImage} src='src\assets\cat.jpg'/>
+                        <img className="projIMG" ref={projImage} src='src\assets\cat.jpg'/>
                         <button className="arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9658;</p></button>
                     </div>    
                     <h5 ref={projAlt} id="alt-text">hey guys this is a cat from google images</h5>

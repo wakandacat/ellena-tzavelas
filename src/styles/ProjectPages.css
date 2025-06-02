@@ -72,7 +72,7 @@
     flex-direction: column;
 }
 
-#projIMG {
+.projIMG {
     position: relative;
     width: 75%;
     border-radius: 5px;
