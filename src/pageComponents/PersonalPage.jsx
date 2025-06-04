@@ -7,12 +7,14 @@ function PersonalPage() {
     const [jsonData, setJsonData] = useState(null);
     const [projArr, setProjArr] = useState([]); // Store the rendered JSX elements
     const [currProjImage, setCurrProjImage] = useState(0);
+    const [currRes, setCurrRes] = useState("");
 
     const currYear = new Date().getFullYear();
 
     //top page elements
     const projTitle = useRef();
     const projYear= useRef();
+    const projRes = useRef();
     const projBlurb = useRef();
     const projImage = useRef();
     const projAlt = useRef();
@@ -39,6 +41,7 @@ function PersonalPage() {
 
     }, []);
 
+    //creating the list of all projects page bottom
     useEffect(() => {
         if (jsonData !== null) {
 
@@ -80,11 +83,14 @@ function PersonalPage() {
         //update the top page card with the project info
         projTitle.current.textContent = element.Title.toUpperCase();
         projYear.current.textContent = element.Year;
+        projRes.current.textContent = element.Res;
         projBlurb.current.textContent = element.Desc;
         projImage.current.src = `src/assets/${element.Image[0].img}`;
         projAlt.current.textContent = element.Image[0].alt;
         projImageArr.current.value = JSON.stringify(element.Image);
         projImageArr2.current.value = JSON.stringify(element.Image);
+
+        setCurrRes(element.Res);
         setCurrProjImage(0);
     }
 
@@ -121,6 +127,7 @@ function PersonalPage() {
                 <div className="flex-container">
                     <h1 ref={projTitle} className="title">PROJECTS</h1>
                     <h2 ref={projYear} className="sub-title">2020-{currYear}</h2>
+                    <a href={currRes} ref={projRes} target="_blank"></a>
                     <h3 ref={projBlurb} className="blurb">A collection of projects I made for fun or associated with school assignments.</h3>
                 </div>
                 <div className="proj-image-container">

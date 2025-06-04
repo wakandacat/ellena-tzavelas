@@ -1,6 +1,6 @@
 .blurb {
     color: var(--text-color);
-    font-size: 1.25vw;
+    font-size: 1.2vw;
 }
   
 .project {
@@ -42,7 +42,7 @@
     margin: 0px;
     font-weight: 900;
     font-size: 2vw;
-    color: inherit;
+    color: white;
     letter-spacing: -2px;
     line-height: 1;
     position: absolute;
@@ -58,7 +58,7 @@
 
 .page-top {
     padding: 10vh 7% 2%;
-    align-items: center;
+    align-items: start;
 }
 
 .page-bottom {
