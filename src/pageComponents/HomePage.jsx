@@ -11,7 +11,7 @@ function HomePage() {
             <Banner/>
             {/* <Card class={''} title={"ACADEMIC PROJECTS"} subtitle={"Carleton University // Algonquin College"} image={'gatsbee2.PNG'} buttonVal={"Academic"}/> */}
             <Card class={'personal'} title={"PROJECTS"} subtitle={`2020 - ${currYear}`} image={'p3back.PNG'} buttonVal={"Personal"}/>
-            <Card class={'about-card'} title={"ABOUT"} subtitle={"ELLENA TZAVELAS"} image={'me.png'} buttonVal={"About"}/>
+            <Card class={'about-card'} title={"ABOUT"} subtitle={"ELLENA TZAVELAS"} image={'me3.png'} buttonVal={"About"}/>
         </>
     );
 }
