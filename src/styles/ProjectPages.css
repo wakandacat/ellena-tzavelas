@@ -67,14 +67,17 @@
 }
 
 .proj-image-container {
-    max-width: 50%;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .projIMG {
     position: relative;
-    width: 75%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 5px;
     border: solid 5px var(--detail-color-2);
     margin: 10px;
@@ -94,6 +97,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 90%;
+    height: 100%;
     margin: auto;
     justify-content: center;
 }
