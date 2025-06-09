@@ -67,20 +67,33 @@
 }
 
 .proj-image-container {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
 }
 
 .projIMG {
     position: relative;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     border-radius: 5px;
     border: solid 5px var(--detail-color-2);
     margin: 10px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+#cycle-image{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 700px; /* set a fixed width, adjust as needed */
+    max-width: 100%; /* responsive for smaller screens */
+    height: 300px; /*this is the height of the image container*/
 }
 
 #alt-text{
@@ -91,16 +104,6 @@
     margin: 5px;
     width: 75%;
     align-self: center;
-}
-
-#cycle-image{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 90%;
-    height: 100%;
-    margin: auto;
-    justify-content: center;
 }
 
 .arrow-button{
