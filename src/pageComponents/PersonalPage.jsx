@@ -132,7 +132,7 @@ function PersonalPage() {
                 </div>
                 <button className="arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><p>&#9664;</p></button>
                 <div className="proj-image-container">
-                    <img className="projIMG" ref={projImage} src='src\assets\flower.png'/>  
+                    <img className="main-proj-image" ref={projImage} src='src\assets\flower.png'/>
                     <h5 ref={projAlt} id="alt-text">Check out some of my work!</h5>
                 </div>
                 <button className="arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9654;</p></button>

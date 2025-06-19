@@ -17,7 +17,6 @@ function App() {
   const componentMapping = {
     HomePage: HomePage,
     About: AboutPage,
-    // Academic: AcademicPage,
     Personal: PersonalPage,
   };
 
