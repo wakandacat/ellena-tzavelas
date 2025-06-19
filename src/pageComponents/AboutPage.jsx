@@ -18,7 +18,7 @@ function AboutPage() {
                 <div className="flex-container">
                     <h2 className="sub-title">RESUME</h2>
                     <h3 className="blurb"></h3>
-                    <iframe src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf"></iframe>
+                    <iframe src="https://wakandacat.github.io/resume/TzavelasEllenaPostGradResume.pdf"></iframe>
                 </div>
             </div>
         </>
