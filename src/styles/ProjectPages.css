@@ -47,6 +47,7 @@
     line-height: 1;
     position: absolute;
     pointer-events: none;
+    -webkit-text-stroke: 1px var(--detail-color-2);
 }
 
 #tri-design {

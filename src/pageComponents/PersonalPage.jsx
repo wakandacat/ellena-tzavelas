@@ -6,8 +6,9 @@ function PersonalPage() {
 
     const [jsonData, setJsonData] = useState(null);
     const [projArr, setProjArr] = useState([]); // Store the rendered JSX elements
-    const [currProjImage, setCurrProjImage] = useState(0);
+    const [currProjIndex, setCurrProjIndex] = useState(0);
     const [currRes, setCurrRes] = useState("");
+    const [currProjImage, setCurrProjImage] = useState({ src: '', alt: '' , isVideo: false });
 
     const currYear = new Date().getFullYear();
 
@@ -45,7 +46,7 @@ function PersonalPage() {
     useEffect(() => {
         if (jsonData !== null) {
 
-            // Map over the Academic array and create JSX elements using index from map function
+            // Map over the array and create JSX elements using index from map function
             const newProjArr = jsonData['Projects'].map((element, index) => (
                 <button className="proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
                     <h2 className="proj-title">{element.Title.toUpperCase()}</h2>
@@ -78,20 +79,18 @@ function PersonalPage() {
         //add the arrow buttons and alt text
         projImageArr.current.style.visibility = "visible";
         projImageArr2.current.style.visibility = "visible";
-        projAlt.current.style.visibility = "visible";
 
         //update the top page card with the project info
         projTitle.current.textContent = element.Title.toUpperCase();
         projYear.current.textContent = element.Year;
         projRes.current.textContent = element.Res;
         projBlurb.current.textContent = element.Desc;
-        projImage.current.src = `src/assets/${element.Image[0].img}`;
-        projAlt.current.textContent = element.Image[0].alt;
+        setCurrProjImage({ src: `src/assets/${element.Image[0].img}`, alt: element.Image[0].alt, isVideo: element.Image[0].img.endsWith(".mp4") });
         projImageArr.current.value = JSON.stringify(element.Image);
         projImageArr2.current.value = JSON.stringify(element.Image);
 
         setCurrRes(element.Res);
-        setCurrProjImage(0);
+        setCurrProjIndex(0);
     }
 
     //change project view on button click with cycling
@@ -99,27 +98,29 @@ function PersonalPage() {
         let ImageArr = JSON.parse(projImageArr.current.value);
         let newIndex = 0;
         if(num === 0){
-            newIndex = currProjImage - 1;
+            newIndex = currProjIndex - 1;
             if(newIndex < 0){
                 newIndex = ImageArr.length - 1;
             }
         } else {
-            newIndex = currProjImage + 1;
+            newIndex = currProjIndex + 1;
             newIndex = newIndex%ImageArr.length;
         }
-        
-        setCurrProjImage(newIndex);
+
+        setCurrProjIndex(newIndex);
     }
 
     //update the project image and alt text when arrow buttons clicked
     useEffect(() => {
         if (jsonData !== null) {
             let ImageArr = JSON.parse(projImageArr.current.value);
+
             //update the image
-            projImage.current.src = `src/assets/${ImageArr[currProjImage].img}`;
-            projAlt.current.textContent = ImageArr[currProjImage].alt;
+            setCurrProjImage({ src: `src/assets/${ImageArr[currProjIndex].img}`, alt: ImageArr[currProjIndex].alt, isVideo: ImageArr[currProjIndex].img.endsWith(".mp4") });
+       
         }
-    }, [currProjImage]);
+    }, [currProjIndex]);
+
 
     return (
         <>
@@ -132,8 +133,25 @@ function PersonalPage() {
                 </div>
                 <button className="arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><p>&#9664;</p></button>
                 <div className="proj-image-container">
-                    <img className="main-proj-image" ref={projImage} src='src\assets\flower.png'/>
-                    <h5 ref={projAlt} id="alt-text">Check out some of my work!</h5>
+                    {/* conditionally render image or video */}
+                    {currProjImage.isVideo ? (
+                        <video
+                            className="main-proj-image"
+                            src={currProjImage.src}
+                            alt={currProjImage.alt}
+                            ref={projImage}
+                            autoPlay
+                            loop
+                        />
+                    ) : (
+                        <img
+                            className="main-proj-image"
+                            src={currProjImage.src || "src/assets/flower.png"}
+                            ref={projImage}
+                            alt={currProjImage.alt}
+                        />
+                    )}
+                    <h5 id="alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
                 </div>
                 <button className="arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9654;</p></button>
             </div>
