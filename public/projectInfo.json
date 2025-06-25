@@ -16,8 +16,8 @@
             "Year": "2024",
             "Res": ""},
         {"Title": "Portfolio",
-            "Desc": "This portfolio lol, i have made a few before with vanilla js",
-            "Image": [{"img": "temp.jpg", "alt": "what it looks like normally"},{"img": "temp.jpg", "alt": "old version"},{"img": "temp.jpg", "alt": "different time of day"}],
+            "Desc": "I started to create this portfolio website in my 3rd year of university to showcase some of the cool academic and personal projects I've been working on. I created it using component-driven React.js as it was a framework I started to learn at a co-op placement and I wanted to continue to improve my skills with it. I will be continuing to update this portfolio as I create more projects and learn new skills!",
+            "Image": [{"img": "port1.png", "alt": "This portfolio showcases a bit about me!"},{"img": "port2.mp4", "alt": "I created a custom theme component to allow for a dark mode and light mode. This is one of the tasks I took on during my co-op placement to improve their React application."}],
             "Year": "2025",
             "Res": ""},
         {"Title": "Flower Flux",
@@ -41,19 +41,9 @@
             "Year": "2024",
             "Res": "https://trisren.itch.io/crab-cove"},
         {"Title": "Garden Planner",
-            "Desc": "react + django",
-            "Image": [{"img": "p3back.PNG", "alt": "what it looks like normally"}],
+            "Desc": "The Garden Planner was created as the term project for my 4th year Web Frameworks course. The goal was to create a useful application with a django backend and a React frontend. Because of my interest in gardening, I decided to create a garden planner that allows users to plan out their gardens by specifying the dimensions and amount of sun and using the external OpenFarm API to suggest possible plants to grow. Users can then save these plants to their gardens and be notified when they should be watered and harvested. User accounts are also saved to the database so that users can login and logout at any time.",
+            "Image": [{"img": "garden2.png", "alt": "Users can create and update garden specifications from the main page."},{"img": "garden3.png", "alt": "Viewing a garden allows users to see the existing plants and see possible new ones that fit the garden criteria from the OpenFarm API."},{"img": "garden4.png", "alt": "Users can view all of the notifications from their gardens."},{"img": "garden1.png", "alt": "Users can create accounts to login and logout of the application."}],
             "Year": "2024",
-            "Res": "https://github.com/Carleton-BIT/project-wakandacat"},
-        {"Title": "Snowball Sandbox",
-            "Desc": "might switch this to assignment 3",
-            "Image": [{"img": "snowball1.PNG", "alt": "what it looks like normally"}, {"img": "snowball2.PNG", "alt": "what it looks like normally"}],
-            "Year": "2024",
-            "Res": ""},
-        {"Title": "Arkive FlashCard Site",
-            "Desc": "heyo get that thang to run",
-            "Image": [{"img": "flower.png", "alt": "what it looks like normally"}, {"img": "snowball2.PNG", "alt": "what it looks like normally"}],
-            "Year": "2024",
-            "Res": ""}
+            "Res": "https://github.com/Carleton-BIT/project-wakandacat"}
     ]  
 }
