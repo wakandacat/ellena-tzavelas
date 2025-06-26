@@ -122,17 +122,52 @@ function PersonalPage() {
     }, [currProjIndex]);
 
 
+    //jquery for image overlay
+    $(document).ready(function(){
+
+        $('.main-proj-image').click(function() {
+            $('.overlay').css('display', 'flex');
+        });
+
+          $('.overlay').click(function() {
+            $('.overlay').css('display', 'none');
+        });
+
+    });
+
     return (
         <>
+            {/* Overlay for enlarging images */}
+            <div className="overlay" id="overlay">
+                {currProjImage.isVideo ? (
+                        <video
+                            className="full-image"
+                            src={currProjImage.src}
+                            alt={currProjImage.alt}
+                            ref={projImage}
+                            autoPlay
+                            loop
+                            muted
+                        />
+                    ) : (
+                        <img
+                            className="full-image"
+                            src={currProjImage.src || "src/assets/me5.jpg"}
+                            ref={projImage}
+                            alt={currProjImage.alt}
+                        />
+                    )} 
+            </div>
             <div className="page-top card">
                 <div className="flex-container">
                     <h1 ref={projTitle} className="title">PROJECTS</h1>
                     <h2 ref={projYear} className="sub-title">2020-{currYear}</h2>
                     <a href={currRes} ref={projRes} target="_blank"></a>
-                    <h3 ref={projBlurb} className="blurb">A collection of projects I made for fun or associated with school assignments.</h3>
+                    <h3 ref={projBlurb} className="blurb">Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!</h3>
                 </div>
                 <button className="arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><p>&#9664;</p></button>
                 <div className="proj-image-container">
+                   
                     {/* conditionally render image or video */}
                     {currProjImage.isVideo ? (
                         <video
@@ -142,15 +177,17 @@ function PersonalPage() {
                             ref={projImage}
                             autoPlay
                             loop
+                            muted
                         />
                     ) : (
                         <img
                             className="main-proj-image"
-                            src={currProjImage.src || "src/assets/flower.png"}
+                            src={currProjImage.src || "src/assets/me5.jpg"}
                             ref={projImage}
                             alt={currProjImage.alt}
                         />
                     )}
+
                     <h5 id="alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
                 </div>
                 <button className="arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9654;</p></button>
