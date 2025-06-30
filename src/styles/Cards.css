@@ -8,6 +8,10 @@
 .card > img {
     width: 30%;
     object-fit: cover;
+    pointer-events: none;
+    border-radius: 5px;
+    border: solid 5px var(--detail-color-2);
+    margin-bottom: 2%;
 }
 
 .personal {
@@ -18,6 +22,11 @@
 
 .about-card {
     padding-bottom: 0px;
+}
+
+.personal > .flex-container{
+    text-align: end;
+    align-items:end;
 }
 
 .flex-container {
@@ -36,6 +45,6 @@
 .main-container {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:space-between;
+    justify-content:center;
     width: 100%;
 }

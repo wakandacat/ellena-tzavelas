@@ -1,5 +1,6 @@
 #nav {
     display: flex;
+    flex-direction: row;
     padding: 5px;
     background-color: var(--background-color-3);
     position: fixed;

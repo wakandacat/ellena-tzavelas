@@ -128,6 +128,8 @@ a {
   text-decoration: none;
   color: var(--detail-color);
   transition: 0.2s ease;
+  font-size: 1.5vw;
+  word-break: break-all;
 }
 
 a:hover {
@@ -136,6 +138,23 @@ a:hover {
 
 /* Medium devices (landscape tablets, 768px and smaller) */
 @media only screen and (max-width: 768px) {
+
+  #nav {
+    flex-direction: column;
+  }
+
+  #right-buttons{
+    margin: auto;
+  }
+
+  .nav-button, #theme-control{
+    border: 1px solid black;
+    font-size: 2.5vw;
+  }
+
+  .page-top {
+    padding: 15vh 7% 2%;
+  }
 
   section {
     min-height: 400px;
@@ -153,7 +172,7 @@ a:hover {
     font-size: 8vw;
   }
 
-  .sub-title {
+  .sub-title, a, .banner-sub {
     font-size: 4vw;
   }
 
@@ -161,8 +180,8 @@ a:hover {
     font-size: 2vw;
   }
 
-  #alt-text {
-    font-size: 2vw;
+  .alt-text {
+    font-size: 1.75vw;
   }
 
   .page-button {
@@ -173,9 +192,22 @@ a:hover {
     flex-direction: column;
   }
 
-  .flex-container{
+  .card > img {
+    width: 98%;
+    margin: auto;
+    margin-bottom: 2%;
+  }
+
+  .personal > .flex-container, .about-card > .flex-container {
     width: 100%;
-    margin: 0px;
+    margin: 0px 0px 2% 0px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  .page-button {
+    padding: 8px 32px;
   }
 
   .proj-image-container {
@@ -188,6 +220,37 @@ a:hover {
 
   .proj-button {
     width: 45%;
+    height: 25vw;
+  }
+
+  .proj-title {
+    font-size: 5vw;
+  }
+
+  #about-image{
+    margin: auto;
+  }
+
+  iframe {
+    width: 98%;
+  }
+
+  /* Small devices (430px or smaller) */
+  @media only screen and (max-width: 430px) {
+
+    .proj-button {
+      width: 90%;
+      height: 45vw;
+    }
+
+    .blurb {
+      font-size: 3vw;
+    }
+
+    .alt-text {
+      font-size: 2.75vw;
+    }
+
   }
 
 }

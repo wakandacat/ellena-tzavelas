@@ -165,7 +165,9 @@ function PersonalPage() {
                     <a href={currRes} ref={projRes} target="_blank"></a>
                     <h3 ref={projBlurb} className="blurb">Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!</h3>
                 </div>
+                
                 <button className="arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><p>&#9664;</p></button>
+                
                 <div className="proj-image-container">
                    
                     {/* conditionally render image or video */}
@@ -188,7 +190,7 @@ function PersonalPage() {
                         />
                     )}
 
-                    <h5 id="alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
+                    <h5 className="alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
                 </div>
                 <button className="arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9654;</p></button>
             </div>
