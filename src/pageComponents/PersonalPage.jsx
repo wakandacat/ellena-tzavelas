@@ -154,7 +154,7 @@ function PersonalPage() {
                     ) : (
                         <img
                             className="full-image"
-                            src={currProjImage.src || defaultIMG }
+                            src={currProjImage.src ? currProjImage.src : defaultIMG}
                             ref={projImage}
                             alt={currProjImage.alt}
                             loading="lazy"
@@ -188,7 +188,7 @@ function PersonalPage() {
                         ) : (
                             <img
                                 className="main-proj-image"
-                                src={currProjImage.src || defaultIMG }
+                                src={currProjImage.src ? currProjImage.src : defaultIMG}
                                 ref={projImage}
                                 alt={currProjImage.alt}
                                 loading="lazy"
