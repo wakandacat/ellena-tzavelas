@@ -165,34 +165,37 @@ function PersonalPage() {
                     <a href={currRes} ref={projRes} target="_blank"></a>
                     <h3 ref={projBlurb} className="blurb">Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!</h3>
                 </div>
-                
-                <button className="arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><p>&#9664;</p></button>
-                
-                <div className="proj-image-container">
-                   
-                    {/* conditionally render image or video */}
-                    {currProjImage.isVideo ? (
-                        <video
-                            className="main-proj-image"
-                            src={currProjImage.src}
-                            alt={currProjImage.alt}
-                            ref={projImage}
-                            autoPlay
-                            loop
-                            muted
-                        />
-                    ) : (
-                        <img
-                            className="main-proj-image"
-                            src={currProjImage.src || "src/assets/me5.jpg"}
-                            ref={projImage}
-                            alt={currProjImage.alt}
-                        />
-                    )}
+                 {/* extra flex div to keep the arrows beside the image when responsive */}
+                <div id="image-and-arrows" className="proj-image-container">
+                    <button className="arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><p>&#9664;</p></button>
+                    
+                    <div className="proj-image-container">
+                    
+                        {/* conditionally render image or video */}
+                        {currProjImage.isVideo ? (
+                            <video
+                                className="main-proj-image"
+                                src={currProjImage.src}
+                                alt={currProjImage.alt}
+                                ref={projImage}
+                                autoPlay
+                                loop
+                                muted
+                            />
+                        ) : (
+                            <img
+                                className="main-proj-image"
+                                src={currProjImage.src || "src/assets/me5.jpg"}
+                                ref={projImage}
+                                alt={currProjImage.alt}
+                            />
+                        )}
 
-                    <h5 className="alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
+                        <h5 className="alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
+                    </div>
+                    <button className="arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9654;</p></button>
                 </div>
-                <button className="arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9654;</p></button>
+                
             </div>
             <div id="tri-design"></div>
             <div className="page-bottom card">

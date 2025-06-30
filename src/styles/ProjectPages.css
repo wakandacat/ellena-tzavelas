@@ -1,8 +1,42 @@
+/* all pages styling */
+.title {
+  letter-spacing: -2px;
+  font-size: 6vw;
+  margin: 0px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--detail-color);
+}
+
+.sub-title{
+  margin: 0px;
+  font-weight: 400;
+  font-size: 1.5vw;
+  color: var(--detail-color-2);
+}
+
 .blurb {
     color: var(--text-color);
     font-size: 1vw;
 }
+
+/* home page styles */
+.page-button {
+  padding: 15px 32px;
+  background-color: var(--detail-color);
+  border: 2px solid var(--detail-color-2);
+  color: var(--text-color-2);
+  transition: 0.2s ease;
+  font-size: 1.5vw;
+  cursor: pointer;
+}
+
+.page-button:hover {
+  background-color: var(--background-color);
+  color: var(--detail-color);
+}
   
+/* project page styles */
 .project {
     width: 100%;
     pointer-events: none;
@@ -47,7 +81,7 @@
     line-height: 1;
     position: absolute;
     pointer-events: none;
-    -webkit-text-stroke: 1px var(--detail-color-2);
+    -webkit-text-stroke: 1px var(--detail-color);
 }
 
 #tri-design {
@@ -72,6 +106,11 @@
   display: inline-block;
 }
 
+#image-and-arrows {
+    display: flex;
+    flex-direction: row;
+}
+
 .proj-image-container {
     display: flex;
     flex-direction: column;
@@ -84,6 +123,7 @@
     position: relative;
     color: var(--background-color-2);
     align-items: center;
+    background-color: var(--background-color);
 }
 
 .main-proj-image {
@@ -126,9 +166,10 @@
     border: 2px solid var(--detail-color-2);
     color: var(--text-color-2);
     transition: 0.2s ease;
-    font-size: 2vw;
+    font-size: 2.5vw;
     visibility: hidden;
     text-align: center;
+    cursor: pointer;
 }
 
 .arrow-button > p {
@@ -156,16 +197,16 @@
   justify-content: center;
   align-items: center;
   z-index: 5000;
+  cursor: zoom-out;
 }
 
 .overlay .full-image {
   max-width: 90%;
   max-height: 90%;
   box-shadow: 0 0 15px black;
-  cursor: zoom-out;
 }
 
-/* About Page */
+/* About Page styling */
 #about-image {
     height: 100%;
     object-fit: cover;
