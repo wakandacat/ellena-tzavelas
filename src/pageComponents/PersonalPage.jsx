@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import '../styles/Cards.css';
 import '../styles/ProjectPages.css';
 import ImageProvider from "../components/ImageProvider";
+import defaultIMG from '../assets/me5.jpg';
 
 function PersonalPage() {
 
@@ -23,7 +24,7 @@ function PersonalPage() {
     const projImageArr = useRef();
     const projImageArr2 = useRef();
 
-    var jsonFile = import.meta.env.BASE_URL + 'projectInfo.json';
+    var jsonFile = './projectInfo.json';
 
     //check internal computer theme state
     useEffect(() => {
@@ -51,7 +52,7 @@ function PersonalPage() {
             const newProjArr = jsonData['Projects'].map((element, index) => (
                 <button className="proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
                     <h2 className="proj-title">{element.Title.toUpperCase()}</h2>
-                    <img className="proj-image" src={ImageProvider[element.Image[0].img]}/>
+                    <img className="proj-image" loading="lazy" src={ImageProvider[element.Image[0].img]}/>
                 </button>
             ));
 
@@ -153,9 +154,10 @@ function PersonalPage() {
                     ) : (
                         <img
                             className="full-image"
-                            src={currProjImage.src || "src/assets/me5.jpg"}
+                            src={currProjImage.src || defaultIMG }
                             ref={projImage}
                             alt={currProjImage.alt}
+                            loading="lazy"
                         />
                     )} 
             </div>
@@ -189,6 +191,7 @@ function PersonalPage() {
                                 src={currProjImage.src || "src/assets/me5.jpg"}
                                 ref={projImage}
                                 alt={currProjImage.alt}
+                                loading="lazy"
                             />
                         )}
 

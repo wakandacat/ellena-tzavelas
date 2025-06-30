@@ -22,7 +22,7 @@ function Card(props) {
                 <h2 className="sub-title">{props.subtitle}</h2>
                 <button className="page-button" value={props.buttonVal} onClick={handleClick}>VIEW</button>
             </div>
-            <img className="about-image" src={ImageProvider[props.image]}/>
+            <img className="about-image" loading="lazy" src={ImageProvider[props.image]}/>
         </div>
     );
 }
