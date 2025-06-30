@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import '../styles/Cards.css';
 import '../styles/ProjectPages.css';
+import ImageProvider from "../components/ImageProvider";
 
 function PersonalPage() {
 
@@ -22,7 +23,7 @@ function PersonalPage() {
     const projImageArr = useRef();
     const projImageArr2 = useRef();
 
-    var jsonFile = '/projectInfo.json';
+    var jsonFile = import.meta.env.BASE_URL + 'projectInfo.json';
 
     //check internal computer theme state
     useEffect(() => {
@@ -50,7 +51,7 @@ function PersonalPage() {
             const newProjArr = jsonData['Projects'].map((element, index) => (
                 <button className="proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
                     <h2 className="proj-title">{element.Title.toUpperCase()}</h2>
-                    <img className="proj-image" src={`src/assets/${element.Image[0].img}`}/>
+                    <img className="proj-image" src={ImageProvider[element.Image[0].img]}/>
                 </button>
             ));
 
@@ -85,7 +86,7 @@ function PersonalPage() {
         projYear.current.textContent = element.Year;
         projRes.current.textContent = element.Res;
         projBlurb.current.textContent = element.Desc;
-        setCurrProjImage({ src: `src/assets/${element.Image[0].img}`, alt: element.Image[0].alt, isVideo: element.Image[0].img.endsWith(".mp4") });
+        setCurrProjImage({ src: ImageProvider[element.Image[0].img], alt: element.Image[0].alt, isVideo: element.Image[0].img.endsWith(".mp4") });
         projImageArr.current.value = JSON.stringify(element.Image);
         projImageArr2.current.value = JSON.stringify(element.Image);
 
@@ -116,7 +117,7 @@ function PersonalPage() {
             let ImageArr = JSON.parse(projImageArr.current.value);
 
             //update the image
-            setCurrProjImage({ src: `src/assets/${ImageArr[currProjIndex].img}`, alt: ImageArr[currProjIndex].alt, isVideo: ImageArr[currProjIndex].img.endsWith(".mp4") });
+            setCurrProjImage({ src: ImageProvider[ImageArr[currProjIndex].img], alt: ImageArr[currProjIndex].alt, isVideo: ImageArr[currProjIndex].img.endsWith(".mp4") });
        
         }
     }, [currProjIndex]);

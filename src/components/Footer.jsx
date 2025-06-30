@@ -3,6 +3,7 @@ import '../styles/Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import etIMG from '/et.png';
 
 function Footer() {
 
@@ -27,7 +28,7 @@ function Footer() {
                 </div>
                 <hr/>
                 <div id="rightsBar">
-                    <img id='logo' src="/et.png"/>
+                    <img id='logo' src= {etIMG}/>
                     <h4>Ellena Tzavelas {currYear}</h4>
                 </div>
             </div>

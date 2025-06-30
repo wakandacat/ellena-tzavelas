@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import '../styles/Navbar.css'
 import ThemeController from './ThemeController.jsx';
 import GlobalContext from "./GlobalContext.jsx";
+import etIMG from '/et.png';
 
 function Navbar() {
 
@@ -18,7 +19,7 @@ function Navbar() {
     return (
         <span id="nav">
             <div id="left-buttons">
-                <img id='logo' src="/et.png"/>
+                <img id='logo' src={etIMG}/>
                 <button className="nav-button" value='HomePage' onClick={handleClick}>HOME</button>
                 <button className="nav-button" value='Personal' onClick={handleClick}>PROJECTS</button>
                 <button className="nav-button" value='About' onClick={handleClick}>ABOUT</button>
