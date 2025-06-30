@@ -188,7 +188,7 @@ function PersonalPage() {
                         ) : (
                             <img
                                 className="main-proj-image"
-                                src={currProjImage.src || "src/assets/me5.jpg"}
+                                src={currProjImage.src || defaultIMG }
                                 ref={projImage}
                                 alt={currProjImage.alt}
                                 loading="lazy"
