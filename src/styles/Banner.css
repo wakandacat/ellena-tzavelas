@@ -22,6 +22,7 @@ section {
     font-weight: 500;
     font-size: 2.5vw;
     color: var(--detail-color);
+    -webkit-text-stroke: 1px white;
 }
 
 #main-content {
@@ -39,4 +40,5 @@ section {
     font-weight: 900;
     line-height: 1;
     color: var(--text-color-2);
+    -webkit-text-stroke: 1px var(--detail-color);
 }
