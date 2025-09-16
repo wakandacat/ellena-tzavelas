@@ -40,5 +40,9 @@ section {
     font-weight: 900;
     line-height: 1;
     color: var(--text-color-2);
-    -webkit-text-stroke: 1px var(--detail-color);
+    text-shadow: 
+    -1px -1px 0 var(--detail-color-2),
+     1px -1px 0 var(--detail-color-2),
+    -1px  1px 0 var(--detail-color-2),
+     1px  1px 0 var(--detail-color-2);
 }

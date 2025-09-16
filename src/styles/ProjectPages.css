@@ -81,7 +81,11 @@
     line-height: 1;
     position: absolute;
     pointer-events: none;
-    -webkit-text-stroke: 1px var(--detail-color);
+    text-shadow: 
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
 }
 
 #tri-design {
