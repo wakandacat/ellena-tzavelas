@@ -10,9 +10,9 @@ function Footer() {
     const currYear = new Date().getFullYear();
 
     return (
-        <span id="footer-top">
+        <footer id="footer-top">
             <div id="social-bar">
-                <h2>CONNECT WITH ME</h2>            
+                <h2 className="sub-title">CONNECT WITH ME!</h2>            
             </div>
             <div id="footer-bottom">
                  <div>
@@ -28,11 +28,11 @@ function Footer() {
                 </div>
                 <hr/>
                 <div id="rightsBar">
-                    <img id='logo' src= {etIMG}/>
+                    <img id='logo' src={etIMG} alt="Ellena's site logo"/>
                     <h4>Ellena Tzavelas {currYear}</h4>
                 </div>
             </div>
-        </span>
+        </footer>
     );
 }
 

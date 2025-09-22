@@ -138,7 +138,7 @@ function PersonalPage() {
     });
 
     return (
-        <>
+        <main>
             {/* Overlay for enlarging images */}
             <div className="overlay" id="overlay">
                 {currProjImage.isVideo ? (
@@ -207,7 +207,7 @@ function PersonalPage() {
                 {projArr}
                 </div>
             </div>
-        </>
+        </main>
     );
 }
 

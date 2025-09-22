@@ -17,17 +17,17 @@ function Navbar() {
     }
 
     return (
-        <span id="nav">
+        <nav id="nav">
             <div id="left-buttons">
-                <img id='logo' src={etIMG}/>
-                <button className="nav-button" value='HomePage' onClick={handleClick}>HOME</button>
-                <button className="nav-button" value='Personal' onClick={handleClick}>PROJECTS</button>
-                <button className="nav-button" value='About' onClick={handleClick}>ABOUT</button>
+                <img id='logo' src={etIMG} alt="Ellena's site logo"/>
+                <button className="nav-button" value='HomePage' onClick={handleClick} aria-label="Travel to the Homepage">HOME</button>
+                <button className="nav-button" value='Personal' onClick={handleClick} aria-label="Travel to the Project page">PROJECTS</button>
+                <button className="nav-button" value='About' onClick={handleClick} aria-label="Travel to the About page">ABOUT</button>
             </div>
             <div id="right-buttons">
                 <ThemeController/>
             </div>
-        </span>
+        </nav>
     );
 }
 

@@ -6,7 +6,7 @@ function Banner() {
     
     return(
     <section>
-        <img id="banner" loading="lazy" src={bannerIMG}/>
+        <img id="banner" loading="lazy" src={bannerIMG} alt="An enlarged purple flower."/>
         <div id="main-content">
             <h1 id="name">ELLENA TZAVELAS</h1>
             <h2 className="banner-sub">Web Dev // Game Dev</h2>
