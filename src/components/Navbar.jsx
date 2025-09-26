@@ -17,12 +17,12 @@ function Navbar() {
     }
 
     return (
-        <nav className="nav">
+        <nav className="text-white nav">
             <div className="left-buttons">
                 <img className='logo' src={etIMG} alt="Ellena's site logo"/>
-                <button className="nav-button" value='HomePage' onClick={handleClick} aria-label="Travel to the Homepage">HOME</button>
-                <button className="nav-button" value='Project' onClick={handleClick} aria-label="Travel to the Project page">PROJECTS</button>
-                <button className="nav-button" value='About' onClick={handleClick} aria-label="Travel to the About page">ABOUT</button>
+                <button className="hover:text-(--detail-color) nav-button" value='HomePage' onClick={handleClick} aria-label="Travel to the Homepage">HOME</button>
+                <button className="hover:text-(--detail-color) nav-button" value='Project' onClick={handleClick} aria-label="Travel to the Project page">PROJECTS</button>
+                <button className="hover:text-(--detail-color) nav-button" value='About' onClick={handleClick} aria-label="Travel to the About page">ABOUT</button>
             </div>
             <div className="right-buttons">
                 <ThemeController/>

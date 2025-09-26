@@ -32,7 +32,7 @@ function ThemeController() {
     }, []);
 
     return (
-        <button id="theme-control" onClick={handleClick} value={localTheme}><p>&#9664;</p>{localTheme.toUpperCase()}<p>&#9658;</p></button>
+        <button className="hover:text-(--detail-color) theme-control" onClick={handleClick} value={localTheme}><p>&#9664;</p>{localTheme.toUpperCase()}<p>&#9658;</p></button>
     );
 }
 

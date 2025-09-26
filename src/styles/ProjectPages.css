@@ -55,12 +55,10 @@
     height: 15vw;
     border: none;
     position: relative;
-    color: var(--background-color-2);
 }
   
 .proj-button:hover {
     background-color: var(--detail-color-2);
-    color: var(--detail-color);
 }
 
 .proj-selected {
@@ -72,7 +70,6 @@
     text-align: start;
     margin: 0px;
     font-weight: 900;
-    color: white;
     letter-spacing: -2px;
     line-height: 1;
     position: absolute;

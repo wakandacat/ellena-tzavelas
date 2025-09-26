@@ -1,7 +1,6 @@
-#theme-control {
+.theme-control {
     display: flex;
     background-color: var(--background-color-3);
-    color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
@@ -9,17 +8,16 @@
     cursor: pointer;
 }
 
-#theme-control:hover {
+.theme-control:hover {
     filter: brightness(2);
-    color: var(--detail-color);
 }
 
-#theme-control > p {
+.theme-control > p {
     margin: 0px;
     padding-left: 15px;
 }
 
-#theme-control > p:first-of-type {
+.theme-control > p:first-of-type {
     margin: 0px;
     padding-right: 15px;
     padding-left: 0px;

@@ -9,7 +9,7 @@ function Footer() {
     const currYear = new Date().getFullYear();
 
     return (
-        <footer className="footer-top">
+        <footer className="text-white footer-top">
             <div className="social-bar">
                 <h2 className='text-2xl'>CONNECT WITH ME!</h2>
             </div>

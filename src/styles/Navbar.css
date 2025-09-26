@@ -1,14 +1,14 @@
 .nav {
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
-    background-color: var(--background-color-3);
-    position: fixed;
-    top: 0;
-    left: 0px;
-    right: 0px;
-    z-index: 2000;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  background-color: var(--background-color-3);
+  position: fixed;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  z-index: 2000;
+  align-items: center;
 }
 
 .nav-button {
@@ -17,14 +17,12 @@
   background-color: var(--background-color-3);
   border: none;
   border-radius: 5px;
-  color: white;
   transition: filter 0.2s ease;
   cursor: pointer;
 }
 
 .nav-button:hover {
   filter: brightness(2);
-  color: var(--detail-color);
 }
 
 .current-nav-button {
