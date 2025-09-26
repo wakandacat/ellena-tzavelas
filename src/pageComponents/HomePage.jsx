@@ -9,7 +9,7 @@ function HomePage() {
     return (
         <main>
             <Banner/>
-            <Card class={'personal'} title={"PROJECTS"} subtitle={`2020 - ${currYear}`} image={'p3back.jpg'} buttonVal={"Personal"} aria-label="Travel to the Projects page."/>
+            <Card class={'personal'} title={"PROJECTS"} subtitle={`2020 - ${currYear}`} image={'p3back.jpg'} buttonVal={"Project"} aria-label="Travel to the Projects page."/>
             <Card class={'about-card'} title={"ABOUT"} subtitle={"ELLENA TZAVELAS"} image={'me3.png'} buttonVal={"About"} aria-label="Travel to the About page."/>
         </main>
     );

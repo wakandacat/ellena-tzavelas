@@ -1,10 +1,12 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import '../styles/Cards.css';
 import '../styles/ProjectPages.css';
 import ImageProvider from "../components/ImageProvider";
 import defaultIMG from '../assets/me5.jpg';
 
-function PersonalPage() {
+//saving this page while the default image is displayed while cause an error because default image does not have a currProjIndex (its not in the array with the other images)
+
+function ProjectPage() {
 
     const [jsonData, setJsonData] = useState(null);
     const [projArr, setProjArr] = useState([]); // Store the rendered JSX elements
@@ -51,7 +53,7 @@ function PersonalPage() {
             // Map over the array and create JSX elements using index from map function
             const newProjArr = jsonData['Projects'].map((element, index) => (
                 <button className="proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
-                    <h2 className="proj-title">{element.Title.toUpperCase()}</h2>
+                    <h2 className="text-4xl proj-title">{element.Title.toUpperCase()}</h2>
                     <img className="proj-image" loading="lazy" src={ImageProvider[element.Image[0].img]}/>
                 </button>
             ));
@@ -116,7 +118,7 @@ function PersonalPage() {
     useEffect(() => {
         if (jsonData !== null) {
             let ImageArr = JSON.parse(projImageArr.current.value);
-
+            console.log("currprojindex", currProjIndex);
             //update the image
             setCurrProjImage({ src: ImageProvider[ImageArr[currProjIndex].img], alt: ImageArr[currProjIndex].alt, isVideo: ImageArr[currProjIndex].img.endsWith(".mp4") });
        
@@ -163,14 +165,14 @@ function PersonalPage() {
             </div>
             <div className="page-top card">
                 <div className="flex-container">
-                    <h1 ref={projTitle} className="title">PROJECTS</h1>
-                    <h2 ref={projYear} className="sub-title">2020-{currYear}</h2>
+                    <h1 ref={projTitle} className="text-8xl title">PROJECTS</h1>
+                    <h2 ref={projYear} className="text-2xl sub-title">2020-{currYear}</h2>
                     <a href={currRes} ref={projRes} target="_blank"></a>
-                    <h3 ref={projBlurb} className="blurb">Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!</h3>
+                    <h3 ref={projBlurb} className="text-xl blurb">Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!</h3>
                 </div>
                  {/* extra flex div to keep the arrows beside the image when responsive */}
                 <div id="image-and-arrows" className="proj-image-container">
-                    <button className="arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><p>&#9664;</p></button>
+                    <button className="text-4xl arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><p>&#9664;</p></button>
                     
                     <div className="proj-image-container">
                     
@@ -195,9 +197,9 @@ function PersonalPage() {
                             />
                         )}
 
-                        <h5 className="alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
+                        <h5 className="text-base alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
                     </div>
-                    <button className="arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9654;</p></button>
+                    <button className="text-4xl arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9654;</p></button>
                 </div>
                 
             </div>
@@ -211,4 +213,4 @@ function PersonalPage() {
     );
 }
 
-export default PersonalPage;
+export default ProjectPage;

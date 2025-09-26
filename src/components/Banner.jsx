@@ -1,15 +1,13 @@
-import React from "react"
 import '../styles/Banner.css'
-import bannerIMG from '../assets/flower.jpg';
 
 function Banner() {
     
     return(
     <section>
-        <img id="banner" loading="lazy" src={bannerIMG} alt="An enlarged purple flower."/>
+        
         <div id="main-content">
-            <h1 id="name">ELLENA TZAVELAS</h1>
-            <h2 className="banner-sub">Web Dev // Game Dev</h2>
+            <h1 className="text-8xl name">ELLENA TZAVELAS</h1>
+            <h2 className="text-5xl banner-sub">Web Dev // Game Dev</h2>
         </div>
     </section>);
 }

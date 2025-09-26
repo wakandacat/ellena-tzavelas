@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import '../styles/Navbar.css'
 import ThemeController from './ThemeController.jsx';
 import GlobalContext from "./GlobalContext.jsx";
@@ -17,14 +17,14 @@ function Navbar() {
     }
 
     return (
-        <nav id="nav">
-            <div id="left-buttons">
-                <img id='logo' src={etIMG} alt="Ellena's site logo"/>
+        <nav className="nav">
+            <div className="left-buttons">
+                <img className='logo' src={etIMG} alt="Ellena's site logo"/>
                 <button className="nav-button" value='HomePage' onClick={handleClick} aria-label="Travel to the Homepage">HOME</button>
-                <button className="nav-button" value='Personal' onClick={handleClick} aria-label="Travel to the Project page">PROJECTS</button>
+                <button className="nav-button" value='Project' onClick={handleClick} aria-label="Travel to the Project page">PROJECTS</button>
                 <button className="nav-button" value='About' onClick={handleClick} aria-label="Travel to the About page">ABOUT</button>
             </div>
-            <div id="right-buttons">
+            <div className="right-buttons">
                 <ThemeController/>
             </div>
         </nav>

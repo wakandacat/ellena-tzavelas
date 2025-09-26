@@ -18,9 +18,9 @@ function Card(props) {
     return(
         <div className={`card ${props.class}`}>
             <div className="flex-container">
-                <h1 className="title">{props.title}</h1>
-                <h2 className="sub-title">{props.subtitle}</h2>
-                <button className="page-button" value={props.buttonVal} onClick={handleClick}>VIEW</button>
+                <h1 className="text-8xl title">{props.title}</h1>
+                <h2 className="text-2xl sub-title">{props.subtitle}</h2>
+                <button className="text-2xl page-button" value={props.buttonVal} onClick={handleClick}>VIEW</button>
             </div>
             <img className="about-image" loading="lazy" src={ImageProvider[props.image]}/>
         </div>
