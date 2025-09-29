@@ -88,6 +88,26 @@ a:hover {
   color: var(--text-color);
 }
 
+.current-nav-button {
+  filter: brightness(2);
+  color: var(--detail-color);
+}
+
+.odd-card {
+    background-color: var(--background-color); 
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.even-card {
+    padding-bottom: 0px;
+}
+
+.odd-card > .flex-container{
+    text-align: end;
+    align-items:end;
+}
+
 /* Medium devices (landscape tablets, 768px and smaller) */
 @media only screen and (max-width: 768px) {
 
@@ -150,7 +170,7 @@ a:hover {
     margin-bottom: 2%;
   }
 
-  .personal > .flex-container, .about-card > .flex-container {
+  .odd-card > .flex-container, .even-card > .flex-container {
     width: 100%;
     margin: 0px 0px 2% 0px;
     flex-direction: row;

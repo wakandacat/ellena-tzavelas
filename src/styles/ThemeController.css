@@ -1,15 +1,10 @@
 .theme-control {
     display: flex;
-    background-color: var(--background-color-3);
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
     transition: filter 0.2s ease;
     cursor: pointer;
-}
-
-.theme-control:hover {
-    filter: brightness(2);
 }
 
 .theme-control > p {

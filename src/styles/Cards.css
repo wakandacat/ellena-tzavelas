@@ -1,5 +1,4 @@
 .card {
-    background-color: var(--background-color-2);
     padding: 2% 7%;
     display: flex;
     justify-content: space-between;
@@ -12,21 +11,6 @@
     border-radius: 5px;
     border: solid 5px var(--detail-color-2);
     margin-bottom: 2%;
-}
-
-.personal {
-    background-color: var(--background-color); 
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
-
-.about-card {
-    padding-bottom: 0px;
-}
-
-.personal > .flex-container{
-    text-align: end;
-    align-items:end;
 }
 
 .flex-container {

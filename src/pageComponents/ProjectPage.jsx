@@ -53,7 +53,7 @@ function ProjectPage() {
             // Map over the array and create JSX elements using index from map function
             const newProjArr = jsonData['Projects'].map((element, index) => (
                 <button className="text-white hover:text-(--detail-color) proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
-                    <h2 className="text-4xl proj-title">{element.Title.toUpperCase()}</h2>
+                    <h2 className="text-4xl font-bold uppercase proj-title">{element.Title}</h2>
                     <img className="proj-image" loading="lazy" src={ImageProvider[element.Image[0].img]}/>
                 </button>
             ));
@@ -85,7 +85,7 @@ function ProjectPage() {
         projImageArr2.current.style.visibility = "visible";
 
         //update the top page card with the project info
-        projTitle.current.textContent = element.Title.toUpperCase();
+        projTitle.current.textContent = element.Title;
         projYear.current.textContent = element.Year;
         projRes.current.textContent = element.Res;
         projBlurb.current.textContent = element.Desc;
@@ -165,8 +165,8 @@ function ProjectPage() {
             </div>
             <div className="page-top card">
                 <div className="flex-container">
-                    <h1 ref={projTitle} className="text-8xl title">PROJECTS</h1>
-                    <h2 ref={projYear} className="text-2xl sub-title">2020-{currYear}</h2>
+                    <h1 ref={projTitle} className="text-8xl font-bold text-(--detail-color) uppercase title">PROJECTS</h1>
+                    <h2 ref={projYear} className="text-2xl text-(--detail-color-2) sub-title">2020-{currYear}</h2>
                     <a href={currRes} ref={projRes} target="_blank"></a>
                     <h3 ref={projBlurb} className="text-xl blurb">Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!</h3>
                 </div>
@@ -197,7 +197,7 @@ function ProjectPage() {
                             />
                         )}
 
-                        <h5 className="text-base alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
+                        <h5 className="text-base text-(--text-color) alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
                     </div>
                     <button className="text-4xl arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9654;</p></button>
                 </div>

@@ -9,16 +9,15 @@ function AboutPage() {
         <main>
             <div className="page-top card">
                 <div className="flex-container">
-                    <h1 className="text-8xl title">ABOUT</h1>
-                    <h2 className="text-2xl sub-title">ELLENA TZAVELAS</h2>
+                    <h1 className="text-8xl font-bold text-(--detail-color) title">ABOUT</h1>
+                    <h2 className="text-2xl text-(--detail-color-2) sub-title">ELLENA TZAVELAS</h2>
                     <h3 className="text-xl blurb">Hello! I’m Ellena Tzavelas, a recent graduate of the joint Carleton-Algonquin Bachelor of Information Technology Interactive Multimedia and Design program. This fantastic program gave me the opportunity to dabble in a plethora of multimedia topics from illustration and design, 3D modeling and physics based animation, software design, audio and video, and human-computer interactions. My academic experiences have ignited my passion for software, web and game development. <br/><br/>I completed a year of university co-op placements at Nokia and Irdeto which allowed me to put my education into practice and helped me to broaden my skills in many technologies (and soft skills too!). <br/><br/>In my spare time, I enjoy playing video games, reading sci-fi fantasy, gardening and cooking.</h3>
                 </div>
                 <img id="about-image" loading="lazy" src={meIMG} alt="Ellena pictured in a brightly-lit area and she is smiling. She is a thin girl with shoulder-length brown hair, gray eyes, and glasses."/>
             </div>
             <div className="page-bottom card">
                 <div className="flex-container">
-                    <h2 className="text-2xl sub-title">RESUME</h2>
-                    <h3 className="text-xl blurb"></h3>
+                    <h2 className="text-2xl text-(--detail-color-2) sub-title">RESUME</h2>
                     <iframe loading="lazy" src="https://wakandacat.github.io/resume/TzavelasEllenaPostGradResume.pdf"></iframe>
                 </div>
             </div>

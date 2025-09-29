@@ -10,10 +10,10 @@ function Footer() {
 
     return (
         <footer className="text-white footer-top">
-            <div className="social-bar">
+            <div className="bg-(--detail-color) social-bar">
                 <h2 className='text-2xl'>CONNECT WITH ME!</h2>
             </div>
-            <div className="footer-bottom">
+            <div className="bg-(--background-color-3) footer-bottom">
                  <div>
                     <a href="https://github.com/wakandacat" target="blank">
                         <FontAwesomeIcon className='text-4xl icon' icon={faGithub} />
