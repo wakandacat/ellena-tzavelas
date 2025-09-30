@@ -32,6 +32,7 @@
   --background-color-2: rgb(211, 211, 211);
   --detail-color: rgb(224, 34, 59);
   --detail-color-2: rgb(104, 2, 53);
+  /* uses default text colors */
 }
 
 html{

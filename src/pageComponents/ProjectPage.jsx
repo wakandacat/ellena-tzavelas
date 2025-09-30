@@ -52,7 +52,7 @@ function ProjectPage() {
 
             // Map over the array and create JSX elements using index from map function
             const newProjArr = jsonData['Projects'].map((element, index) => (
-                <button className="text-white hover:text-(--detail-color) proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
+                <button className="text-white hover:text-(--detail-color) border-4 border-(--detail-color-2) rounded-xl proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
                     <h2 className="text-4xl font-bold uppercase proj-title">{element.Title}</h2>
                     <img className="proj-image" loading="lazy" src={ImageProvider[element.Image[0].img]}/>
                 </button>
@@ -164,7 +164,7 @@ function ProjectPage() {
                     )} 
             </div>
             <div className="page-top card">
-                <div className="flex-container">
+                <div className="flex-container mx-2">
                     <h1 ref={projTitle} className="text-8xl font-bold text-(--detail-color) uppercase title">PROJECTS</h1>
                     <h2 ref={projYear} className="text-2xl text-(--detail-color-2) sub-title">2020-{currYear}</h2>
                     <a href={currRes} ref={projRes} target="_blank"></a>
@@ -179,7 +179,7 @@ function ProjectPage() {
                         {/* conditionally render image or video */}
                         {currProjImage.isVideo ? (
                             <video
-                                className="main-proj-image"
+                                className="border-4 border-(--detail-color-2) rounded-xl main-proj-image"
                                 src={currProjImage.src}
                                 alt={currProjImage.alt}
                                 ref={projImage}
@@ -189,7 +189,7 @@ function ProjectPage() {
                             />
                         ) : (
                             <img
-                                className="main-proj-image"
+                                className="border-4 border-(--detail-color-2) rounded-xl main-proj-image"
                                 src={currProjImage.src ? currProjImage.src : defaultIMG}
                                 ref={projImage}
                                 alt={currProjImage.alt}

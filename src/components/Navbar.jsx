@@ -20,9 +20,9 @@ function Navbar() {
         <nav className="text-white bg-(--background-color-3) nav">
             <div className="left-buttons">
                 <img className='logo' src={etIMG} alt="Ellena's site logo"/>
-                <button className="hover:text-(--detail-color) bg-(--background-color-3) hover:brightness-200 nav-button" value='HomePage' onClick={handleClick} aria-label="Travel to the Homepage">HOME</button>
-                <button className="hover:text-(--detail-color) bg-(--background-color-3) hover:brightness-200 nav-button" value='Project' onClick={handleClick} aria-label="Travel to the Project page">PROJECTS</button>
-                <button className="hover:text-(--detail-color) bg-(--background-color-3) hover:brightness-200 nav-button" value='About' onClick={handleClick} aria-label="Travel to the About page">ABOUT</button>
+                <button className="hover:text-(--detail-color) bg-(--background-color-3) hover:brightness-200 border-0 rounded-xl nav-button" value='HomePage' onClick={handleClick} aria-label="Travel to the Homepage">HOME</button>
+                <button className="hover:text-(--detail-color) bg-(--background-color-3) hover:brightness-200 border-0 rounded-xl nav-button" value='Project' onClick={handleClick} aria-label="Travel to the Project page">PROJECTS</button>
+                <button className="hover:text-(--detail-color) bg-(--background-color-3) hover:brightness-200 border-0 rounded-xl nav-button" value='About' onClick={handleClick} aria-label="Travel to the About page">ABOUT</button>
             </div>
             <div className="right-buttons">
                 <ThemeController/>
