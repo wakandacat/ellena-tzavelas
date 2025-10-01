@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import '../styles/Cards.css';
 import '../styles/ProjectPages.css';
 import ImageProvider from "../components/ImageProvider";
 import defaultIMG from '../assets/me5.jpg';
@@ -53,7 +52,7 @@ function ProjectPage() {
             // Map over the array and create JSX elements using index from map function
             const newProjArr = jsonData['Projects'].map((element, index) => (
                 <button className="text-white hover:text-(--detail-color) border-4 border-(--detail-color-2) rounded-xl proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
-                    <h2 className="text-4xl font-bold uppercase proj-title">{element.Title}</h2>
+                    <h3 className="text-4xl font-bold uppercase proj-title">{element.Title}</h3>
                     <img className="proj-image" loading="lazy" src={ImageProvider[element.Image[0].img]}/>
                 </button>
             ));
@@ -163,10 +162,10 @@ function ProjectPage() {
                         />
                     )} 
             </div>
-            <div className="page-top card">
-                <div className="flex-container mx-2">
-                    <h1 ref={projTitle} className="text-8xl font-bold text-(--detail-color) uppercase title">PROJECTS</h1>
-                    <h2 ref={projYear} className="text-2xl text-(--detail-color-2) sub-title">2020-{currYear}</h2>
+            <div className="page-top">
+                <div className="flex-container">
+                    <h2 ref={projTitle} className="text-8xl font-bold text-(--detail-color) uppercase title">PROJECTS</h2>
+                    <h3 ref={projYear} className="text-2xl text-(--detail-color-2) sub-title">2020-{currYear}</h3>
                     <a href={currRes} ref={projRes} target="_blank"></a>
                     <h3 ref={projBlurb} className="text-xl blurb">Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!</h3>
                 </div>
@@ -204,7 +203,7 @@ function ProjectPage() {
                 
             </div>
             <div id="tri-design"></div>
-            <div className="page-bottom card">
+            <div className="page-bottom">
                 <div className="flex-container main-container">
                 {projArr}
                 </div>

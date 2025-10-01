@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quintessential&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 :root {
   font-family: "Verdana", Helvetica, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,10 +28,18 @@
 }
 
 [data-theme="pink"] {
-  --background-color: pink;
-  --background-color-2: rgb(211, 211, 211);
+  --background-color: rgb(255, 227, 231);
+  --background-color-2: rgb(255, 255, 255);
   --detail-color: rgb(224, 34, 59);
   --detail-color-2: rgb(104, 2, 53);
+  /* uses default text colors */
+}
+
+[data-theme="green"] {
+  --background-color: #b7ffb7;
+  --background-color-2: #e6fce6;
+  --detail-color: #0d4901;
+  --detail-color-2: #028f19;
   /* uses default text colors */
 }
 
@@ -68,6 +76,10 @@ body {
   color: var(--text-color);
 }
 
+h1, h2{
+  font-family: "Noto Serif Display", Helvetica, sans-serif;
+}
+
 #root {
   width: 100vw;
   min-height: 100vh;
@@ -95,18 +107,41 @@ a:hover {
 }
 
 .odd-card {
-    background-color: var(--background-color); 
-    flex-direction: row-reverse;
-    justify-content: space-between;
+  background-color: var(--background-color); 
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  text-align: end;
 }
 
-.even-card {
-    padding-bottom: 0px;
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: start;
+  text-align: start;
+  justify-content: space-between;
 }
 
-.odd-card > .flex-container{
-    text-align: end;
-    align-items:end;
+.nav-button {
+  padding: 10px 15px;
+  margin: 3px;
+  transition: filter 0.2s ease;
+  cursor: pointer;
+}
+
+.banner {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  min-height: 900px;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/src/assets/flower.jpg') no-repeat center;
+  background-size: cover;
+  text-shadow: 
+  -1px -1px 0 var(--detail-color-2),
+    1px -1px 0 var(--detail-color-2),
+  -1px  1px 0 var(--detail-color-2),
+    1px  1px 0 var(--detail-color-2);
 }
 
 /* Medium devices (landscape tablets, 768px and smaller) */
@@ -167,8 +202,7 @@ a:hover {
 
   .card > img {
     width: 98%;
-    margin: auto;
-    margin-bottom: 2%;
+    margin: 1%;
   }
 
   .odd-card > .flex-container, .even-card > .flex-container {

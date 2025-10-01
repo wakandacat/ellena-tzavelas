@@ -32,7 +32,6 @@
 .main-container {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:center;
     width: 100%;
 }
 
@@ -84,11 +83,15 @@
     padding: 10vh 7% 2%;
     align-items: start;
     height: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .page-bottom {
     background-color: var(--background-color);
-    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh 7% 2%;
 }
 
 .thumbnail-container {
@@ -189,11 +192,7 @@
 }
 
 /* About Page styling */
-.about-image {
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
-}
+
 
 iframe {
     width: 100%;
