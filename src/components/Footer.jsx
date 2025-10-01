@@ -10,9 +10,9 @@ function Footer() {
     return (
         <footer className="text-white absolute flex flex-col bottom-0">
             <div className="bg-(--detail-color) w-screen">
-                <h2 className='text-3xl'>CONNECT WITH ME!</h2>
+                <h4 className='text-3xl py-2'>CONNECT WITH ME!</h4>
             </div>
-            <div className="bg-(--background-color-3) py-4 h-[175px]">
+            <div className="bg-(--background-color-3) py-4 h-[165px]">
                  <div>
                     <a href="https://github.com/wakandacat" target="blank">
                         <FontAwesomeIcon className='text-4xl px-4 py-2 icon' icon={faGithub} />
@@ -24,10 +24,10 @@ function Footer() {
                         <FontAwesomeIcon className='text-4xl px-4 py-2 icon' icon={faEnvelope} />
                     </a>
                 </div>
-                <hr className='m-auto w-4/5 border-1 border-(--background-color-2)'/>
+                <hr className='m-auto w-4/5 border-1 border-(--background-color-2) my-2'/>
                 <div className="flex items-center justify-center rightsBar">
                     <img className='w-[40px] m-2' src={etIMG} alt="Ellena's site logo"/>
-                    <h4>Ellena Tzavelas {currYear}</h4>
+                    <h5>Ellena Tzavelas {currYear}</h5>
                 </div>
             </div>
         </footer>

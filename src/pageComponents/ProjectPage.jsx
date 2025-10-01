@@ -51,8 +51,8 @@ function ProjectPage() {
 
             // Map over the array and create JSX elements using index from map function
             const newProjArr = jsonData['Projects'].map((element, index) => (
-                <button className="text-white hover:text-(--detail-color) border-4 border-(--detail-color-2) rounded-xl proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
-                    <h3 className="text-4xl font-bold uppercase proj-title">{element.Title}</h3>
+                <button className="proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
+                    <h3 className="font-bold uppercase proj-title">{element.Title}</h3>
                     <img className="proj-image" loading="lazy" src={ImageProvider[element.Image[0].img]}/>
                 </button>
             ));
@@ -164,10 +164,10 @@ function ProjectPage() {
             </div>
             <div className="page-top">
                 <div className="flex-container">
-                    <h2 ref={projTitle} className="text-8xl font-bold text-(--detail-color) uppercase title">PROJECTS</h2>
-                    <h3 ref={projYear} className="text-2xl text-(--detail-color-2) sub-title">2020-{currYear}</h3>
+                    <h2 ref={projTitle} className="font-bold text-(--detail-color) uppercase title">PROJECTS</h2>
+                    <h3 ref={projYear} className="text-(--detail-color-2) sub-title">2020-{currYear}</h3>
                     <a href={currRes} ref={projRes} target="_blank"></a>
-                    <h3 ref={projBlurb} className="text-xl blurb">Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!</h3>
+                    <h4 ref={projBlurb} className="text-xl blurb">Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!</h4>
                 </div>
                  {/* extra flex div to keep the arrows beside the image when responsive */}
                 <div id="image-and-arrows" className="proj-image-container">

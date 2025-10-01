@@ -15,13 +15,13 @@ function Card(props) {
     }
 
     return(
-        <div className={`bg-(--background-color-2) px-20 py-6 flex justify-between text-start ${props.class}`}>
+        <div className={`card ${props.class}`}>
             <div className="flex flex-col justify-start">
-                <h2 className="text-8xl font-bold text-(--detail-color)">{props.title}</h2>
-                <h3 className="text-2xl text-(--detail-color-2)">{props.subtitle}</h3>           
+                <h2 className="font-bold text-(--detail-color)">{props.title}</h2>
+                <h3 className="text-(--detail-color-2)">{props.subtitle}</h3>           
                 <button className="text-2xl hover:text-(--detail-color) mt-4 page-button" value={props.buttonVal} onClick={handleClick}>VIEW</button>
             </div>
-            <img className="border-4 border-(--detail-color-2) rounded-xl w-1/3 object-cover" loading="lazy" src={ImageProvider[props.image]}/>
+            <img className="border-4 border-(--detail-color-2) rounded-xl w-[80%] md:w-[30%] object-cover" loading="lazy" src={ImageProvider[props.image]}/>
         </div>
     );
 }

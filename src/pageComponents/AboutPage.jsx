@@ -7,11 +7,11 @@ function AboutPage() {
         <main>
             <div className="page-top">
                 <div className="flex-container">
-                    <h2 className="text-8xl font-bold text-(--detail-color) title">ABOUT</h2>
-                    <h3 className="text-2xl text-(--detail-color-2) sub-title">ELLENA TZAVELAS</h3>
-                    <p className="text-xl blurb">Hello! I’m Ellena Tzavelas, a recent graduate of the joint Carleton-Algonquin Bachelor of Information Technology Interactive Multimedia and Design program. This fantastic program gave me the opportunity to dabble in a plethora of multimedia topics from illustration and design, 3D modeling and physics based animation, software design, audio and video, and human-computer interactions. My academic experiences have ignited my passion for software, web and game development. <br/><br/>I completed a year of university co-op placements at Nokia and Irdeto which allowed me to put my education into practice and helped me to broaden my skills in many technologies (and soft skills too!). <br/><br/>In my spare time, I enjoy playing video games, reading sci-fi fantasy, gardening and cooking.</p>
+                    <h2 className="font-bold text-(--detail-color) title">ABOUT</h2>
+                    <h3 className="text-(--detail-color-2) sub-title">ELLENA TZAVELAS</h3>
+                    <h4 className="blurb">Hello! I’m Ellena Tzavelas, a recent graduate of the joint Carleton-Algonquin Bachelor of Information Technology Interactive Multimedia and Design program. This fantastic program gave me the opportunity to dabble in a plethora of multimedia topics from illustration and design, 3D modeling and physics based animation, software design, audio and video, and human-computer interactions. My academic experiences have ignited my passion for software, web and game development. <br/><br/>I completed a year of university co-op placements at Nokia and Irdeto which allowed me to put my education into practice and helped me to broaden my skills in many technologies (and soft skills too!). <br/><br/>In my spare time, I enjoy playing video games, reading sci-fi fantasy, gardening and cooking.</h4>
                 </div>
-                <img className="border-4 border-(--detail-color-2) rounded-xl w-1/3 object-cover" loading="lazy" src={meIMG} alt="Ellena pictured in a brightly-lit area and she is smiling. She is a thin girl with shoulder-length brown hair, gray eyes, and glasses."/>
+                <img className="border-4 border-(--detail-color-2) rounded-xl w-sm md:w-md object-cover" loading="lazy" src={meIMG} alt="Ellena pictured in a brightly-lit area and she is smiling. She is a thin girl with shoulder-length brown hair, gray eyes, and glasses."/>
             </div>
             <div className="page-bottom">
                 <div className="flex-container">

@@ -1,15 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quintessential&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+/*general page items*/
 :root {
   font-family: "Verdana", Helvetica, sans-serif;
   line-height: 1.5;
+
+  width: 100vw;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  top: 0%;
+  padding-bottom: 200px; 
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /*data-theme="light"*/
   --background-color: white;
   --background-color-2: rgb(211, 211, 211);
   --background-color-3: rgb(36, 35, 35);
@@ -36,7 +45,7 @@
 }
 
 [data-theme="green"] {
-  --background-color: #b7ffb7;
+  --background-color: #b5e1b8;
   --background-color-2: #e6fce6;
   --detail-color: #0d4901;
   --detail-color-2: #028f19;
@@ -48,7 +57,19 @@ html{
   scrollbar-color: var(--detail-color);
 }
 
-/*scrollbar updates*/
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-y: visible;
+  overflow-x: hidden;
+  background-color: var(--background-color-2);
+  color: var(--text-color);
+}
+
+/*scrollbar*/
 body::-webkit-scrollbar {
   width: auto; 
 }
@@ -64,29 +85,33 @@ body::-webkit-scrollbar-track {
   background: transparent;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  overflow-y: visible;
-  overflow-x: hidden;
-  background-color: var(--background-color-2);
-  color: var(--text-color);
-}
-
-h1, h2{
+h1, h2 {
   font-family: "Noto Serif Display", Helvetica, sans-serif;
+  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl;
 }
 
-#root {
-  width: 100vw;
-  min-height: 100vh;
-  text-align: center;
-  position: relative;
-  top: 0%;
-  padding-bottom: 200px; 
+h3 {
+  @apply text-2xl md:text-3xl lg:text-4xl;
+}
+
+h4 {
+  @apply text-sm md:text-xl;
+}
+
+/*TODO:
+-adjust card photo sizing
+-adjust a sizing
+-adjust alt-text sizing
+-finish converting all styles to @apply
+-move all remaining styles to this file and delete the others*/
+
+
+.page-top {
+  @apply flex flex-col lg:flex-row items-center lg:items-start h-[100%] justify-between px-10 py-3 md:px-20 pt-10 sm:pt-25;
+}
+
+.page-bottom {
+  @apply bg-(--background-color) flex justify-between px-10 py-3 md:px-20;
 }
 
 a {
@@ -106,23 +131,45 @@ a:hover {
   color: var(--detail-color);
 }
 
-.odd-card {
-  background-color: var(--background-color); 
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  text-align: end;
+.card {
+  @apply bg-(--background-color-2) px-10 py-3 md:px-20 flex md:flex-row flex-col-reverse justify-between text-center md:text-start items-center md:items-start;
 }
 
+.odd-card {
+  @apply bg-(--background-color) flex md:flex-row-reverse flex-col-reverse justify-between text-center md:text-end;
+}
+
+/*large/heavy classes*/
 .flex-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: start;
-  text-align: start;
-  justify-content: space-between;
+  @apply flex flex-col w-[100%] items-start text-start justify-between pr-4 pb-4;
+}
+
+.proj-title{
+  @apply absolute m-0 p-1 text-start text-4xl;
+  letter-spacing: -2px;
+  line-height: 1;
+  pointer-events: none;
+  text-shadow: 
+  -1px -1px 0 black,
+    1px -1px 0 black,
+  -1px  1px 0 black,
+    1px  1px 0 black;
+}
+
+.proj-button {
+  @apply text-white hover:text-(--detail-color) m-2 w-[90%] md:w-[45%] lg:w-[30%] aspect-7/4 relative;
+}
+
+.proj-image {
+  @apply w-[100%] h-[100%] object-cover pointer-events-none hover:border-(--detail-color) border-4 border-(--detail-color-2) rounded-xl;
+}
+
+.main-container {
+  @apply flex flex-row w-[100%] flex-wrap justify-center p-0 md:justify-between;
 }
 
 .nav-button {
+  @apply text-base;
   padding: 10px 15px;
   margin: 3px;
   transition: filter 0.2s ease;
@@ -130,138 +177,12 @@ a:hover {
 }
 
 .banner {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  min-height: 900px;
+  @apply flex flex-col relative items-center min-h-[400px] md:min-h-[500px] lg:min-h-[700px] xl:min-h-[900px];
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('/src/assets/flower.jpg') no-repeat center;
   background-size: cover;
   text-shadow: 
   -1px -1px 0 var(--detail-color-2),
-    1px -1px 0 var(--detail-color-2),
+  1px -1px 0 var(--detail-color-2),
   -1px  1px 0 var(--detail-color-2),
-    1px  1px 0 var(--detail-color-2);
-}
-
-/* Medium devices (landscape tablets, 768px and smaller) */
-@media only screen and (max-width: 768px) {
-
-  #nav {
-    flex-direction: column;
-  }
-
-  #right-buttons{
-    margin: auto;
-  }
-
-  .nav-button, #theme-control{
-    border: 1px solid black;
-    font-size: 2.5vw;
-  }
-
-  .page-top {
-    padding: 17vh 7% 2%;
-  }
-
-  section {
-    min-height: 400px;
-  }
-
-  #banner {
-    min-height: 400px;
-  }
-
-  #name {
-    font-size: 9vw;
-  }
-
-  .title {
-    font-size: 8vw;
-  }
-
-  .sub-title, a, .banner-sub {
-    font-size: 4vw;
-  }
-
-  .blurb {
-    font-size: 2vw;
-  }
-
-  .alt-text {
-    font-size: 1.75vw;
-  }
-
-  .page-button {
-    font-size: 3vw;
-  }
-
-  .card {
-    flex-direction: column;
-  }
-
-  .card > img {
-    width: 98%;
-    margin: 1%;
-  }
-
-  .odd-card > .flex-container, .even-card > .flex-container {
-    width: 100%;
-    margin: 0px 0px 2% 0px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: end;
-  }
-
-  .arrow-button {
-    font-size: 5vw;
-  }
-
-  .page-button {
-    padding: 8px 32px;
-  }
-
-  .proj-image-container {
-    width: 98%;
-  }
-
-  .page-bottom{
-    padding: 15px;
-  }
-
-  .proj-button {
-    width: 45%;
-    height: 25vw;
-  }
-
-  .proj-title {
-    font-size: 5vw;
-  }
-
-  #about-image{
-    margin: auto;
-  }
-
-  iframe {
-    width: 98%;
-  }
-
-  /* Small devices (430px or smaller) */
-  @media only screen and (max-width: 430px) {
-
-    .proj-button {
-      width: 90%;
-      height: 45vw;
-    }
-
-    .blurb {
-      font-size: 3vw;
-    }
-
-    .alt-text {
-      font-size: 2.75vw;
-    }
-
-  }
-
+  1px  1px 0 var(--detail-color-2);
 }
