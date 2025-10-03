@@ -16,7 +16,7 @@ function AboutPage() {
             <div className="page-bottom">
                 <div className="flex-container">
                     <h3 className="text-2xl text-(--detail-color-2) sub-title">RESUME</h3>
-                    <iframe className="border-4 border-(--detail-color-2) rounded-xl" loading="lazy" src="https://wakandacat.github.io/resume/TzavelasEllenaPostGradResume.pdf"></iframe>
+                    <iframe className="w-[100%] aspect-4/3 border-4 border-(--detail-color-2) rounded-xl" loading="lazy" src="https://wakandacat.github.io/resume/TzavelasEllenaPostGradResume.pdf"></iframe>
                 </div>
             </div>
         </main>

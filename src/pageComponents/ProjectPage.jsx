@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import '../styles/ProjectPages.css';
 import ImageProvider from "../components/ImageProvider";
 import defaultIMG from '../assets/me5.jpg';
 
@@ -141,7 +140,7 @@ function ProjectPage() {
     return (
         <main>
             {/* Overlay for enlarging images */}
-            <div className="overlay" id="overlay">
+            <div className="overlay">
                 {currProjImage.isVideo ? (
                         <video
                             className="full-image"
@@ -167,18 +166,18 @@ function ProjectPage() {
                     <h2 ref={projTitle} className="font-bold text-(--detail-color) uppercase title">PROJECTS</h2>
                     <h3 ref={projYear} className="text-(--detail-color-2) sub-title">2020-{currYear}</h3>
                     <a href={currRes} ref={projRes} target="_blank"></a>
-                    <h4 ref={projBlurb} className="text-xl blurb">Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!</h4>
+                    <h4 ref={projBlurb} className="blurb">Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!</h4>
                 </div>
                  {/* extra flex div to keep the arrows beside the image when responsive */}
-                <div id="image-and-arrows" className="proj-image-container">
-                    <button className="text-4xl arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><p>&#9664;</p></button>
+                <div className="flex flex-row proj-image-container">
+                    <button className="arrow-button" ref={projImageArr} value={0} onClick={() => handleCycle(0)}><h3>&#9664;</h3></button>
                     
-                    <div className="proj-image-container">
+                    <div className="flex flex-col proj-image-container">
                     
                         {/* conditionally render image or video */}
                         {currProjImage.isVideo ? (
                             <video
-                                className="border-4 border-(--detail-color-2) rounded-xl main-proj-image"
+                                className="main-proj-image"
                                 src={currProjImage.src}
                                 alt={currProjImage.alt}
                                 ref={projImage}
@@ -188,7 +187,7 @@ function ProjectPage() {
                             />
                         ) : (
                             <img
-                                className="border-4 border-(--detail-color-2) rounded-xl main-proj-image"
+                                className="main-proj-image"
                                 src={currProjImage.src ? currProjImage.src : defaultIMG}
                                 ref={projImage}
                                 alt={currProjImage.alt}
@@ -196,13 +195,13 @@ function ProjectPage() {
                             />
                         )}
 
-                        <h5 className="text-base text-(--text-color) alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
+                        <h5 className="alt-text">{currProjImage.alt || "Check out some of my work!"}</h5>
                     </div>
-                    <button className="text-4xl arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><p>&#9654;</p></button>
+                    <button className="arrow-button" ref={projImageArr2} value={0} onClick={() => handleCycle(1)}><h3>&#9654;</h3></button>
                 </div>
                 
             </div>
-            <div id="tri-design"></div>
+            <div className="w-[100%] h-[25px] bg-(--background-color) triangle-clip"></div>
             <div className="page-bottom">
                 <div className="flex-container main-container">
                 {projArr}
