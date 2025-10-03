@@ -1,4 +1,3 @@
-import '../styles/ProjectPages.css';
 import meIMG from '../assets/me4.jpg';
 
 function AboutPage() {

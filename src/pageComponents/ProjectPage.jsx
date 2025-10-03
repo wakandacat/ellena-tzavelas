@@ -50,7 +50,7 @@ function ProjectPage() {
 
             // Map over the array and create JSX elements using index from map function
             const newProjArr = jsonData['Projects'].map((element, index) => (
-                <button className="proj-button" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
+                <button className="proj-button group/project" key={index} value={JSON.stringify(element)} onClick={() => handleClick(element, event)}>
                     <h3 className="font-bold uppercase proj-title">{element.Title}</h3>
                     <img className="proj-image" loading="lazy" src={ImageProvider[element.Image[0].img]}/>
                 </button>

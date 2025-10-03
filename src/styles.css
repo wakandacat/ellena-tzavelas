@@ -107,7 +107,7 @@ h4, a {
 }
 
 .overlay {
-  @apply fixed top-0 left-0 w-[100vw] h-[100vh] hidden bg-black/80 z-5000 cursor-zoom-out items-center justify-center;
+  @apply fixed top-0 left-0 w-[100%] h-[100vh] hidden bg-black/80 z-5000 cursor-zoom-out items-center justify-center;
 }
 
 .full-image {
@@ -187,16 +187,16 @@ a {
   @apply text-white hover:text-(--detail-color) m-2 w-[90%] md:w-[45%] lg:w-[30%] aspect-7/4 relative;
 }
 
+.proj-selected {
+  @apply text-(--detail-color);
+}
+
 .proj-selected > img {
   @apply border-(--detail-color);
 }
 
-.proj-selected > h3 {
-  @apply text-(--detail-color);
-}
-
 .proj-image {
-  @apply w-[100%] h-[100%] object-cover pointer-events-none element-border;
+  @apply w-[100%] h-[100%] object-cover pointer-events-none element-border group-hover/project:border-(--detail-color);
 }
 
 .main-container {
