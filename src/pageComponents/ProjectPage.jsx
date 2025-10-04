@@ -1,35 +1,32 @@
 import { useEffect, useState, useRef } from "react";
 import ImageProvider from "../components/ImageProvider";
-import defaultIMG from "../assets/me5.jpg";
-
-//saving this page while the default image is displayed while cause an error because default image does not have a currProjIndex (its not in the array with the other images)
 
 function ProjectPage() {
-  const [jsonData, setJsonData] = useState(null);
-  const [projArr, setProjArr] = useState([]); // Store the rendered JSX elements
-  const [currProjIndex, setCurrProjIndex] = useState(0);
-  const [currRes, setCurrRes] = useState("");
-  const [currProjImage, setCurrProjImage] = useState({
-    src: "",
-    alt: "",
-    isVideo: false,
-  });
+  const [jsonData, setJsonData] = useState(null); //the entire json data read in from projectInfo.json
+  const [arrProjsPageBottom, setArrProjsPageBottom] = useState([]); // jsx objects of each project shown at the bottom of the page
+  const [currImageIndex, setCurrImageIndex] = useState(0); //the index of an image corresponding to a single project's images (ex. Hangman proj has 3 images --> indeces 0,1,2)
+  const [currentImageIsVideo, setCurrentImageIsVideo] = useState(false); //boolean to determine whether current project image should be rendered as <img> or <video>
+  const [defaultIMG, setDefaultIMG] = useState(null);
+  const [defaultALT, setDefaultALT] = useState("");
+  const [defaultTITLE, setDefaultTITLE] = useState("");
+  const [defaultDESC, setDefaultDESC] = useState("");
+
+  const [currentProject, setCurrentProject] = useState({
+    Title: "",
+    Desc: "",
+    Image: ["img", "alt"],
+    Year: "",
+    Res: "",
+  }); // a project object
+
+  const arrowLeft = useRef();
+  const arrowRight = useRef();
 
   const currYear = new Date().getFullYear();
 
-  //top page elements
-  const projTitle = useRef();
-  const projYear = useRef();
-  const projRes = useRef();
-  const projBlurb = useRef();
-  const projImage = useRef();
-  const projAlt = useRef();
-  const projImageArr = useRef();
-  const projImageArr2 = useRef();
+  let jsonFile = "./projectInfo.json";
 
-  var jsonFile = "./projectInfo.json";
-
-  //check internal computer theme state
+  //initial setup
   useEffect(() => {
     fetch(jsonFile)
       .then((res) => {
@@ -40,6 +37,28 @@ function ProjectPage() {
       })
       .then((data) => {
         setJsonData(data);
+
+        setDefaultIMG(ImageProvider[data.DefaultProject.Image.img]);
+        setDefaultALT(data.DefaultProject.Image.alt);
+        setDefaultTITLE(data.DefaultProject.Title);
+        setDefaultDESC(data.DefaultProject.Desc);
+
+        let images = [];
+
+        images.push({
+          image: defaultIMG,
+          alt: defaultALT,
+        });
+
+        setCurrentProject({
+          Title: defaultTITLE,
+          Desc: defaultDESC,
+          Image: images,
+          Year: "",
+          Res: "",
+        });
+
+        setCurrentImageIsVideo(false);
       })
       .catch((error) => console.error("Unable to fetch data:", error));
   }, []);
@@ -48,24 +67,26 @@ function ProjectPage() {
   useEffect(() => {
     if (jsonData !== null) {
       // Map over the array and create JSX elements using index from map function
-      const newProjArr = jsonData["Projects"].map((element, index) => (
-        <button
-          className="proj-button group/project"
-          key={index}
-          value={JSON.stringify(element)}
-          onClick={() => handleClick(element, event)}
-        >
-          <h3 className="proj-title font-bold uppercase">{element.Title}</h3>
-          <img
-            className="proj-image"
-            loading="lazy"
-            src={ImageProvider[element.Image[0].img]}
-          />
-        </button>
-      ));
+      const tempArrProjsPageBottom = jsonData["Projects"].map(
+        (element, index) => (
+          <button
+            className="proj-button group/project"
+            key={index}
+            value={JSON.stringify(element)}
+            onClick={() => handleClick(element, event)}
+          >
+            <h3 className="proj-title font-bold uppercase">{element.Title}</h3>
+            <img
+              className="proj-image"
+              loading="lazy"
+              src={ImageProvider[element.Image[0].img]}
+            />
+          </button>
+        ),
+      );
 
       // Update the state with the new array of JSX elements
-      setProjArr(newProjArr);
+      setArrProjsPageBottom(tempArrProjsPageBottom);
     }
   }, [jsonData]);
 
@@ -83,79 +104,83 @@ function ProjectPage() {
     //force page to top
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    //add the arrow buttons and alt text
-    projImageArr.current.style.visibility = "visible";
-    projImageArr2.current.style.visibility = "visible";
 
-    //update the top page card with the project info
-    projTitle.current.textContent = element.Title;
-    projYear.current.textContent = element.Year;
-    projRes.current.textContent = element.Res;
-    projBlurb.current.textContent = element.Desc;
-    setCurrProjImage({
-      src: ImageProvider[element.Image[0].img],
-      alt: element.Image[0].alt,
-      isVideo: element.Image[0].img.endsWith(".mp4"),
+    if (element.Image.length > 1) {
+      //add the arrow buttons
+      arrowLeft.current.style.visibility = "visible";
+      arrowRight.current.style.visibility = "visible";
+    } else {
+      //hide the arrow buttons
+      arrowLeft.current.style.visibility = "hidden";
+      arrowRight.current.style.visibility = "hidden";
+    }
+
+    let images = [];
+
+    for (let i = 0; i < element.Image.length; i++) {
+      images.push({
+        image: ImageProvider[element.Image[i].img],
+        alt: element.Image[i].alt,
+      });
+    }
+
+    setCurrentProject({
+      Title: element.Title,
+      Desc: element.Desc,
+      Image: images,
+      Year: element.Year,
+      Res: element.Res,
     });
-    projImageArr.current.value = JSON.stringify(element.Image);
-    projImageArr2.current.value = JSON.stringify(element.Image);
 
-    setCurrRes(element.Res);
-    setCurrProjIndex(0);
+    setCurrImageIndex(0);
+    setCurrentImageIsVideo(false);
   };
 
   //change project view on button click with cycling
   const handleCycle = (num) => {
-    let ImageArr = JSON.parse(projImageArr.current.value);
     let newIndex = 0;
     if (num === 0) {
-      newIndex = currProjIndex - 1;
+      newIndex = currImageIndex - 1;
       if (newIndex < 0) {
-        newIndex = ImageArr.length - 1;
+        newIndex = currentProject.Image.length - 1;
       }
     } else {
-      newIndex = currProjIndex + 1;
-      newIndex = newIndex % ImageArr.length;
+      newIndex = currImageIndex + 1;
+      newIndex = newIndex % currentProject.Image.length;
     }
 
-    setCurrProjIndex(newIndex);
+    if (currentProject.Image[newIndex].image.endsWith(".mp4")) {
+      setCurrentImageIsVideo(true);
+    } else {
+      setCurrentImageIsVideo(false);
+    }
+
+    setCurrImageIndex(newIndex);
   };
-
-  //update the project image and alt text when arrow buttons clicked
-  useEffect(() => {
-    if (jsonData !== null) {
-      let ImageArr = JSON.parse(projImageArr.current.value);
-      console.log("currprojindex", currProjIndex);
-      //update the image
-      setCurrProjImage({
-        src: ImageProvider[ImageArr[currProjIndex].img],
-        alt: ImageArr[currProjIndex].alt,
-        isVideo: ImageArr[currProjIndex].img.endsWith(".mp4"),
-      });
-    }
-  }, [currProjIndex]);
 
   //jquery for image overlay
   $(document).ready(function () {
     $(".main-proj-image").click(function () {
-      $(".overlay").css("display", "flex");
+      $("#overlay").css("display", "flex");
     });
 
-    $(".overlay").click(function () {
-      $(".overlay").css("display", "none");
+    $("#overlay").click(function () {
+      $("#overlay").css("display", "none");
     });
   });
 
   return (
     <main>
       {/* Overlay for enlarging images */}
-      <div className="overlay">
-        {currProjImage.isVideo ? (
+      <div
+        id="overlay"
+        className="fixed top-0 left-0 z-5000 hidden h-[100vh] w-[100%] cursor-zoom-out items-center justify-center bg-black/80"
+      >
+        {currentImageIsVideo ? (
           <video
             className="full-image"
-            src={currProjImage.src}
-            alt={currProjImage.alt}
-            ref={projImage}
+            src={currentProject.Image[currImageIndex].image || defaultIMG}
+            alt={currentProject.Image[currImageIndex].alt || defaultALT}
             autoPlay
             loop
             muted
@@ -163,36 +188,30 @@ function ProjectPage() {
         ) : (
           <img
             className="full-image"
-            src={currProjImage.src ? currProjImage.src : defaultIMG}
-            ref={projImage}
-            alt={currProjImage.alt}
+            src={currentProject.Image[currImageIndex].image || defaultIMG}
+            alt={currentProject.Image[currImageIndex].alt || defaultALT}
             loading="lazy"
           />
         )}
       </div>
       <div className="page-top">
         <div className="flex-container">
-          <h2
-            ref={projTitle}
-            className="title font-bold text-(--detail-color) uppercase"
-          >
-            PROJECTS
+          <h2 className="title font-bold text-(--detail-color) uppercase">
+            {currentProject.Title || defaultTITLE}
           </h2>
-          <h3 ref={projYear} className="sub-title text-(--detail-color-2)">
-            2020-{currYear}
+          <h3 className="sub-title text-(--detail-color-2)">
+            {currentProject.Year || `2020 - ${currYear}`}
           </h3>
-          <a href={currRes} ref={projRes} target="_blank"></a>
-          <h4 ref={projBlurb} className="blurb">
-            Welcome to my portfolio! This is a collection of projects I made for
-            fun or associated with school assignments. I plan to keep adding to
-            it as I create more cool projects!
+          <a href={currentProject.Res} target="_blank"></a>
+          <h4 className="blurb leading-tight">
+            {currentProject.Desc || defaultDESC}
           </h4>
         </div>
         {/* extra flex div to keep the arrows beside the image when responsive */}
         <div className="proj-image-container flex flex-row">
           <button
             className="arrow-button"
-            ref={projImageArr}
+            ref={arrowLeft}
             value={0}
             onClick={() => handleCycle(0)}
           >
@@ -201,12 +220,11 @@ function ProjectPage() {
 
           <div className="proj-image-container flex flex-col">
             {/* conditionally render image or video */}
-            {currProjImage.isVideo ? (
+            {currentImageIsVideo ? (
               <video
                 className="main-proj-image"
-                src={currProjImage.src}
-                alt={currProjImage.alt}
-                ref={projImage}
+                src={currentProject.Image[currImageIndex].image || defaultIMG}
+                alt={currentProject.Image[currImageIndex].alt || defaultALT}
                 autoPlay
                 loop
                 muted
@@ -214,20 +232,19 @@ function ProjectPage() {
             ) : (
               <img
                 className="main-proj-image"
-                src={currProjImage.src ? currProjImage.src : defaultIMG}
-                ref={projImage}
-                alt={currProjImage.alt}
+                src={currentProject.Image[currImageIndex].image || defaultIMG}
+                alt={currentProject.Image[currImageIndex].alt || defaultALT}
                 loading="lazy"
               />
             )}
 
-            <h5 className="alt-text">
-              {currProjImage.alt || "Check out some of my work!"}
+            <h5 className="m-2 w-[75%] self-center text-xs leading-tight text-(--text-color) md:text-sm">
+              {currentProject.Image[currImageIndex].alt || defaultALT}
             </h5>
           </div>
           <button
             className="arrow-button"
-            ref={projImageArr2}
+            ref={arrowRight}
             value={0}
             onClick={() => handleCycle(1)}
           >
@@ -237,7 +254,9 @@ function ProjectPage() {
       </div>
       <div className="triangle-clip h-[25px] w-[100%] bg-(--background-color)"></div>
       <div className="page-bottom">
-        <div className="flex-container main-container">{projArr}</div>
+        <div className="flex-container main-container">
+          {arrProjsPageBottom}
+        </div>
       </div>
     </main>
   );

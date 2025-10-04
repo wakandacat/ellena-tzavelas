@@ -1,23 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Quintessential&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
-/*general page items*/
-:root {
-  font-family: "Verdana", Helvetica, sans-serif;
-  line-height: 1.5;
-
-  width: 100vw;
-  min-height: 100vh;
-  text-align: center;
-  position: relative;
-  top: 0%;
-  padding-bottom: 200px;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+@theme {
   /*data-theme="light"*/
   --background-color: white;
   --background-color-2: rgb(211, 211, 211);
@@ -52,13 +35,13 @@
   /* uses default text colors */
 }
 
-html {
-  @apply scroll-smooth;
-  scrollbar-color: var(--detail-color);
-}
-
-body {
-  @apply m-0 flex min-h-[100vh] min-w-[320px] place-items-center overflow-x-hidden overflow-y-visible bg-(--background-color-2) text-(--text-color);
+:root {
+  font-family: "Verdana", Helvetica, sans-serif;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /*scrollbar*/
@@ -92,10 +75,6 @@ a {
   @apply text-sm md:text-xl;
 }
 
-.alt-text {
-  @apply m-2 w-[75%] self-center text-xs text-(--text-color) md:text-sm;
-}
-
 .proj-image-container {
   @apply m-auto w-[100%] rounded-xl border-0 bg-(--background-color) p-2;
 }
@@ -108,16 +87,12 @@ a {
   @apply element-border button-transition invisible m-auto cursor-pointer bg-(--detail-color) text-(--text-color-2) hover:bg-(--detail-color-2) hover:text-(--detail-color);
 }
 
-.overlay {
-  @apply fixed top-0 left-0 z-5000 hidden h-[100vh] w-[100%] cursor-zoom-out items-center justify-center bg-black/80;
-}
-
 .full-image {
   @apply max-h-[90%] max-w-[90%] shadow-xl shadow-black;
 }
 
 @utility button-transition {
-  @apply transition duration-200 ease-in-out;
+  @apply transition duration-400 ease-in-out;
 }
 
 @utility triangle-clip {
@@ -213,8 +188,4 @@ a {
 
 .page-button {
   @apply button-transition element-border mt-4 w-[200px] cursor-pointer bg-(--detail-color) px-4 py-3 text-2xl text-(--text-color-2) hover:bg-(--detail-color-2) hover:text-(--detail-color);
-}
-
-.banner {
-  @apply banner-text-outline banner-background relative flex min-h-[400px] flex-col items-center md:min-h-[500px] lg:min-h-[700px] xl:min-h-[900px];
 }
