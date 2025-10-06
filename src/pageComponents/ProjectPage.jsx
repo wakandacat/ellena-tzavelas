@@ -14,7 +14,7 @@ function ProjectPage() {
   const [currentProject, setCurrentProject] = useState({
     Title: "",
     Desc: "",
-    Image: ["img", "alt"],
+    Image: [{ image: "", alt: "" }],
     Year: "",
     Res: "",
   }); // a project object
@@ -89,6 +89,11 @@ function ProjectPage() {
       setArrProjsPageBottom(tempArrProjsPageBottom);
     }
   }, [jsonData]);
+
+  useEffect(() => {
+    //ensure the index is reset
+    setCurrImageIndex(0);
+  }, [currentProject]);
 
   //change project view on button click
   const handleClick = (element, event) => {
@@ -202,7 +207,9 @@ function ProjectPage() {
           <h3 className="sub-title text-(--detail-color-2)">
             {currentProject.Year || `2020 - ${currYear}`}
           </h3>
-          <a href={currentProject.Res} target="_blank"></a>
+          <a href={currentProject.Res || ""} target="_blank">
+            {currentProject.Res || ""}
+          </a>
           <h4 className="blurb leading-tight">
             {currentProject.Desc || defaultDESC}
           </h4>
