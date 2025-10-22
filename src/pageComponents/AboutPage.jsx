@@ -1,6 +1,9 @@
 import meIMG from "../assets/me4.jpg";
+import { useState } from "react";
 
 function AboutPage() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <main>
       <div className="page-top">
@@ -26,10 +29,13 @@ function AboutPage() {
           </h4>
         </div>
         <img
-          className="w-sm rounded-xl border-4 border-(--detail-color-2) object-cover md:w-md"
+          className={`aspect-square w-sm rounded-xl border-4 border-(--detail-color-2) object-cover md:w-md ${
+            !loaded ? "animate-pulse" : ""
+          } `}
           loading="lazy"
           src={meIMG}
           alt="Ellena pictured in a brightly-lit area and she is smiling. She is a thin girl with shoulder-length brown hair, gray eyes, and glasses."
+          onLoad={() => setLoaded(true)}
         />
       </div>
       <div className="page-bottom">

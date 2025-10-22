@@ -10,6 +10,7 @@ function ProjectPage() {
   const [defaultALT, setDefaultALT] = useState("");
   const [defaultTITLE, setDefaultTITLE] = useState("");
   const [defaultDESC, setDefaultDESC] = useState("");
+  const [loaded, setLoaded] = useState(false);
 
   const [currentProject, setCurrentProject] = useState({
     Title: "",
@@ -97,6 +98,7 @@ function ProjectPage() {
 
   //change project view on button click
   const handleClick = (element, event) => {
+    setLoaded(false); //allow the loading state to reappear
     let buttons = document.querySelector(".main-container").children;
 
     for (let i = 0; i < buttons.length; i++) {
@@ -143,6 +145,8 @@ function ProjectPage() {
 
   //change project view on button click with cycling
   const handleCycle = (num) => {
+    setLoaded(false); //allow the loading state to reappear
+
     let newIndex = 0;
     if (num === 0) {
       newIndex = currImageIndex - 1;
@@ -229,19 +233,21 @@ function ProjectPage() {
             {/* conditionally render image or video */}
             {currentImageIsVideo ? (
               <video
-                className="main-proj-image"
+                className={`main-proj-image ${!loaded ? "animate-pulse" : ""}`}
                 src={currentProject.Image[currImageIndex].image || defaultIMG}
                 alt={currentProject.Image[currImageIndex].alt || defaultALT}
                 autoPlay
                 loop
                 muted
+                onLoad={() => setLoaded(true)}
               />
             ) : (
               <img
-                className="main-proj-image"
+                className={`main-proj-image ${!loaded ? "animate-pulse" : ""}`}
                 src={currentProject.Image[currImageIndex].image || defaultIMG}
                 alt={currentProject.Image[currImageIndex].alt || defaultALT}
                 loading="lazy"
+                onLoad={() => setLoaded(true)}
               />
             )}
 

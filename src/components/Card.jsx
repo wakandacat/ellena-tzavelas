@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import GlobalContext from "./GlobalContext.jsx";
 import ImageProvider from "./ImageProvider.jsx";
 
 function Card(props) {
   const { globalState, setGlobalState } = useContext(GlobalContext);
+  const [loaded, setLoaded] = useState(false);
 
   //change pages when corresponding button is pressed
   const handleClick = (event) => {
@@ -27,9 +28,12 @@ function Card(props) {
         </button>
       </div>
       <img
-        className="w-[80%] rounded-xl border-4 border-(--detail-color-2) object-cover md:w-[30%]"
+        className={`aspect-7/5 w-[80%] ${
+          !loaded ? "animate-pulse" : ""
+        } rounded-xl border-4 border-(--detail-color-2) bg-gray-700 object-cover md:w-[30%]`}
         loading="lazy"
         src={ImageProvider[props.image]}
+        onLoad={() => setLoaded(true)}
       />
     </div>
   );

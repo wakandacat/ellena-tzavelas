@@ -18,15 +18,29 @@ function App() {
     Project: ProjectPage,
   };
 
+  //loading spinner management
+  useEffect(() => {
+    const loader = document.getElementById("loading-screen");
+    if (!loader) return;
+
+    //set a timeout so everyone sees the loader
+    setTimeout(() => {
+      loader.classList.add("hidden");
+
+      // remove loader html after load
+      loader.addEventListener("transitionend", () => loader.remove());
+    }, 1000);
+  }, []);
+
+  //update the current page and force scroll to top effect
   useEffect(() => {
     const PageComponent = componentMapping[globalState.currentPage];
     setLocalPage(<PageComponent />);
     //force page to top
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }, [globalState.currentPage]);
 
-  useEffect(() => {
+    //grab the nav buttons and update their styles
     const allButtons = document.querySelectorAll(".nav-button");
 
     for (let i = 0; i < allButtons.length; i++) {
@@ -38,7 +52,7 @@ function App() {
       `[value="${globalState.currentPage}"]`,
     );
     navButton.classList.add("current-nav-button");
-  });
+  }, [globalState.currentPage]);
 
   return (
     <>

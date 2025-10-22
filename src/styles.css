@@ -84,7 +84,7 @@ a {
 }
 
 .main-proj-image {
-  @apply element-border button-transition max-h-[400px] cursor-pointer object-cover hover:scale-102;
+  @apply element-border button-transition max-h-[400px] min-h-[200px] cursor-pointer object-cover hover:scale-102;
 }
 
 .arrow-button {
@@ -188,4 +188,14 @@ a {
 
 .page-button {
   @apply button-transition element-border mt-4 w-[200px] cursor-pointer bg-(--detail-color) px-4 py-3 text-2xl text-(--text-color-2) hover:bg-(--detail-color-2) hover:text-(--detail-color);
+}
+
+#loading-screen {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* fade duration */
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none; /* optional: prevent clicks while fading */
 }
