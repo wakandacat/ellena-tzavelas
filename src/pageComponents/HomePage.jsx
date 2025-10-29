@@ -12,6 +12,9 @@ function HomePage() {
         title={"PROJECTS"}
         subtitle={`2020 - ${currYear}`}
         image={"p3back.jpg"}
+        alt={
+          "Persona 3 computer background screenshot displaying date and time."
+        }
         buttonVal={"Project"}
         aria-label="Travel to the Projects page."
       />
@@ -20,6 +23,9 @@ function HomePage() {
         title={"ABOUT"}
         subtitle={"ELLENA TZAVELAS"}
         image={"me3.png"}
+        alt={
+          "Headshot of Ellena, a girl with short brown hair, blue eyes and glasses. She is smiling."
+        }
         buttonVal={"About"}
         aria-label="Travel to the About page."
       />

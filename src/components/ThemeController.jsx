@@ -41,6 +41,7 @@ function ThemeController() {
           className="nav-button flex justify-center rounded-xl border-0 bg-(--background-color-3) uppercase"
           onClick={() => handleChangeTheme(theme)}
           key={theme}
+          aria-label={`${theme} theme`}
         >
           <h5 className="px-4">{theme}</h5>
         </button>
@@ -73,6 +74,7 @@ function ThemeController() {
         className="nav-button flex rounded-xl border-0 bg-(--background-color-3) uppercase"
         onClick={handleClick}
         value={localTheme}
+        aria-label={`Button that says ${localTheme} theme. Click to open a dropdown to select a different site theme.`}
       >
         <h5 className="px-4">{localTheme}</h5>
         {isOpen ? <p>&#11206;</p> : <p>&#11208;</p>}

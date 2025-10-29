@@ -33,6 +33,7 @@ function Card(props) {
         } rounded-xl border-4 border-(--detail-color-2) bg-gray-700 object-cover md:w-[30%]`}
         loading="lazy"
         src={ImageProvider[props.image]}
+        alt={props.alt}
         onLoad={() => setLoaded(true)}
       />
     </div>

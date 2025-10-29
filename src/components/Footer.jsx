@@ -17,19 +17,25 @@ function Footer() {
             <FontAwesomeIcon
               className="icon px-4 py-2 text-4xl"
               icon={faGithub}
+              aria-label="GitHub account"
             />
+            <span className="sr-only">Github</span>
           </a>
           <a href="https://www.linkedin.com/in/ellenatzavelas/" target="blank">
             <FontAwesomeIcon
               className="icon px-4 py-2 text-4xl"
               icon={faLinkedin}
+              aria-label="LinkedIn profile"
             />
+            <span className="sr-only">LinkedIn</span>
           </a>
           <a href="mailto:wakandacat@gmail.com" target="blank">
             <FontAwesomeIcon
               className="icon px-4 py-2 text-4xl"
               icon={faEnvelope}
+              aria-label="Email account"
             />
+            <span className="sr-only">Email</span>
           </a>
         </div>
         <hr className="m-auto my-2 w-4/5 border-1 border-(--background-color-2)" />

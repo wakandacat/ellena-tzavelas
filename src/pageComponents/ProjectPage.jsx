@@ -81,6 +81,7 @@ function ProjectPage() {
               className="proj-image"
               loading="lazy"
               src={ImageProvider[element.Image[0].img]}
+              alt={element.Image[0].alt}
             />
           </button>
         ),
@@ -213,6 +214,10 @@ function ProjectPage() {
           </h3>
           <a href={currentProject.Res || ""} target="_blank">
             {currentProject.Res || ""}
+            <span className="sr-only">
+              Visit an external resource that is either the live project or the
+              codebase.
+            </span>
           </a>
           <h4 className="blurb leading-tight">
             {currentProject.Desc || defaultDESC}
@@ -225,6 +230,7 @@ function ProjectPage() {
             ref={arrowLeft}
             value={0}
             onClick={() => handleCycle(0)}
+            aria-label="Previous image."
           >
             <h3>&#9664;</h3>
           </button>
@@ -260,6 +266,7 @@ function ProjectPage() {
             ref={arrowRight}
             value={0}
             onClick={() => handleCycle(1)}
+            aria-label="Next image."
           >
             <h3>&#9654;</h3>
           </button>
