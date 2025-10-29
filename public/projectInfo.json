@@ -1,5 +1,69 @@
 {
   "Projects": [
+      {
+      "Title": "The Little Robot",
+      "Desc": "The Little Robot is a linear 3D platforming and melee combat game where you play as a small robot trapped in an isolated testing facility, unaware of the world beyond its walls. This game was created with 5 peers as our final year 8-month Capstone project in Unity. As the team lead, I took on the infrastructure of the game including scene management and checkpoints. I was also responsible for the majority of the environmental scripting such as the conveyor belts, moving platforms, and vent systems. I was also responsible for creating the cutscenes sequences and implementing the (many) cameras using the Cinemachine plugin.",
+      "Image": [
+        {
+          "img": "robotPlat.gif",
+          "alt": "The robot must traverse through platforming sections as he descends deeper into the facility."
+        },
+        {
+          "img": "narrRoom.png",
+          "alt": "Explore a mysterious facility where dangerous fungus runs rampant."
+        },
+        {
+          "img": "robotComb.gif",
+          "alt": "The robot must defeat a dangerous reoccuring enemy with its fast-paced attacks."
+        }
+      ],
+      "Year": "2025",
+      "Res": "https://wakandacat.wixsite.com/the-little-robot"
+    },
+    {
+      "Title": "Crab Cove",
+      "Desc": "Crab Cove is a relaxing game about a crab collecting items to decorate his sandcastle! Created by 3 peers and I to fulfill the challenge of making a unique player controller for our 4th year Advanced Game Dev course in Unity, I was responsible for developing the crab's sideways movement and item spawning with C#, as well as the camerawork with the Cinemachine plugin.",
+      "Image": [
+        {
+          "img": "crabHome.jpg",
+          "alt": "Help the crab collect treasures for his home!"
+        },
+        {
+          "img": "crab.gif",
+          "alt": "The crab can dig holes in the sand to find various items."
+        },
+        {
+          "img": "crabGrab.jpg",
+          "alt": "The crab can pick up items with either claw to bring them back to his sandcastle home and decorate it."
+        }
+      ],
+      "Year": "2024",
+      "Res": "https://trisren.itch.io/crab-cove"
+    },
+    {
+      "Title": "Garden Planner",
+      "Desc": "The Garden Planner was created as the term project for my 4th year Web Frameworks course. The goal was to create a useful application with a django backend and a React frontend. Because of my interest in gardening, I decided to create a garden planner that allows users to plan out their gardens by specifying the dimensions and amount of sun and using the external OpenFarm API to suggest possible plants to grow. Users can then save these plants to their gardens and be notified when they should be watered and harvested. User accounts are also saved to the database so that users can login and logout at any time.",
+      "Image": [
+        {
+          "img": "garden2.png",
+          "alt": "Users can create and update garden specifications from the main page."
+        },
+        {
+          "img": "garden3.png",
+          "alt": "Viewing a garden allows users to see the existing plants and see possible new ones that fit the garden criteria from the OpenFarm API."
+        },
+        {
+          "img": "garden4.png",
+          "alt": "Users can view all of the notifications from their gardens."
+        },
+        {
+          "img": "garden1.png",
+          "alt": "Users can create accounts to login and logout of the application."
+        }
+      ],
+      "Year": "2024",
+      "Res": "https://github.com/wakandacat/Garden-Planner"
+    },
     {
       "Title": "Hangman",
       "Desc": "As a way to teach myself React.js, I created a game of hangman. The first iteration I made to prepare for my university co-ops and it was a semi-functional and poorly structured program. It has since been remade with React best practices. The game leverages the Wikipedia API to provide the player with a random Wikipedia article title to guess. The UI is heavily influenced by the video game Persona 5, which also makes use of tarot cards like the Hanged Man.",
@@ -30,7 +94,7 @@
         },
         {
           "img": "p3back2.jpg",
-          "alt": "More memorable phases of the moon, such as Quarter, Half and Full moons are spelled out directly. Other moon phases have the number of days until a full moon besode it."
+          "alt": "More memorable phases of the moon, such as Quarter, Half and Full moons are spelled out directly. Other moon phases have the number of days until a full moon beside it."
         },
         {
           "img": "p3back4.jpg",
@@ -119,70 +183,6 @@
       ],
       "Year": "2022",
       "Res": ""
-    },
-    {
-      "Title": "The Little Robot",
-      "Desc": "The Little Robot is a linear 3D platforming and melee combat game where you play as a small robot trapped in an isolated testing facility, unaware of the world beyond its walls. This game was created with 5 peers as our final year 8-month Capstone project in Unity. As the team lead, I took on the infrastructure of the game including scene management and checkpoints. I was also responsible for the majority of the environmental scripting such as the conveyor belts, moving platforms, and vent systems. I was also responsible for creating the cutscenes sequences and implementing the (many) cameras using the Cinemachine plugin.",
-      "Image": [
-        {
-          "img": "robotPlat.gif",
-          "alt": "The robot must traverse through platforming sections as he descends deeper into the facility."
-        },
-        {
-          "img": "narrRoom.png",
-          "alt": "Explore a mysterious facility where dangerous fungus runs rampant."
-        },
-        {
-          "img": "robotComb.gif",
-          "alt": "The robot must defeat a dangerous reoccuring enemy with its fast-paced attacks."
-        }
-      ],
-      "Year": "2025",
-      "Res": "https://wakandacat.wixsite.com/the-little-robot"
-    },
-    {
-      "Title": "Crab Cove",
-      "Desc": "Crab Cove is a relaxing game about a crab collecting items to decorate his sandcastle! Created by 3 peers and I to fulfill the challenge of making a unique player controller for our 4th year Advanced Game Dev course in Unity, I was responsible for developing the crab's sideways movement and item spawning with C#, as well as the camerawork with the Cinemachine plugin.",
-      "Image": [
-        {
-          "img": "crabHome.jpg",
-          "alt": "Help the crab collect treasures for his home!"
-        },
-        {
-          "img": "crab.gif",
-          "alt": "The crab can dig holes in the sand to find various items."
-        },
-        {
-          "img": "crabGrab.jpg",
-          "alt": "The crab can pick up items with either claw to bring them back to his sandcastle home and decorate it."
-        }
-      ],
-      "Year": "2024",
-      "Res": "https://trisren.itch.io/crab-cove"
-    },
-    {
-      "Title": "Garden Planner",
-      "Desc": "The Garden Planner was created as the term project for my 4th year Web Frameworks course. The goal was to create a useful application with a django backend and a React frontend. Because of my interest in gardening, I decided to create a garden planner that allows users to plan out their gardens by specifying the dimensions and amount of sun and using the external OpenFarm API to suggest possible plants to grow. Users can then save these plants to their gardens and be notified when they should be watered and harvested. User accounts are also saved to the database so that users can login and logout at any time.",
-      "Image": [
-        {
-          "img": "garden2.png",
-          "alt": "Users can create and update garden specifications from the main page."
-        },
-        {
-          "img": "garden3.png",
-          "alt": "Viewing a garden allows users to see the existing plants and see possible new ones that fit the garden criteria from the OpenFarm API."
-        },
-        {
-          "img": "garden4.png",
-          "alt": "Users can view all of the notifications from their gardens."
-        },
-        {
-          "img": "garden1.png",
-          "alt": "Users can create accounts to login and logout of the application."
-        }
-      ],
-      "Year": "2024",
-      "Res": "https://github.com/wakandacat/Garden-Planner"
     }
   ],
   "DefaultProject": 
