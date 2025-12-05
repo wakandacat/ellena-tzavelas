@@ -18,7 +18,8 @@
         }
       ],
       "Year": "2025",
-      "Res": "https://wakandacat.wixsite.com/the-little-robot"
+      "Res": "https://wakandacat.wixsite.com/the-little-robot",
+      "Filters": ["Academic Project", "Game Development"]
     },
     {
       "Title": "Crab Cove",
@@ -38,7 +39,8 @@
         }
       ],
       "Year": "2024",
-      "Res": "https://trisren.itch.io/crab-cove"
+      "Res": "https://trisren.itch.io/crab-cove",
+      "Filters": ["Academic Project", "Game Development"]
     },
     {
       "Title": "Garden Planner",
@@ -62,7 +64,8 @@
         }
       ],
       "Year": "2024",
-      "Res": "https://github.com/wakandacat/Garden-Planner"
+      "Res": "https://github.com/wakandacat/Garden-Planner",
+      "Filters": ["Academic Project", "Web Development"]
     },
     {
       "Title": "Hangman",
@@ -82,7 +85,8 @@
         }
       ],
       "Year": "2024",
-      "Res": "https://wakandacat.github.io/HangmanGameUpdated/"
+      "Res": "https://wakandacat.github.io/HangmanGameUpdated/",
+      "Filters": ["Personal Project", "Web Development"]
     },
     {
       "Title": "Persona 3 Background",
@@ -106,7 +110,8 @@
         }
       ],
       "Year": "2024",
-      "Res": "https://wakandacat.github.io/P3BackgroundVUE/"
+      "Res": "https://wakandacat.github.io/P3BackgroundVUE/",
+      "Filters": ["Personal Project", "Web Development"]
     },
     {
       "Title": "Event Scheduler",
@@ -126,7 +131,8 @@
         }
       ],
       "Year": "2024",
-      "Res": ""
+      "Res": "",
+      "Filters": ["Academic Project", "Mobile Development", "UX Design"]
     },
     {
       "Title": "Portfolio",
@@ -142,7 +148,8 @@
         }
       ],
       "Year": "2025",
-      "Res": "https://wakandacat.github.io/ellena-tzavelas/"
+      "Res": "https://wakandacat.github.io/ellena-tzavelas/",
+      "Filters": ["Personal Project", "Web Development", "UX Design"]
     },
     {
       "Title": "Flower Flux",
@@ -162,7 +169,8 @@
         }
       ],
       "Year": "2022",
-      "Res": "https://ginettegonzales.itch.io/flower-flux"
+      "Res": "https://ginettegonzales.itch.io/flower-flux",
+      "Filters": ["Academic Project", "Game Development"]
     },
     {
       "Title": "Crow Game & Controller",
@@ -182,19 +190,62 @@
         }
       ],
       "Year": "2022",
-      "Res": ""
-    }
-  ],
-  "DefaultProject": 
+      "Res": "",
+      "Filters": ["Academic Project", "Multimedia Development"]
+    },
     {
-      "Title": "Projects",
-      "Desc": "Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!",
-      "Image":
+      "Title": "OC Transpo Redesign",
+      "Desc": "A peer and I were tasked with analysing and redesigning a website for our 4th year UX Experience and Accessibility course. We chose the OC Transpo site as it is a frequently used service for university students and the site had many areas for improvement. We conducted user surveys and accessibility checks to find pain points, brainstormed to create mid-fidelity mockups in Figma and documented the process in a written report.",
+      "Image": [
         {
-          "img": "me5.jpg",
-          "alt": "Ellena sitting and reading intently among the clouds. Created as an assignment for my first year visual processes course to introduce ourselves."
+          "img": "octranspo1.jpg",
+          "alt": "The existing site was analyzed using the WAVE accessibility checker and various screen readers after which a detailed document of errors and warnings was written."
         },
-      "Year": "",
-      "Res": ""
+        {
+          "img": "octranspo4.jpg",
+          "alt": "User survey and think-aloud sessions were conducted with university-age participants to identify the strengths and weaknesses of the existing site."
+        },
+        {
+          "img": "octranspo3.jpg",
+          "alt": "New designs were drawn with pen and paper to resolve the main issues found in the analysis phase."
+        },
+        {
+          "img": "octranspo2.jpg",
+          "alt": "Mid-fidelity mockups of several key pages were created in Figma to demonstrate the new design."
+        }
+      ],
+      "Year": "2024",
+      "Res": "",
+      "Filters": ["Academic Project", "UX Design"]
+    },
+      {
+      "Title": "Nature Museum Whale App",
+      "Desc": "3 peers and I were tasked with creating an interactive application to better immerse visitors at the Canadian Museum of Nature. Our idea was to create an app that would lead users to certain exhibits via an AR whale on the screen and progressively louder whale calls as they got close to the exhibit. We conducted significant user testing and analysis before brainstorming suitable design alternatives. A low fidelity design was created in Figma and tested with users before creating a mid-fidelity prototype.",
+      "Image": [
+        {
+          "img": "whale3.jpg",
+          "alt": "User survey and think-aloud sessions were conducted with users of various ages to identify what features would be most engaging. User personas and scenarios were also created to better understand our target audience."
+        },
+        {
+          "img": "whale4.jpg",
+          "alt": "Initial designs were drawn with pen and paper to satisfy the criteria of the user tests."
+        },
+        {
+          "img": "whale1.jpg",
+          "alt": "Low-fidelity mockups of the app design were created in Figma before being tested again by users."
+        },
+        {
+          "img": "whale2.jpg",
+          "alt": "A final mid-fidelity prototype was created based on the low-fidelity feedback."
+        },        
+        {
+          "img": "whalevid.mp4",
+          "alt": "Our mid-fidelity prototype was created in Figma and shown to the many users we tested throughout the process."
+        }
+      ],
+      "Year": "2024",
+      "Res": "",
+      "Filters": ["Academic Project", "UX Design"]
     }
+  ]
 }
