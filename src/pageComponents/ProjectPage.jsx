@@ -7,11 +7,15 @@ function ProjectPage() {
   const [arrProjsPageBottom, setArrProjsPageBottom] = useState([]); // jsx objects of each project shown at the bottom of the page
   const [currImageIndex, setCurrImageIndex] = useState(0); //the index of an image corresponding to a single project's images (ex. Hangman proj has 3 images --> indeces 0,1,2)
   const [currentImageIsVideo, setCurrentImageIsVideo] = useState(false); //boolean to determine whether current project image should be rendered as <img> or <video>
-  const [defaultIMG, setDefaultIMG] = useState(null);
-  const [defaultALT, setDefaultALT] = useState("");
-  const [defaultTITLE, setDefaultTITLE] = useState("");
-  const [defaultDESC, setDefaultDESC] = useState("");
   const [loaded, setLoaded] = useState(false);
+
+  //backups if json data hasn't loaded yet
+  const defaultIMG = ImageProvider["me5.jpg"];
+  const defaultALT =
+    "Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!";
+  const defaultTITLE = "Projects";
+  const defaultDESC =
+    "Ellena sitting and reading intently among the clouds. Created as an assignment for my first year visual processes course to introduce ourselves.";
 
   //filters from ProjectFilter component
   const [currentFilter, setCurrentFilter] = useState("All");
@@ -50,28 +54,6 @@ function ProjectPage() {
       })
       .then((data) => {
         setJsonData(data);
-
-        setDefaultIMG(ImageProvider[data.DefaultProject.Image.img]);
-        setDefaultALT(data.DefaultProject.Image.alt);
-        setDefaultTITLE(data.DefaultProject.Title);
-        setDefaultDESC(data.DefaultProject.Desc);
-
-        let images = [];
-
-        images.push({
-          image: defaultIMG,
-          alt: defaultALT,
-        });
-
-        setCurrentProject({
-          Title: defaultTITLE,
-          Desc: defaultDESC,
-          Image: images,
-          Year: "",
-          Res: "",
-        });
-
-        setCurrentImageIsVideo(false);
       })
       .catch((error) => console.error("Unable to fetch data:", error));
 
@@ -97,7 +79,7 @@ function ProjectPage() {
           className="proj-button group/project"
           key={index}
           value={JSON.stringify(element)}
-          onClick={() => handleClick(element, event)}
+          onClick={(event) => handleClick(element, event.currentTarget)}
         >
           <h3 className="proj-title font-bold uppercase">{element.Title}</h3>
           <img
@@ -111,6 +93,20 @@ function ProjectPage() {
 
       // Update the state with the new array of JSX elements
       setArrProjsPageBottom(tempArrProjsPageBottom);
+
+      //always select the first project in the filtered list
+      if (filteredProjects.length > 0) {
+        // ensure the buttons are rendered first
+        setTimeout(() => {
+          const container = document.querySelector(".main-container");
+          if (container) {
+            const firstButton = container.children[0];
+            if (firstButton) {
+              handleClick(filteredProjects[0], firstButton);
+            }
+          }
+        }, 0);
+      }
     }
   }, [jsonData, currentFilter]);
 
@@ -120,7 +116,7 @@ function ProjectPage() {
   }, [currentProject]);
 
   //change project view on button click
-  const handleClick = (element, event) => {
+  const handleClick = (element, clickedButton) => {
     setLoaded(false); //allow the loading state to reappear
     let buttons = document.querySelector(".main-container").children;
 
@@ -129,7 +125,7 @@ function ProjectPage() {
     }
 
     //show selected project differently
-    event.target.classList.add("proj-selected");
+    clickedButton.classList.add("proj-selected");
 
     //force page to top
     document.body.scrollTop = 0; // For Safari

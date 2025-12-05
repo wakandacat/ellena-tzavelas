@@ -19,13 +19,18 @@ function Card(props) {
       <div className="flex flex-col items-center md:items-start">
         <h2 className="font-bold text-(--detail-color)">{props.title}</h2>
         <h3 className="text-(--detail-color-2)">{props.subtitle}</h3>
-        <button
-          className="page-button"
-          value={props.buttonVal}
-          onClick={handleClick}
-        >
-          VIEW
-        </button>
+
+        {props.buttonVal ? (
+          <button
+            className="page-button"
+            value={props.buttonVal}
+            onClick={handleClick}
+          >
+            VIEW
+          </button>
+        ) : (
+          ""
+        )}
       </div>
       <img
         className={`aspect-7/5 w-[80%] ${

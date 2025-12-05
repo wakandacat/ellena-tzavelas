@@ -8,6 +8,17 @@ function HomePage() {
     <main>
       <Banner />
       <Card
+        class={"even-card"}
+        title={"HELLO!"}
+        subtitle={
+          "Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!"
+        }
+        image={"me5.jpg"}
+        alt={
+          "Ellena sitting and reading intently among the clouds. Created as an assignment for my first year visual processes course to introduce ourselves."
+        }
+      />
+      <Card
         class={"odd-card"}
         title={"PROJECTS"}
         subtitle={`2020 - ${currYear}`}

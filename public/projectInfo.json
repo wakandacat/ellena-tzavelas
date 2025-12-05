@@ -247,18 +247,5 @@
       "Res": "",
       "Filters": ["Academic Project", "UX Design"]
     }
-  ],
-  "DefaultProject": 
-    {
-      "Title": "Projects",
-      "Desc": "Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!",
-      "Image":
-        {
-          "img": "me5.jpg",
-          "alt": "Ellena sitting and reading intently among the clouds. Created as an assignment for my first year visual processes course to introduce ourselves."
-        },
-      "Year": "",
-      "Res": "",
-      "Filters": [""]
-    }
+  ]
 }
