@@ -58,7 +58,13 @@ function ProjectPage() {
       .catch((error) => console.error("Unable to fetch data:", error));
 
     //check localstorage for saved filter
-    let savedFilter = localStorage.getItem("filter");
+
+    let savedFilter = "All";
+
+    //check localstorage for saved filter
+    if (localStorage.getItem("filter")) {
+      savedFilter = localStorage.getItem("filter");
+    }
     setCurrentFilter(savedFilter);
   }, []);
 

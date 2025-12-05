@@ -33,8 +33,12 @@ function ThemeController() {
     //   ? "dark"
     //   : "light";
 
+    let currentTheme = "light";
+
     //check localstorage for saved theme
-    let currentTheme = localStorage.getItem("pagetheme");
+    if (localStorage.getItem("pagetheme")) {
+      currentTheme = localStorage.getItem("pagetheme");
+    }
 
     setLocalTheme(currentTheme);
     document.querySelector("html").setAttribute("data-theme", currentTheme);

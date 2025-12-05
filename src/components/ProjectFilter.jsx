@@ -64,7 +64,13 @@ function ProjectFilter({ handleFilterChange }) {
       })
       .catch((error) => console.error("Unable to fetch data:", error));
 
-    let savedFilter = localStorage.getItem("filter");
+    let savedFilter = "All";
+
+    //check localstorage for saved filter
+    if (localStorage.getItem("filter")) {
+      savedFilter = localStorage.getItem("filter");
+    }
+
     setCurrKeyword(savedFilter);
   }, []);
 
