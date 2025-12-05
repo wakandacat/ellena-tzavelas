@@ -18,16 +18,24 @@ function ThemeController() {
   const handleChangeTheme = (clickedTheme) => {
     setIsOpen(false); //close
     setLocalTheme(clickedTheme);
+
+    //update the theme in localstorage
+    localStorage.setItem("pagetheme", clickedTheme);
+
     document.querySelector("html").setAttribute("data-theme", clickedTheme);
   };
 
   //check internal computer theme state
   useEffect(() => {
-    //only light or dark modes
-    const currentTheme = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
-      ? "dark"
-      : "light";
+    // //only light or dark modes
+    // const currentTheme = window.matchMedia("(prefers-color-scheme: dark)")
+    //   .matches
+    //   ? "dark"
+    //   : "light";
+
+    //check localstorage for saved theme
+    let currentTheme = localStorage.getItem("pagetheme");
+
     setLocalTheme(currentTheme);
     document.querySelector("html").setAttribute("data-theme", currentTheme);
   }, []);

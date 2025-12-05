@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import ImageProvider from "../components/ImageProvider";
+import ProjectFilter from "../components/ProjectFilter";
 
 function ProjectPage() {
   const [jsonData, setJsonData] = useState(null); //the entire json data read in from projectInfo.json
@@ -11,6 +12,17 @@ function ProjectPage() {
   const [defaultTITLE, setDefaultTITLE] = useState("");
   const [defaultDESC, setDefaultDESC] = useState("");
   const [loaded, setLoaded] = useState(false);
+
+  //filters from ProjectFilter component
+  const [currentFilter, setCurrentFilter] = useState("All");
+
+  //create a callback function that can be passed to ProjectFilter to update the current filter
+  const handleFilterChange = useCallback(
+    (newFilter) => {
+      setCurrentFilter(newFilter);
+    },
+    [currentFilter],
+  );
 
   const [currentProject, setCurrentProject] = useState({
     Title: "",
@@ -62,35 +74,45 @@ function ProjectPage() {
         setCurrentImageIsVideo(false);
       })
       .catch((error) => console.error("Unable to fetch data:", error));
+
+    //check localstorage for saved filter
+    let savedFilter = localStorage.getItem("filter");
+    setCurrentFilter(savedFilter);
   }, []);
 
-  //creating the list of all projects page bottom
+  //creating the list of all projects page bottom + update the projects when the filter changes
   useEffect(() => {
     if (jsonData !== null) {
+      //take into account the filter
+      const filteredProjects =
+        currentFilter === "All"
+          ? jsonData["Projects"]
+          : jsonData["Projects"].filter((project) =>
+              project.Filters.includes(currentFilter),
+            );
+
       // Map over the array and create JSX elements using index from map function
-      const tempArrProjsPageBottom = jsonData["Projects"].map(
-        (element, index) => (
-          <button
-            className="proj-button group/project"
-            key={index}
-            value={JSON.stringify(element)}
-            onClick={() => handleClick(element, event)}
-          >
-            <h3 className="proj-title font-bold uppercase">{element.Title}</h3>
-            <img
-              className="proj-image"
-              loading="lazy"
-              src={ImageProvider[element.Image[0].img]}
-              alt={element.Image[0].alt}
-            />
-          </button>
-        ),
-      );
+      const tempArrProjsPageBottom = filteredProjects.map((element, index) => (
+        <button
+          className="proj-button group/project"
+          key={index}
+          value={JSON.stringify(element)}
+          onClick={() => handleClick(element, event)}
+        >
+          <h3 className="proj-title font-bold uppercase">{element.Title}</h3>
+          <img
+            className="proj-image"
+            loading="lazy"
+            src={ImageProvider[element.Image[0].img]}
+            alt={element.Image[0].alt}
+          />
+        </button>
+      ));
 
       // Update the state with the new array of JSX elements
       setArrProjsPageBottom(tempArrProjsPageBottom);
     }
-  }, [jsonData]);
+  }, [jsonData, currentFilter]);
 
   useEffect(() => {
     //ensure the index is reset
@@ -274,6 +296,10 @@ function ProjectPage() {
       </div>
       <div className="triangle-clip h-[25px] w-[100%] bg-(--background-color)"></div>
       <div className="page-bottom">
+        <ProjectFilter
+          currentFilter={currentFilter}
+          handleFilterChange={handleFilterChange}
+        />
         <div className="flex-container main-container">
           {arrProjsPageBottom}
         </div>
