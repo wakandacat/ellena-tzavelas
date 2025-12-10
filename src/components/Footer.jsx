@@ -29,7 +29,7 @@ function Footer() {
             />
             <span className="sr-only">LinkedIn</span>
           </a>
-          <a href="mailto:wakandacat@gmail.com" target="blank">
+          <a href="mailto:ellena.tzavelas@gmail.com" target="blank">
             <FontAwesomeIcon
               className="icon px-4 py-2 text-4xl"
               icon={faEnvelope}

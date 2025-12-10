@@ -89,7 +89,7 @@ function ThemeController() {
         aria-label={`Button that says ${localTheme} theme. Click to open a dropdown to select a different site theme.`}
       >
         <h5 className="px-4">{localTheme}</h5>
-        {isOpen ? <p>&#11206;</p> : <p>&#11208;</p>}
+        {isOpen ? <p>&#x25BC;</p> : <p>&#x25B6;</p>}
       </button>
       {isOpen ? (
         <aside>

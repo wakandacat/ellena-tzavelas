@@ -8,6 +8,7 @@ function ProjectPage() {
   const [currImageIndex, setCurrImageIndex] = useState(0); //the index of an image corresponding to a single project's images (ex. Hangman proj has 3 images --> indeces 0,1,2)
   const [currentImageIsVideo, setCurrentImageIsVideo] = useState(false); //boolean to determine whether current project image should be rendered as <img> or <video>
   const [loaded, setLoaded] = useState(false);
+  const [overlayVisible, setOverlayVisible] = useState(false);
 
   //backups if json data hasn't loaded yet
   const defaultIMG = ImageProvider["me5.jpg"];
@@ -192,23 +193,13 @@ function ProjectPage() {
     setCurrImageIndex(newIndex);
   };
 
-  //jquery for image overlay
-  $(document).ready(function () {
-    $(".main-proj-image").click(function () {
-      $("#overlay").css("display", "flex");
-    });
-
-    $("#overlay").click(function () {
-      $("#overlay").css("display", "none");
-    });
-  });
-
   return (
     <main>
       {/* Overlay for enlarging images */}
       <div
         id="overlay"
-        className="fixed top-0 left-0 z-5000 hidden h-[100vh] w-[100%] cursor-zoom-out items-center justify-center bg-black/80"
+        className={`fixed top-0 left-0 z-5000 ${overlayVisible ? "flex" : "hidden"} h-[100vh] w-[100%] cursor-zoom-out items-center justify-center bg-black/80`}
+        onClick={() => setOverlayVisible(false)}
       >
         {currentImageIsVideo ? (
           <video
@@ -270,6 +261,7 @@ function ProjectPage() {
                 loop
                 muted
                 onLoad={() => setLoaded(true)}
+                onClick={() => setOverlayVisible(true)}
               />
             ) : (
               <img
@@ -278,6 +270,7 @@ function ProjectPage() {
                 alt={currentProject.Image[currImageIndex].alt || defaultALT}
                 loading="lazy"
                 onLoad={() => setLoaded(true)}
+                onClick={() => setOverlayVisible(true)}
               />
             )}
 

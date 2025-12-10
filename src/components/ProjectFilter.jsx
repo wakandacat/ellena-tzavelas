@@ -100,7 +100,7 @@ function ProjectFilter({ handleFilterChange }) {
         aria-label={``}
       >
         <h5 className="px-4">{currKeyword}</h5>
-        {isOpen ? <p>&#11206;</p> : <p>&#11208;</p>}
+        {isOpen ? <p>&#x25BC;</p> : <p>&#x25B6;</p>}
       </button>
       {isOpen ? (
         <aside>
