@@ -18,7 +18,7 @@ function Card(props) {
     <div className={`card ${props.class}`}>
       <div className="flex flex-col items-center md:items-start">
         <h2 className="font-bold text-(--detail-color)">{props.title}</h2>
-        <h3 className="text-(--detail-color-2)">{props.subtitle}</h3>
+        <h3 className="w-[95%] text-(--detail-color-2)">{props.subtitle}</h3>
 
         {props.buttonVal ? (
           <button

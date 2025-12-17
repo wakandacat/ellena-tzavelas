@@ -1,5 +1,30 @@
 {
   "Projects": [
+       {
+      "Title": "AHEPA Website Redesign",
+      "Desc": "I volunteered to redesign the website for the Ottawa chapter of AHEPA to help them modernize their online presence and continue their mission of promoting Hellenism in Ottawa. I collaborated with stakeholders to determine necessary functionality, provided various design alternatives in Figma, redesigned the website layout and structure with the Square Online platform, provided refinements from stakeholder feedback, and compiled documentation for future upkeep.",
+      "Image": [
+        {
+          "img": "ahepa.jpg",
+          "alt": "The site is managed through Square and was redesigned using the Square Online platform. The site now provides easy-to-navigate information about AHEPA's mission, events and membership, and more."
+        },
+        {
+          "img": "ahepa2.jpg",
+          "alt": "Design alternatives for the site banner, colour schemes and fonts were provided to stakeholders through Figma."
+        },
+        {
+          "img": "ahepa3.jpg",
+          "alt": "Mockups of site pages were created in Figma to satisfy the site requirements."
+        },
+        {
+          "img": "ahepa4.jpg",
+          "alt": "Documentation was provided to stakeholders outlining key features and common pitfalls of the Square Online platform for future upkeep."
+        }
+      ],
+      "Year": "2025",
+      "Res": "https://www.ahepaottawa.ca/",
+      "Filters": ["Client Project", "UX Design", "Web Development"]
+    },
       {
       "Title": "The Little Robot",
       "Desc": "The Little Robot is a linear 3D platforming and melee combat game where you play as a small robot trapped in an isolated testing facility, unaware of the world beyond its walls. This game was created with 5 peers as our final year 8-month Capstone project in Unity. As the team lead, I took on the infrastructure of the game including scene management and checkpoints. I was also responsible for the majority of the environmental scripting such as the conveyor belts, moving platforms, and vent systems. I was also responsible for creating the cutscenes sequences and implementing the (many) cameras using the Cinemachine plugin.",
@@ -20,6 +45,23 @@
       "Year": "2025",
       "Res": "https://wakandacat.wixsite.com/the-little-robot",
       "Filters": ["Academic Project", "Game Development"]
+    },
+        {
+      "Title": "Portfolio",
+      "Desc": "I started to create this portfolio website in my 3rd year of university to showcase some of the cool academic and personal projects I've been working on. I created it using component-driven React.js as which I learned throughout university and at a co-op placement. Initially created with CSS, it has since been updated to use Tailwind. I will be continuing to update this portfolio as I create more projects and learn new skills!",
+      "Image": [
+        {
+          "img": "port1.jpg",
+          "alt": "This portfolio showcases a bit about me! A continuous work in progress, I plan to keep adding to it!"
+        },
+        {
+          "img": "port2.mp4",
+          "alt": "I created a custom theme component to allow for a dark mode and light mode. This is one of the tasks I took on during my co-op placement to improve their React application."
+        }
+      ],
+      "Year": "2025",
+      "Res": "https://wakandacat.github.io/ellena-tzavelas/",
+      "Filters": ["Personal Project", "Web Development", "UX Design"]
     },
     {
       "Title": "Crab Cove",
@@ -88,6 +130,60 @@
       "Res": "https://wakandacat.github.io/HangmanGameUpdated/",
       "Filters": ["Personal Project", "Web Development"]
     },
+        {
+      "Title": "OC Transpo Redesign",
+      "Desc": "A peer and I were tasked with analysing and redesigning a website for our 4th year UX Experience and Accessibility course. We chose the OC Transpo site as it is a frequently used service for university students and the site had many areas for improvement. We conducted user surveys and accessibility checks to find pain points, brainstormed to create mid-fidelity mockups in Figma and documented the process in a written report.",
+      "Image": [
+        {
+          "img": "octranspo1.jpg",
+          "alt": "The existing site was analyzed using the WAVE accessibility checker and various screen readers after which a detailed document of errors and warnings was written."
+        },
+        {
+          "img": "octranspo4.jpg",
+          "alt": "User survey and think-aloud sessions were conducted with university-age participants to identify the strengths and weaknesses of the existing site."
+        },
+        {
+          "img": "octranspo3.jpg",
+          "alt": "New designs were drawn with pen and paper to resolve the main issues found in the analysis phase."
+        },
+        {
+          "img": "octranspo2.jpg",
+          "alt": "Mid-fidelity mockups of several key pages were created in Figma to demonstrate the new design."
+        }
+      ],
+      "Year": "2024",
+      "Res": "",
+      "Filters": ["Academic Project", "UX Design"]
+    },
+    {
+      "Title": "Nature Museum Whale App",
+      "Desc": "3 peers and I were tasked with creating an interactive application to better immerse visitors at the Canadian Museum of Nature. Our idea was to create an app that would lead users to certain exhibits via an AR whale on the screen and progressively louder whale calls as they got close to the exhibit. We conducted significant user testing and analysis before brainstorming suitable design alternatives. A low fidelity design was created in Figma and tested with users before creating a mid-fidelity prototype.",
+      "Image": [
+        {
+          "img": "whale3.jpg",
+          "alt": "User survey and think-aloud sessions were conducted with users of various ages to identify what features would be most engaging. User personas and scenarios were also created to better understand our target audience."
+        },
+        {
+          "img": "whale4.jpg",
+          "alt": "Initial designs were drawn with pen and paper to satisfy the criteria of the user tests."
+        },
+        {
+          "img": "whale1.jpg",
+          "alt": "Low-fidelity mockups of the app design were created in Figma before being tested again by users."
+        },
+        {
+          "img": "whale2.jpg",
+          "alt": "A final mid-fidelity prototype was created based on the low-fidelity feedback."
+        },        
+        {
+          "img": "whalevid.mp4",
+          "alt": "Our mid-fidelity prototype was created in Figma and shown to the many users we tested throughout the process."
+        }
+      ],
+      "Year": "2024",
+      "Res": "",
+      "Filters": ["Academic Project", "UX Design"]
+    },
     {
       "Title": "Persona 3 Background",
       "Desc": "A computer background created using Vue.js and deployed to Wallpaper Engine. Initially created using vanilla JavaScript a few years ago, I decided to recreate it with Vue to improve the cleanliness of the code. The goal of this project was to imitate the UI from the video game Persona 3 Portable, one of my personal favourites. This background displays the current date, the time of day, the phase of the moon and indicates how many days are left until a full moon. The background images are pulled directly from the PSP version's game files.",
@@ -135,23 +231,6 @@
       "Filters": ["Academic Project", "Mobile Development", "UX Design"]
     },
     {
-      "Title": "Portfolio",
-      "Desc": "I started to create this portfolio website in my 3rd year of university to showcase some of the cool academic and personal projects I've been working on. I created it using component-driven React.js as which I learned throughout university and at a co-op placement. Initially created with CSS, it has since been updated to use Tailwind. I will be continuing to update this portfolio as I create more projects and learn new skills!",
-      "Image": [
-        {
-          "img": "port1.jpg",
-          "alt": "This portfolio showcases a bit about me! A continuous work in progress, I plan to keep adding to it!"
-        },
-        {
-          "img": "port2.mp4",
-          "alt": "I created a custom theme component to allow for a dark mode and light mode. This is one of the tasks I took on during my co-op placement to improve their React application."
-        }
-      ],
-      "Year": "2025",
-      "Res": "https://wakandacat.github.io/ellena-tzavelas/",
-      "Filters": ["Personal Project", "Web Development", "UX Design"]
-    },
-    {
       "Title": "Flower Flux",
       "Desc": "Help Gatsbee the bee pollinate the flowers in his garden! 3 peers and I created this 2D side-scrolling game in our Intro to Game Dev course in 2nd year with Unity. I was responsible for the side scrolling, the UI and menu scripting as well as the pollination ability.",
       "Image": [
@@ -192,60 +271,6 @@
       "Year": "2022",
       "Res": "",
       "Filters": ["Academic Project", "Multimedia Development"]
-    },
-    {
-      "Title": "OC Transpo Redesign",
-      "Desc": "A peer and I were tasked with analysing and redesigning a website for our 4th year UX Experience and Accessibility course. We chose the OC Transpo site as it is a frequently used service for university students and the site had many areas for improvement. We conducted user surveys and accessibility checks to find pain points, brainstormed to create mid-fidelity mockups in Figma and documented the process in a written report.",
-      "Image": [
-        {
-          "img": "octranspo1.jpg",
-          "alt": "The existing site was analyzed using the WAVE accessibility checker and various screen readers after which a detailed document of errors and warnings was written."
-        },
-        {
-          "img": "octranspo4.jpg",
-          "alt": "User survey and think-aloud sessions were conducted with university-age participants to identify the strengths and weaknesses of the existing site."
-        },
-        {
-          "img": "octranspo3.jpg",
-          "alt": "New designs were drawn with pen and paper to resolve the main issues found in the analysis phase."
-        },
-        {
-          "img": "octranspo2.jpg",
-          "alt": "Mid-fidelity mockups of several key pages were created in Figma to demonstrate the new design."
-        }
-      ],
-      "Year": "2024",
-      "Res": "",
-      "Filters": ["Academic Project", "UX Design"]
-    },
-      {
-      "Title": "Nature Museum Whale App",
-      "Desc": "3 peers and I were tasked with creating an interactive application to better immerse visitors at the Canadian Museum of Nature. Our idea was to create an app that would lead users to certain exhibits via an AR whale on the screen and progressively louder whale calls as they got close to the exhibit. We conducted significant user testing and analysis before brainstorming suitable design alternatives. A low fidelity design was created in Figma and tested with users before creating a mid-fidelity prototype.",
-      "Image": [
-        {
-          "img": "whale3.jpg",
-          "alt": "User survey and think-aloud sessions were conducted with users of various ages to identify what features would be most engaging. User personas and scenarios were also created to better understand our target audience."
-        },
-        {
-          "img": "whale4.jpg",
-          "alt": "Initial designs were drawn with pen and paper to satisfy the criteria of the user tests."
-        },
-        {
-          "img": "whale1.jpg",
-          "alt": "Low-fidelity mockups of the app design were created in Figma before being tested again by users."
-        },
-        {
-          "img": "whale2.jpg",
-          "alt": "A final mid-fidelity prototype was created based on the low-fidelity feedback."
-        },        
-        {
-          "img": "whalevid.mp4",
-          "alt": "Our mid-fidelity prototype was created in Figma and shown to the many users we tested throughout the process."
-        }
-      ],
-      "Year": "2024",
-      "Res": "",
-      "Filters": ["Academic Project", "UX Design"]
     }
   ]
 }

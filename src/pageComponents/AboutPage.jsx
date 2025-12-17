@@ -14,15 +14,14 @@ function AboutPage() {
             Hello! I’m Ellena Tzavelas, a recent graduate of the joint
             Carleton-Algonquin Bachelor of Information Technology Interactive
             Multimedia and Design program. This fantastic program gave me the
-            opportunity to dabble in a plethora of multimedia topics from
-            illustration and design, 3D modeling and physics based animation,
-            software design, audio and video, and human-computer interactions.
-            My academic experiences have ignited my passion for software, web
-            and game development. <br />
-            <br />I completed a year of university co-op placements at Nokia and
+            opportunity to dabble in various multimedia topics from illustration
+            and design, 3D modeling and physics based animation, software
+            design, audio and video, human-computer interactions and more. My
+            academic experiences have ignited my passion for web development and
+            design. <br />
+            <br />I completed a year of paid university internships at Nokia and
             Irdeto which allowed me to put my education into practice and helped
-            me to broaden my skills in many technologies (and soft skills too!).{" "}
-            <br />
+            me to broaden my technology skills (and soft skills too!). <br />
             <br />
             In my spare time, I enjoy playing video games, reading sci-fi
             fantasy, gardening and cooking.

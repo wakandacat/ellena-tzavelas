@@ -11,7 +11,7 @@ function HomePage() {
         class={"even-card"}
         title={"HELLO!"}
         subtitle={
-          "Welcome to my portfolio! This is a collection of projects I made for fun or associated with school assignments. I plan to keep adding to it as I create more cool projects!"
+          "Welcome to my portfolio! This is a collection of projects I have compiled to showcase my skills. As a lifelong learner, new projects are always in the works!"
         }
         image={"me5.jpg"}
         alt={
@@ -22,7 +22,7 @@ function HomePage() {
         class={"odd-card"}
         title={"PROJECTS"}
         subtitle={`2020 - ${currYear}`}
-        image={"p3back.jpg"}
+        image={"octranspo2.jpg"}
         alt={
           "Persona 3 computer background screenshot displaying date and time."
         }

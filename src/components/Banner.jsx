@@ -9,7 +9,7 @@ function Banner() {
           ELLENA TZAVELAS
         </h1>
         <h3 id="banner-sub" className="text-(--detail-color)">
-          Web Dev // Game Dev
+          Web Dev // Design
         </h3>
       </div>
     </section>

@@ -254,7 +254,8 @@ function ProjectPage() {
             {/* conditionally render image or video */}
             {currentImageIsVideo ? (
               <video
-                className={`main-proj-image ${!loaded ? "animate-pulse" : ""}`}
+                // className={`main-proj-image ${!loaded ? "animate-pulse" : ""}`}
+                className="main-proj-image"
                 src={currentProject.Image[currImageIndex].image || defaultIMG}
                 alt={currentProject.Image[currImageIndex].alt || defaultALT}
                 autoPlay
@@ -265,7 +266,8 @@ function ProjectPage() {
               />
             ) : (
               <img
-                className={`main-proj-image ${!loaded ? "animate-pulse" : ""}`}
+                // className={`main-proj-image ${!loaded ? "animate-pulse" : ""}`}
+                className="main-proj-image"
                 src={currentProject.Image[currImageIndex].image || defaultIMG}
                 alt={currentProject.Image[currImageIndex].alt || defaultALT}
                 loading="lazy"
