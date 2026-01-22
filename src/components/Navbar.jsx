@@ -16,7 +16,7 @@ function Navbar() {
 
   return (
     <nav
-      className="sm:no-wrap relative top-0 right-0 left-0 z-2000 flex flex-row flex-wrap items-center justify-center bg-(--background-color-3) px-5 py-2 text-white sm:fixed"
+      className="sm:no-wrap relative top-0 right-0 left-0 z-2000 flex flex-row flex-wrap items-center justify-center bg-(--nav-color) px-5 py-2 text-white sm:fixed"
       role="navigation"
       aria-label="Main Navigation Bar"
     >

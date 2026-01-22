@@ -9,10 +9,11 @@ function ThemeController() {
   const [isOpen, setIsOpen] = useState(0);
   const [dropdownOps, setDropdownOps] = useState([]);
   const dropdownRef = useRef(null); //grab a reference to the dropdown to close it when the user clicks away
+  const buttonRef = useRef(null); //reference to the dropdown button
 
   //change modes manually with the button
   const handleClick = () => {
-    setIsOpen(true); //toggle the open state
+    setIsOpen((prev) => !prev); //toggle the open state
   };
 
   const handleChangeTheme = (clickedTheme) => {
@@ -46,25 +47,29 @@ function ThemeController() {
 
   //everytime the local theme changes, update the dropdown options
   useEffect(() => {
-    const newOps = themeOptions
-      .filter((theme) => theme !== localTheme)
-      .map((theme) => (
-        <button
-          className="nav-button flex justify-center rounded-xl border-0 bg-(--background-color-3) uppercase"
-          onClick={() => handleChangeTheme(theme)}
-          key={theme}
-          aria-label={`${theme} theme`}
-        >
-          <h5 className="px-4">{theme}</h5>
-        </button>
-      ));
+    const newOps = themeOptions.map((theme) => (
+      <button
+        className="nav-button flex justify-center rounded-xl border-0 bg-(--nav-color) capitalize"
+        onClick={() => handleChangeTheme(theme)}
+        key={theme}
+        aria-label={`${theme} theme`}
+      >
+        <h5 className="px-4">{`${theme} Mode`}</h5>
+        {theme === localTheme && <span className="mr-2">✓</span>}
+      </button>
+    ));
     setDropdownOps(newOps);
   }, [localTheme]);
 
   useEffect(() => {
     function handleClickOutside(event) {
       // close the dropdown if the user clicks outside
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
       }
     }
@@ -83,18 +88,19 @@ function ThemeController() {
   return (
     <>
       <button
-        className="nav-button flex rounded-xl border-0 bg-(--background-color-3) uppercase"
+        className="nav-button flex rounded-xl border-0 bg-(--nav-color) capitalize"
         onClick={handleClick}
+        ref={buttonRef}
         value={localTheme}
         aria-label={`Button that says ${localTheme} theme. Click to open a dropdown to select a different site theme.`}
       >
-        <h5 className="px-4">{localTheme}</h5>
+        <h5 className="px-4">{`${localTheme} Mode`}</h5>
         {isOpen ? <p>&#x25BC;</p> : <p>&#x25B6;</p>}
       </button>
       {isOpen ? (
         <aside>
           <div
-            className="absolute flex flex-col rounded-xl border-2 bg-(--background-color-3) uppercase"
+            className="absolute flex flex-col rounded-xl border-2 bg-(--nav-color) capitalize"
             ref={dropdownRef}
           >
             {dropdownOps}

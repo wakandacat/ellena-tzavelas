@@ -1,8 +1,8 @@
 function Banner() {
   return (
     <section
-      id="banner-image"
-      className="section-padding flex h-screen w-full flex-col items-center justify-center bg-gradient-to-tr from-[#028286] to-[#0B4C44] text-white"
+      id="banner"
+      className="section-padding flex h-screen w-full flex-col items-center justify-center bg-gradient-to-tr from-(--detail-color) to-(--detail-color-2) text-white"
     >
       <div className="flex flex-col justify-center gap-6 text-center">
         <h1 className="text-6xl font-bold md:text-7xl lg:text-8xl">

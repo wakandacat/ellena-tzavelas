@@ -32,7 +32,7 @@ function ProjectFilter({ handleFilterChange }) {
       .filter((word) => word !== currKeyword)
       .map((word) => (
         <button
-          className="nav-button flex justify-center rounded-xl border-0 bg-(--background-color-3) text-white uppercase"
+          className="nav-button flex justify-center rounded-xl border-0 bg-(--nav-color) text-white uppercase"
           onClick={() => handleChangeTheme(word)}
           key={word}
           aria-label={`${word} filter`}
@@ -94,7 +94,7 @@ function ProjectFilter({ handleFilterChange }) {
   return (
     <>
       <button
-        className="nav-button flex rounded-xl border-0 bg-(--background-color-3) text-white uppercase"
+        className="nav-button flex rounded-xl border-0 bg-(--nav-color) text-white uppercase"
         onClick={handleClick}
         value={currKeyword}
         aria-label={``}
@@ -105,7 +105,7 @@ function ProjectFilter({ handleFilterChange }) {
       {isOpen ? (
         <aside>
           <div
-            className="pointer-events-auto absolute z-[1000] flex flex-col rounded-xl border-2 bg-(--background-color-3) uppercase"
+            className="pointer-events-auto absolute z-[1000] flex flex-col rounded-xl border-2 bg-(--nav-color) uppercase"
             ref={dropdownRef}
           >
             {dropdownOps}
