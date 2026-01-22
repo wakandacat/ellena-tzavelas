@@ -63,10 +63,12 @@ body::-webkit-scrollbar-track {
   background: transparent;
 }
 
-h1,
-h2 {
+h1 {
   font-family: "Playfair Display", serif;
-  /* @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl; */
+}
+
+h2 {
+  @apply italic text-[#1f1f1f];
 }
 
 h3 {
@@ -80,6 +82,8 @@ a {
 h4 {
   @apply text-sm md:text-xl;
 }
+
+
 
 .proj-image-container {
   @apply m-auto w-[100%] rounded-xl border-0 bg-(--background-color) p-2;
@@ -116,6 +120,16 @@ h4 {
 @utility element-border {
   @apply rounded-xl border-4 border-(--detail-color-2);
 }
+
+.section-padding {
+  @apply px-10 py-5 md:px-25 md:py-7 lg:px-30 lg:py-20 2xl:px-80 2xl:py-30;
+}
+
+.body-text {
+  @apply text-start lg:text-xl text-lg leading-loose;
+}
+
+/* px-10 py-3 pt-10 sm:pt-25 md:px-20 lg:flex-row lg:items-start */
 
 .page-top {
   @apply flex h-[100%] flex-col items-center justify-between px-10 py-3 pt-10 sm:pt-25 md:px-20 lg:flex-row lg:items-start;

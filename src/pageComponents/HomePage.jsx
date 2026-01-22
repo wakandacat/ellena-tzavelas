@@ -1,5 +1,6 @@
 import Banner from "../components/Banner";
 import Card from "../components/Card";
+import AboutPage from "./AboutPage";
 
 function HomePage() {
   const currYear = new Date().getFullYear();
@@ -7,17 +8,7 @@ function HomePage() {
   return (
     <main>
       <Banner />
-      <Card
-        class={"even-card"}
-        title={"HELLO!"}
-        subtitle={
-          "Welcome to my portfolio! This is a collection of projects I have compiled to showcase my skills. As a lifelong learner, new projects are always in the works!"
-        }
-        image={"me5.jpg"}
-        alt={
-          "Ellena sitting and reading intently among the clouds. Created as an assignment for my first year visual processes course to introduce ourselves."
-        }
-      />
+      <AboutPage />
       <Card
         class={"odd-card"}
         title={"PROJECTS"}
