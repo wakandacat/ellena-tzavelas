@@ -2,15 +2,24 @@ function Banner() {
   return (
     <section
       id="banner-image"
-      className="banner-text-outline banner-background relative box-border flex min-h-[400px] w-full flex-col items-center md:min-h-[500px] lg:min-h-[700px] xl:min-h-[900px]"
+      className="flex h-screen w-full flex-col items-center justify-center bg-gradient-to-tr from-[#028286] to-[#0B4C44] text-white"
     >
-      <div className="absolute flex h-[100%] flex-col justify-center">
-        <h1 id="name" className="font-bold text-(--text-color-2) uppercase">
-          ELLENA TZAVELAS
+      <div className="flex flex-col justify-center gap-6 text-center">
+        <h1 className="text-6xl font-bold md:text-7xl lg:text-8xl">
+          Ellena Tzavelas
         </h1>
-        <h3 id="banner-sub" className="text-(--detail-color)">
-          Web Dev // Design
-        </h3>
+        <p className="text-3xl font-extralight italic md:text-4xl lg:text-5xl">
+          Frontend Designer & Developer
+        </p>
+        <p className="text-md font-extralight md:text-lg lg:text-xl">
+          Creating accessible and engaging web experiences
+        </p>
+        <a
+          href="#about"
+          className="mt-20 text-3xl text-white motion-safe:animate-bounce"
+        >
+          ↓
+        </a>
       </div>
     </section>
   );

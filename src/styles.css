@@ -1,3 +1,6 @@
+/* Playfair Display Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -36,7 +39,7 @@
 }
 
 :root {
-  font-family: "Verdana", Helvetica, sans-serif;
+  font-family: "Inter", Helvetica, sans-serif;
   line-height: 1.5;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -62,8 +65,8 @@ body::-webkit-scrollbar-track {
 
 h1,
 h2 {
-  font-family: "Noto Serif Display", Helvetica, sans-serif;
-  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl;
+  font-family: "Playfair Display", serif;
+  /* @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl; */
 }
 
 h3 {
@@ -71,11 +74,10 @@ h3 {
 }
 
 a {
-  @apply button-transition break-all text-(--detail-color) no-underline hover:text-(--text-color);
+  @apply button-transition break-all no-underline;
 }
 
-h4,
-a {
+h4 {
   @apply text-sm md:text-xl;
 }
 
@@ -109,21 +111,6 @@ a {
     1px -1px 0 black,
     -1px 1px 0 black,
     1px 1px 0 black;
-}
-
-@utility banner-text-outline {
-  text-shadow:
-    -1px -1px 0 var(--detail-color-2),
-    1px -1px 0 var(--detail-color-2),
-    -1px 1px 0 var(--detail-color-2),
-    1px 1px 0 var(--detail-color-2);
-}
-
-@utility banner-background {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
-    url("/src/assets/flower.jpg") no-repeat center;
-  background-size: cover;
 }
 
 @utility element-border {
