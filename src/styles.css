@@ -10,7 +10,7 @@
   --background-color-2: #e8e8e8;
   --text-color: #2a2a2a;
   --text-color-2: white;
-  --text-secondary: #6b7280; 
+  --text-secondary: #4f555f; 
   --detail-color: #028286;
   --detail-color-2: #0a4a4d;
   --detail-color-hover: #025b5e;
@@ -22,6 +22,7 @@
   --background-color-2: #1d2a35;
   --text-color: white;
   --text-color-2: black;
+  --text-secondary: #aab6ca; 
 }
 
 [data-theme="pink"] {
@@ -128,10 +129,20 @@ h4 {
 }
 
 .body-text {
-  @apply text-start lg:text-xl text-lg leading-loose;
+  @apply text-start lg:text-xl md:text-lg text-base leading-loose;
 }
 
-/* px-10 py-3 pt-10 sm:pt-25 md:px-20 lg:flex-row lg:items-start */
+.heading {
+  @apply text-start text-4xl lg:text-6xl;
+}
+
+.sub-heading {
+  @apply text-start lg:text-3xl md:text-2xl text-lg text-(--text-secondary);
+}
+
+.skill-pill {
+  @apply border-4 border-(--detail-color) text-(--detail-color) bg-(--detail-color-light) px-2 py-0.5 w-fit;
+}
 
 .page-top {
   @apply flex h-[100%] flex-col items-center justify-between px-10 py-3 pt-10 sm:pt-25 md:px-20 lg:flex-row lg:items-start;

@@ -1,6 +1,7 @@
 import Banner from "../components/Banner";
 import Card from "../components/Card";
 import AboutPage from "./AboutPage";
+import Skills from "../components/Skills";
 
 function HomePage() {
   const currYear = new Date().getFullYear();
@@ -9,6 +10,7 @@ function HomePage() {
     <main>
       <Banner />
       <AboutPage />
+      <Skills />
       <Card
         class={"odd-card"}
         title={"PROJECTS"}
@@ -19,17 +21,6 @@ function HomePage() {
         }
         buttonVal={"Project"}
         aria-label="Travel to the Projects page."
-      />
-      <Card
-        class={"even-card"}
-        title={"ABOUT"}
-        subtitle={"ELLENA TZAVELAS"}
-        image={"me3.png"}
-        alt={
-          "Headshot of Ellena, a girl with short brown hair, blue eyes and glasses. She is smiling."
-        }
-        buttonVal={"About"}
-        aria-label="Travel to the About page."
       />
     </main>
   );

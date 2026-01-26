@@ -7,10 +7,10 @@ function AboutPage() {
   return (
     <section
       id="about"
-      className="section-padding flex flex-col justify-between gap-10 lg:flex-row lg:items-start lg:gap-20"
+      className="section-padding flex flex-col justify-between gap-10 bg-(--background-color) lg:flex-row lg:items-start lg:gap-20"
     >
       <div className="flex flex-col items-start gap-6 lg:max-w-3xl lg:flex-1">
-        <h2 className="text-start text-6xl">About Me</h2>
+        <h2 className="heading">About Me</h2>
         <p className="body-text">
           Hi! I’m Ellena, a frontend developer and designer passionate about
           creating responsive, user-focused web applications. I specialize in

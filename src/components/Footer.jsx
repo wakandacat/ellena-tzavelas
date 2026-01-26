@@ -7,8 +7,11 @@ function Footer() {
   const currYear = new Date().getFullYear();
 
   return (
-    <footer className="border-box absolute bottom-0 flex w-screen flex-col gap-5 bg-(--nav-color) px-2 py-2 text-white">
-      <p className="pt-4 text-2xl md:text-3xl">Let's Connect</p>
+    <section
+      id="contact"
+      className="border-box absolute bottom-0 flex w-screen flex-col items-center justify-center gap-8 bg-(--nav-color) px-2 py-20 text-white"
+    >
+      <p className="heading">Let's Connect</p>
 
       <div className="flex items-center justify-center gap-2">
         <a
@@ -49,7 +52,7 @@ function Footer() {
         <img className="m-2 w-[30px]" src={etIMG} alt="Ellena's site logo" />
         <h5>© {currYear} Ellena Tzavelas</h5>
       </div>
-    </footer>
+    </section>
   );
 }
 
