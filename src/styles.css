@@ -11,7 +11,7 @@
   --text-color: #2a2a2a;
   --text-color-2: white;
   --text-secondary: #4f555f; 
-  --detail-color: #028286;
+  --detail-color: #25a0a8;
   --detail-color-2: #0a4a4d;
   --detail-color-hover: #025b5e;
   --detail-color-light: #e6f7f7;
@@ -157,11 +157,11 @@ h4 {
 }
 
 .card {
-  @apply flex flex-col-reverse items-center justify-between bg-(--background-color-2) px-10 py-8 text-center md:flex-row md:items-start md:px-20 md:text-start;
+  @apply flex flex-col-reverse items-center justify-between bg-(--background-color-2) px-10 py-8 my-2 text-center md:flex-row md:items-start md:px-20 md:text-start;
 }
 
 .odd-card {
-  @apply flex flex-col-reverse justify-between bg-(--background-color) text-center md:flex-row-reverse md:text-end;
+  @apply flex flex-col-reverse justify-between text-center md:flex-row-reverse md:text-end;
 }
 
 .odd-card > div {
@@ -197,7 +197,7 @@ h4 {
 }
 
 .nav-button {
-  @apply button-transition m-1 cursor-pointer rounded-xl border-0 px-4 py-3 text-base hover:text-(--detail-color) hover:brightness-200;
+  @apply button-transition m-1 bg-(--nav-color) cursor-pointer rounded-xl border-0 px-4 py-3 text-base hover:text-(--detail-color) hover:brightness-200;
 }
 
 .page-button {

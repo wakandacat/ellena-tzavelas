@@ -9,7 +9,7 @@ function Footer() {
   return (
     <section
       id="contact"
-      className="border-box absolute bottom-0 flex w-screen flex-col items-center justify-center gap-8 bg-(--nav-color) px-2 py-20 text-white"
+      className="border-box bottom-0 flex w-screen flex-col items-center justify-center gap-8 bg-(--nav-color) px-2 py-20 text-white"
     >
       <p className="heading">Let's Connect</p>
 

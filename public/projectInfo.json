@@ -23,7 +23,7 @@
       ],
       "Year": "2025",
       "Res": "https://www.ahepaottawa.ca/",
-      "Filters": ["Client Project", "UX Design", "Web Development"]
+      "Filters": ["UX Design", "Web Development", "Featured"]
     },
       {
       "Title": "The Little Robot",
@@ -44,7 +44,7 @@
       ],
       "Year": "2025",
       "Res": "https://wakandacat.wixsite.com/the-little-robot",
-      "Filters": ["Academic Project", "Game Development"]
+      "Filters": ["Game Development"]
     },
         {
       "Title": "Portfolio",
@@ -61,7 +61,7 @@
       ],
       "Year": "2025",
       "Res": "https://wakandacat.github.io/ellena-tzavelas/",
-      "Filters": ["Personal Project", "Web Development", "UX Design"]
+      "Filters": [ "Web Development", "UX Design"]
     },
     {
       "Title": "Crab Cove",
@@ -82,7 +82,7 @@
       ],
       "Year": "2024",
       "Res": "https://trisren.itch.io/crab-cove",
-      "Filters": ["Academic Project", "Game Development"]
+      "Filters": ["Game Development"]
     },
     {
       "Title": "Garden Planner",
@@ -107,7 +107,7 @@
       ],
       "Year": "2024",
       "Res": "https://github.com/wakandacat/Garden-Planner",
-      "Filters": ["Academic Project", "Web Development"]
+      "Filters": ["Web Development"]
     },
     {
       "Title": "Hangman",
@@ -128,7 +128,7 @@
       ],
       "Year": "2024",
       "Res": "https://wakandacat.github.io/HangmanGameUpdated/",
-      "Filters": ["Personal Project", "Web Development"]
+      "Filters": ["Web Development"]
     },
         {
       "Title": "OC Transpo Redesign",
@@ -153,7 +153,7 @@
       ],
       "Year": "2024",
       "Res": "",
-      "Filters": ["Academic Project", "UX Design"]
+      "Filters": ["UX Design"]
     },
     {
       "Title": "Nature Museum Whale App",
@@ -182,7 +182,7 @@
       ],
       "Year": "2024",
       "Res": "",
-      "Filters": ["Academic Project", "UX Design"]
+      "Filters": ["UX Design"]
     },
     {
       "Title": "Persona 3 Background",
@@ -207,7 +207,7 @@
       ],
       "Year": "2024",
       "Res": "https://wakandacat.github.io/P3BackgroundVUE/",
-      "Filters": ["Personal Project", "Web Development"]
+      "Filters": ["Web Development"]
     },
     {
       "Title": "Event Scheduler",
@@ -228,7 +228,7 @@
       ],
       "Year": "2024",
       "Res": "",
-      "Filters": ["Academic Project", "Mobile Development", "UX Design"]
+      "Filters": [ "Mobile Development", "UX Design"]
     },
     {
       "Title": "Flower Flux",
@@ -249,7 +249,7 @@
       ],
       "Year": "2022",
       "Res": "https://ginettegonzales.itch.io/flower-flux",
-      "Filters": ["Academic Project", "Game Development"]
+      "Filters": ["Game Development"]
     },
     {
       "Title": "Crow Game & Controller",
@@ -270,7 +270,7 @@
       ],
       "Year": "2022",
       "Res": "",
-      "Filters": ["Academic Project", "Multimedia Development"]
+      "Filters": ["Multimedia Development"]
     }
   ]
 }

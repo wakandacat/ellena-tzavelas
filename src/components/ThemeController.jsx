@@ -88,7 +88,7 @@ function ThemeController() {
   return (
     <>
       <button
-        className="nav-button flex rounded-xl border-0 bg-(--nav-color) capitalize"
+        className="nav-button flex rounded-xl border-0 capitalize"
         onClick={handleClick}
         ref={buttonRef}
         value={localTheme}

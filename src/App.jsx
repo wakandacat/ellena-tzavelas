@@ -32,27 +32,14 @@ function App() {
     }, 1000);
   }, []);
 
-  // //update the current page and force scroll to top effect
-  // useEffect(() => {
-  //   const PageComponent = componentMapping[globalState.currentPage];
-  //   setLocalPage(<PageComponent />);
-  //   //force page to top
-  //   document.body.scrollTop = 0; // For Safari
-  //   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-
-  //   //grab the nav buttons and update their styles
-  //   const allButtons = document.querySelectorAll(".nav-button");
-
-  //   for (let i = 0; i < allButtons.length; i++) {
-  //     allButtons[i].classList.remove("current-nav-button");
-  //   }
-
-  //   //ensure the nav button stays selected
-  //   const navButton = document.querySelector(
-  //     `[value="${globalState.currentPage}"]`,
-  //   );
-  //   navButton.classList.add("current-nav-button");
-  // }, [globalState.currentPage]);
+  //update the current page and force scroll to top effect
+  useEffect(() => {
+    const PageComponent = componentMapping[globalState.currentPage];
+    setLocalPage(<PageComponent />);
+    //force page to top
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }, [globalState.currentPage]);
 
   return (
     <>

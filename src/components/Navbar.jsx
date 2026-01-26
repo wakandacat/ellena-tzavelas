@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import ThemeController from "./ThemeController.jsx";
 import GlobalContext from "./GlobalContext.jsx";
 import etIMG from "/et.png";
@@ -6,15 +6,53 @@ import etIMG from "/et.png";
 function Navbar() {
   const { globalState, setGlobalState } = useContext(GlobalContext);
   const [activeSection, setActiveSection] = useState("banner"); //banner, about, skills, projects, contact
+  const [isOpen, setIsOpen] = useState(0);
+  const dropdownRef = useRef(null); //grab a reference to the dropdown to close it when the user clicks away
+  const buttonRef = useRef(null); //reference to the dropdown button
 
-  //change pages when corresponding button is pressed
-  // const handleClick = (event) => {
+  //go back to the homepage from other pages if we click on the homepage scrollspy options
+  const handleNavClick = (event, sectionID) => {
+    if (sectionID === "projects") {
+      setIsOpen((prev) => !prev); //toggle the open state of the projects dropdown
+    }
+    if (globalState.currentPage !== "HomePage") {
+      event.preventDefault(); //stop default behaviour of hrefs
+      setGlobalState((prevState) => ({
+        ...prevState,
+        currentPage: "HomePage",
+      }));
+      setTimeout(() => {
+        //after page loads, scroll to section
+        document
+          .getElementById(sectionID)
+          .scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
 
-  //   // setGlobalState((prevState) => ({
-  //   //   ...prevState,
-  //   //   currentPage: event.target.value,
-  //   // }));
-  // };
+  useEffect(() => {
+    function handleClickOutside(event) {
+      // close the dropdown if the user clicks outside
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    // attach listener when mounted
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("scroll", handleClickOutside);
+
+    // cleanup when unmounted
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("scroll", handleClickOutside);
+    };
+  }, []);
 
   //detect which section is currently in view
   useEffect(() => {
@@ -56,46 +94,79 @@ function Navbar() {
       <img className="m-2 w-[40px]" src={etIMG} alt="Ellena's site logo" />
       <a
         className={`nav-button ${activeSection === "banner" ? "current-nav-button" : ""}`}
-        // value="HomePage"
-        // onClick={handleClick}
         aria-label="Travel to the Home section"
         href="#banner"
+        onClick={(e) => handleNavClick(e, "banner")}
       >
         Home
       </a>
       <a
         className={`nav-button ${activeSection === "about" ? "current-nav-button" : ""}`}
-        value="About"
-        // onClick={handleClick}
         aria-label="Travel to the About section"
         href="#about"
+        onClick={(e) => handleNavClick(e, "about")}
       >
         About
       </a>
       <a
         className={`nav-button ${activeSection === "skills" ? "current-nav-button" : ""}`}
-        value="Skills"
-        // onClick={handleClick}
         aria-label="Travel to the Skills section"
         href="#skills"
+        onClick={(e) => handleNavClick(e, "skills")}
       >
         Skills
       </a>
-      <a
-        className={`nav-button ${activeSection === "projects" ? "current-nav-button" : ""}`}
-        value="Project"
-        // onClick={handleClick}
-        aria-label="Travel to the Project section"
-        href="#projects"
-      >
-        Projects &#x25B6;
-      </a>
+      <div className="relative">
+        <a
+          className={`nav-button flex ${activeSection === "projects" ? "current-nav-button" : ""}`}
+          value="Project"
+          // onClick={handleClick}
+          ref={buttonRef}
+          onClick={(e) => handleNavClick(e, "projects")}
+          aria-label="Travel to the Project section"
+        >
+          {isOpen ? <p>Projects &#x25BC;</p> : <p>Projects &#x25B6;</p>}
+        </a>
+        {isOpen ? (
+          <aside>
+            <div
+              className="absolute flex flex-col rounded-xl border-2 bg-(--nav-color) capitalize"
+              ref={dropdownRef}
+            >
+              <a
+                href="#projects"
+                className="nav-button flex justify-center rounded-xl border-0 bg-(--nav-color) capitalize"
+              >
+                {" "}
+                <h5 className="px-4 whitespace-nowrap">
+                  {"Featured Projects"}
+                </h5>
+              </a>
+              <button
+                className="nav-button flex justify-center rounded-xl border-0 bg-(--nav-color) capitalize"
+                onClick={() => {
+                  setIsOpen(false);
+                  setGlobalState((prevState) => ({
+                    ...prevState,
+                    currentPage: "Project",
+                  }));
+                }}
+                aria-label={"Go to the All Projects page"}
+              >
+                <h5 className="px-4 whitespace-nowrap">{"All Projects"}</h5>
+              </button>
+            </div>
+          </aside>
+        ) : (
+          ""
+        )}
+      </div>
       <a
         className={`nav-button ${activeSection === "contact" ? "current-nav-button" : ""}`}
         value="Contact"
-        // onClick={handleClick}
         aria-label="Travel to the Contact section"
         href="#contact"
+        // onClick={(e) => handleNavClick(e, "contact")}
       >
         Contact
       </a>
