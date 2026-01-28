@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pageComponents/HomePage";
-import AboutPage from "./pageComponents/AboutPage";
+import About from "./pageComponents/About";
 import ProjectPage from "./pageComponents/ProjectPage";
 import { useContext, useEffect, useState } from "react";
 import GlobalContext from "./components/GlobalContext";
@@ -14,7 +14,7 @@ function App() {
   //map the strings to the page components
   const componentMapping = {
     HomePage: HomePage,
-    About: AboutPage,
+    About: About,
     Project: ProjectPage,
   };
 

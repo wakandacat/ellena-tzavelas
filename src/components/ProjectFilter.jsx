@@ -3,45 +3,22 @@ import { useEffect, useState, useRef } from "react";
 function ProjectFilter({ handleFilterChange }) {
   //local keyword
   const [currKeyword, setCurrKeyword] = useState("All");
+  const [filterOptions, setFilterOptions] = useState(["All"]);
+  const [mobileView, setMobileView] = useState(false); //flag for if we're in mobile view
 
   let jsonFile = "./projectInfo.json";
 
-  const [filterOptions, setFilterOptions] = useState(["All"]);
-  const [isOpen, setIsOpen] = useState(0);
-  const [dropdownOps, setDropdownOps] = useState([]);
-  const dropdownRef = useRef(null); //grab a reference to the dropdown to close it when the user clicks away
-
-  //change modes manually with the button
-  const handleClick = () => {
-    setIsOpen(true); //toggle the open state
-  };
-
-  const handleChangeTheme = (clickedWord) => {
-    setIsOpen(false); //close
+  const handleChangeFilter = (clickedWord) => {
     setCurrKeyword(clickedWord);
 
     //update the parents state
     handleFilterChange(clickedWord);
     //update the theme in localstorage
     localStorage.setItem("filter", clickedWord);
-  };
 
-  //everytime the options or current options update, recreate the dropdown options
-  useEffect(() => {
-    const newOps = filterOptions
-      .filter((word) => word !== currKeyword)
-      .map((word) => (
-        <button
-          className="nav-button flex justify-center rounded-xl border-0 bg-(--nav-color) text-white uppercase"
-          onClick={() => handleChangeTheme(word)}
-          key={word}
-          aria-label={`${word} filter`}
-        >
-          <h5 className="px-4">{word}</h5>
-        </button>
-      ));
-    setDropdownOps(newOps);
-  }, [currKeyword, filterOptions]);
+    // force scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   //check for all keywords from project json file
   useEffect(() => {
@@ -64,56 +41,62 @@ function ProjectFilter({ handleFilterChange }) {
       })
       .catch((error) => console.error("Unable to fetch data:", error));
 
-    let savedFilter = "All";
-
     //check localstorage for saved filter
-    if (localStorage.getItem("filter")) {
-      savedFilter = localStorage.getItem("filter");
-    }
+    const savedFilter = localStorage.getItem("filter") || "All";
 
     setCurrKeyword(savedFilter);
+    handleFilterChange(savedFilter);
   }, []);
 
+  //ensure the mobile menu is closed when resizing to desktop
   useEffect(() => {
-    function handleClickOutside(event) {
-      // close the dropdown if the user clicks outside
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
+    const handleResize = () => {
+      //close the menu
+      if (window.innerWidth >= 1024) {
+        //greater than md breakpoint
+        setMobileView(false);
+      } else {
+        setMobileView(true);
       }
-    }
-
-    // attach listener when mounted
-    document.addEventListener("mousedown", handleClickOutside);
-
-    // cleanup when unmounted
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
     };
+
+    // add event listener
+    window.addEventListener("resize", handleResize);
+    //run once initially
+    handleResize();
+
+    // cleanup on dismount
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <>
-      <button
-        className="nav-button flex rounded-xl border-0 bg-(--nav-color) text-white uppercase"
-        onClick={handleClick}
-        value={currKeyword}
-        aria-label={``}
-      >
-        <h5 className="px-4">{currKeyword}</h5>
-        {isOpen ? <p>&#x25BC;</p> : <p>&#x25B6;</p>}
-      </button>
-      {isOpen ? (
-        <aside>
-          <div
-            className="pointer-events-auto absolute z-[1000] flex flex-col rounded-xl border-2 bg-(--nav-color) uppercase"
-            ref={dropdownRef}
-          >
-            {dropdownOps}
+      <section className="section-padding-x fixed top-16 z-40 flex w-full flex-row items-center gap-4 bg-(--detail-color-light) py-4 shadow-sm">
+        <div className="relative">
+          <div className="text-base whitespace-nowrap text-(--nav-color)">
+            {mobileView ? <p>&#x25C0;</p> : <p>Filter by:</p>}
           </div>
-        </aside>
-      ) : (
-        ""
-      )}
+        </div>
+        <div
+          // ensure that the scrollbar is hidden
+          className={`flex w-full flex-row items-center justify-start gap-4 overflow-x-auto pr-10 ${mobileView ? "bg-(--nav-color)" : "bg-(--detail-color-light)"} overflow-y-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden`}
+        >
+          {filterOptions.map((word) => (
+            <button
+              key={word}
+              onClick={() => handleChangeFilter(word)}
+              className={`filter-button rounded-full border-2 px-5 py-2 font-medium whitespace-nowrap transition-all ${currKeyword === word ? "filter-active" : ""} `}
+              aria-label={`Filter by ${word}`}
+              aria-pressed={currKeyword === word}
+            >
+              {word}
+            </button>
+          ))}
+          <div className="section-padding-x absolute right-0 bg-(--detail-color-light) py-6 !pl-4 text-end text-(--nav-color)">
+            {mobileView && <p>&#x25B6;</p>}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

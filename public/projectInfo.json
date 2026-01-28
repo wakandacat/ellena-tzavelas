@@ -26,7 +26,7 @@
       "Year": "2025",
       "LiveURL": "https://www.ahepaottawa.ca/",
       "GithubURL": "",
-      "Filters": ["UX Design", "Web Development"],
+      "Filters": ["UX", "Web"],
       "Skills": ["Figma", "Square Online"]
     },
       {
@@ -51,7 +51,7 @@
       "Year": "2025",
       "LiveURL": "https://wakandacat.wixsite.com/the-little-robot",
       "GithubURL": "https://github.com/wakandacat/The-Little-Robot",
-      "Filters": ["Game Development"],
+      "Filters": ["Game"],
       "Skills": ["Unity", "C#", "GitHub", "Agile"]
     },
         {
@@ -72,7 +72,7 @@
       "Year": "2025",
       "LiveURL": "https://wakandacat.github.io/ellena-tzavelas/",
       "GithubURL": "https://github.com/wakandacat/ellena-tzavelas",
-      "Filters": [ "Web Development", "UX Design"],
+      "Filters": [ "Web", "UX"],
       "Skills": ["Figma", "JavaScript", "React", "Tailwind CSS", "GitHub"]
     },
     {
@@ -97,7 +97,7 @@
       "Year": "2024",
       "LiveURL": "https://trisren.itch.io/crab-cove",
       "GithubURL": "https://github.com/wakandacat/IMD4006A_Group1_TermProject",
-      "Filters": ["Game Development"],
+      "Filters": ["Game"],
       "Skills": ["Unity", "C#", "GitHub", "Agile"]
     },
     {
@@ -126,7 +126,7 @@
       "Year": "2024",
       "LiveURL": "https://github.com/wakandacat/Garden-Planner",
       "GithubURL": "https://github.com/wakandacat/Garden-Planner",
-      "Filters": ["Web Development"],
+      "Filters": ["Web"],
       "Skills": ["React", "Django", "GitHub"]
     },
     {
@@ -151,7 +151,7 @@
       "Year": "2024",
       "LiveURL": "https://wakandacat.github.io/HangmanGameUpdated/",
       "GithubURL": "https://github.com/wakandacat/HangmanGameUpdated",
-      "Filters": ["Web Development"],
+      "Filters": ["Web"],
       "Skills": ["React", "JavaScript", "HTML", "CSS", "GitHub"]
     },
         {
@@ -180,7 +180,7 @@
       "Year": "2024",
       "LiveURL": "",
       "GithubURL": "",
-      "Filters": ["UX Design"],
+      "Filters": ["UX"],
       "Skills": ["Figma"]
     },
     {
@@ -213,7 +213,7 @@
       "Year": "2024",
       "LiveURL": "",
       "GithubURL": "",
-      "Filters": ["UX Design"],
+      "Filters": ["UX"],
       "Skills": ["Figma"]
     },
     {
@@ -242,7 +242,7 @@
       "Year": "2024",
       "LiveURL": "https://wakandacat.github.io/P3BackgroundVUE/",
       "GithubURL": "https://github.com/wakandacat/P3BackgroundVUE",
-      "Filters": ["Web Development"],
+      "Filters": ["Web"],
       "Skills": ["JavaScript", "HTML", "CSS", "Vue", "GitHub"]
     },
     {
@@ -267,8 +267,8 @@
       "Year": "2024",
       "LiveURL": "",
       "GithubURL": "",
-      "Filters": [ "Mobile Development", "UX Design"],
-      "Skills": ["Android Studio", "Java"]
+      "Filters": [ "Mobile", "UX"],
+      "Skills": ["Java (Android Studio)"]
     },
     {
       "Title": "Flower Flux",
@@ -292,7 +292,7 @@
       "Year": "2022",
       "LiveURL": "https://ginettegonzales.itch.io/flower-flux",
       "GithubURL": "",
-      "Filters": ["Game Development"],
+      "Filters": ["Game"],
       "Skills": ["Unity", "C#", "GitHub"]
     },
     {
@@ -317,7 +317,7 @@
       "Year": "2022",
       "LiveURL": "",
       "GithubURL": "",
-      "Filters": ["Multimedia Development"],
+      "Filters": ["Multimedia"],
       "Skills": ["C++", "openFrameworks", "Arduino"]
     }
   ]

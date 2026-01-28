@@ -83,7 +83,7 @@ h3 {
 }
 
 a {
-  @apply button-transition break-all no-underline;
+  @apply transition-all break-all no-underline;
 }
 
 h4 {
@@ -94,19 +94,6 @@ h5 {
   @apply text-base md:text-lg;
 }
 
-
-.proj-image-container {
-  @apply m-auto w-[100%] rounded-xl border-0 bg-(--background-color) p-2;
-}
-
-.main-proj-image {
-  @apply element-border button-transition max-h-[400px] min-h-[200px] cursor-pointer object-cover hover:scale-102;
-}
-
-.arrow-button {
-  @apply element-border button-transition invisible m-auto cursor-pointer bg-(--detail-color) text-(--text-color-2) hover:bg-(--detail-color-2) hover:text-(--detail-color);
-}
-
 .full-image {
   @apply max-h-[90%] max-w-[90%] shadow-xl shadow-black;
 }
@@ -115,24 +102,12 @@ h5 {
   @apply transition duration-400 ease-in-out;
 }
 
-@utility triangle-clip {
-  clip-path: polygon(50% 0%, 47% 100%, 53% 100%);
+.section-padding-y {
+  @apply py-20 lg:py-30 2xl:py-40;
 }
 
-@utility project-title-outline {
-  text-shadow:
-    -1px -1px 0 black,
-    1px -1px 0 black,
-    -1px 1px 0 black,
-    1px 1px 0 black;
-}
-
-@utility element-border {
-  @apply rounded-xl border-4 border-(--detail-color);
-}
-
-.section-padding {
-  @apply px-10 md:px-25 py-20 lg:px-30 lg:py-30 2xl:px-80 2xl:py-40;
+.section-padding-x {
+  @apply px-10 md:px-25 lg:px-30 2xl:px-80;
 }
 
 .body-text {
@@ -151,18 +126,6 @@ h5 {
   @apply border-4 border-(--detail-color) text-(--detail-color) bg-(--detail-color-light) px-2 py-0.5 w-fit;
 }
 
-.page-top {
-  @apply flex h-[100%] flex-col items-center justify-between px-10 py-3 pt-10 sm:pt-25 md:px-20 lg:flex-row lg:items-start;
-}
-
-.page-bottom {
-  @apply flex flex-col justify-between bg-(--background-color) px-10 py-3 md:px-20;
-}
-
-.current-nav-button {
-  @apply text-(--detail-color);
-}
-
 .base-card {
   @apply flex gap-6 bg-(--background-color-2) px-10 py-8 my-2 lg:px-20 text-start items-start;
 }
@@ -175,40 +138,24 @@ h5 {
   @apply flex flex-col-reverse lg:flex-row-reverse;
 }
 
-.flex-container {
-  @apply flex w-[100%] flex-col items-start justify-between pr-4 pb-4 text-start;
-}
-
-.proj-title {
-  @apply project-title-outline pointer-events-none absolute m-0 p-1 text-start text-4xl leading-none wrap-anywhere;
-}
-
-.proj-button {
-  @apply relative m-2 aspect-7/4 w-[90%] text-white hover:text-(--detail-color) md:w-[45%] lg:w-[30%];
-}
-
-.proj-selected {
-  @apply text-(--detail-color);
-}
-
-.proj-selected > img {
-  @apply border-(--detail-color);
-}
-
-.proj-image {
-  @apply element-border pointer-events-none h-[100%] w-[100%] object-cover group-hover/project:border-(--detail-color);
-}
-
-.main-container {
-  @apply flex w-[100%] flex-row flex-wrap justify-center p-0 md:justify-between;
-}
-
 .nav-button {
-  @apply button-transition m-1 bg-(--nav-color) cursor-pointer rounded-xl border-0 px-4 py-1 md:py-3 text-base hover:text-(--detail-color) hover:brightness-200;
+  @apply button-transition m-1 bg-(--nav-color) cursor-pointer rounded-xl border-2 border-(--nav-color) px-4 py-1 md:py-3 text-base hover:text-(--detail-color) hover:brightness-200;
+}
+
+.current-nav-button {
+  @apply  text-(--detail-color);
 }
 
 .page-button {
-  @apply button-transition element-border cursor-pointer bg-(--detail-color) px-2 py-2 text-2xl text-(--text-color-2) hover:bg-(--detail-color-hover) text-center hover:text-(--text-color-2);
+  @apply button-transition rounded-xl border-4 border-(--detail-color) cursor-pointer bg-(--detail-color) px-2 py-2 text-2xl text-(--text-color-2) hover:bg-(--detail-color-hover) text-center hover:text-(--text-color-2);
+}
+
+.filter-button {
+  @apply button-transition m-1 text-(--nav-color) bg-(--detail-color-light) cursor-pointer rounded-xl border-2 border-(--detail-color-light) px-4 py-1 md:py-3 text-base hover:text-white hover:bg-(--detail-color-hover);
+}
+
+.filter-active {
+  @apply bg-(--detail-color) text-white border-(--detail-color);
 }
 
 #loading-screen {

@@ -1,13 +1,13 @@
 import meIMG from "../assets/me4.jpg";
 import { useState } from "react";
 
-function AboutPage() {
+function About() {
   const [loaded, setLoaded] = useState(false);
 
   return (
     <section
       id="about"
-      className="section-padding flex flex-col justify-between gap-6 bg-(--background-color) lg:flex-row lg:items-start lg:gap-20"
+      className="section-padding-x section-padding-y flex flex-col justify-between gap-6 bg-(--background-color) lg:flex-row lg:items-start lg:gap-20"
     >
       <div className="flex flex-col items-start gap-6 text-start lg:max-w-3xl lg:flex-1">
         <h2 className="heading">About Me</h2>
@@ -48,4 +48,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default About;

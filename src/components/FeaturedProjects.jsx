@@ -24,7 +24,7 @@ function FeaturedProjects() {
   return (
     <section
       id="projects"
-      className="section-padding flex flex-col items-center gap-6 bg-(--background-color)"
+      className="section-padding-x section-padding-y flex flex-col items-center gap-6 bg-(--background-color)"
     >
       <h2 className="heading">Featured Projects</h2>
 
