@@ -26,18 +26,22 @@
 }
 
 [data-theme="pink"] {
-  --background-color: rgb(255, 227, 231);
-  --background-color-2: rgb(255, 255, 255);
-  --detail-color: rgb(224, 34, 59);
-  --detail-color-2: rgb(104, 2, 53);
+  --background-color: #dacfd1;
+  --background-color-2: white;
+  --detail-color: #e0223b;
+  --detail-color-2: #680235;
+  --detail-color-hover: #8d1626;
+  --detail-color-light: #e4bec3;
   /* uses default text colors */
 }
 
 [data-theme="green"] {
-  --background-color: #b5e1b8;
-  --background-color-2: #e6fce6;
-  --detail-color: #0d4901;
-  --detail-color-2: #028f19;
+  --background-color: #e3fade;
+  --background-color-2: white;
+  --detail-color: #226914;
+  --detail-color-2: #04270a;
+  --detail-color-hover: #0e2908;
+  --detail-color-light: #c7ffbb;
   /* uses default text colors */
 }
 
@@ -86,6 +90,9 @@ h4 {
   @apply text-sm md:text-xl;
 }
 
+h5 {
+  @apply text-base md:text-lg;
+}
 
 
 .proj-image-container {
@@ -125,11 +132,11 @@ h4 {
 }
 
 .section-padding {
-  @apply px-10 py-10 md:px-25 md:py-15 lg:px-30 lg:py-30 2xl:px-80 2xl:py-40;
+  @apply px-10 md:px-25 py-20 lg:px-30 lg:py-30 2xl:px-80 2xl:py-40;
 }
 
 .body-text {
-  @apply text-start lg:text-xl md:text-lg text-base leading-loose;
+  @apply  lg:text-xl md:text-lg text-base leading-loose;
 }
 
 .heading {
@@ -156,16 +163,16 @@ h4 {
   @apply text-(--detail-color);
 }
 
-.card {
-  @apply flex flex-col-reverse items-center justify-between bg-(--background-color-2) px-10 py-8 my-2 text-center md:flex-row md:items-start md:px-20 md:text-start;
+.base-card {
+  @apply flex gap-6 bg-(--background-color-2) px-10 py-8 my-2 lg:px-20 text-start items-start;
+}
+
+.even-card {
+  @apply flex flex-col-reverse lg:flex-row;
 }
 
 .odd-card {
-  @apply flex flex-col-reverse justify-between text-center md:flex-row-reverse md:text-end;
-}
-
-.odd-card > div {
-  @apply md:items-end;
+  @apply flex flex-col-reverse lg:flex-row-reverse;
 }
 
 .flex-container {
@@ -197,11 +204,11 @@ h4 {
 }
 
 .nav-button {
-  @apply button-transition m-1 bg-(--nav-color) cursor-pointer rounded-xl border-0 px-4 py-3 text-base hover:text-(--detail-color) hover:brightness-200;
+  @apply button-transition m-1 bg-(--nav-color) cursor-pointer rounded-xl border-0 px-4 py-1 md:py-3 text-base hover:text-(--detail-color) hover:brightness-200;
 }
 
 .page-button {
-  @apply button-transition element-border mt-4 w-[200px] cursor-pointer bg-(--detail-color) px-4 py-3 text-2xl text-(--text-color-2) hover:bg-(--detail-color-hover) hover:text-(--text-color-2);
+  @apply button-transition element-border cursor-pointer bg-(--detail-color) px-2 py-2 text-2xl text-(--text-color-2) hover:bg-(--detail-color-hover) text-center hover:text-(--text-color-2);
 }
 
 #loading-screen {

@@ -1,6 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 
-function ThemeController() {
+function ThemeController(props) {
+  //define the themes and their --detail-color and --background-color values to use in the navbar dropdown
+  const THEME_COLORS = {
+    light: { name: "Light Mode", detail: "#25a0a8", background: "#ffffff" },
+    dark: { name: "Dark Mode", detail: "#25a0a8", background: "#16222c" },
+    pink: { name: "Pink Mode", detail: "#e0223b", background: "#dacfd1" },
+    green: { name: "Green Mode", detail: "#226914", background: "#e3fade" },
+  };
+
   //local theme state
   const [localTheme, setLocalTheme] = useState("light");
 
@@ -10,6 +18,7 @@ function ThemeController() {
   const [dropdownOps, setDropdownOps] = useState([]);
   const dropdownRef = useRef(null); //grab a reference to the dropdown to close it when the user clicks away
   const buttonRef = useRef(null); //reference to the dropdown button
+  const [mobileView, setMobileView] = useState(false); //flag for if we're in mobile view
 
   //change modes manually with the button
   const handleClick = () => {
@@ -42,7 +51,7 @@ function ThemeController() {
     }
 
     setLocalTheme(currentTheme);
-    document.querySelector("html").setAttribute("data-theme", currentTheme);
+    document.querySelector("html").setAttribute("data-theme", currentTheme); //use the corresponding "theme" from the css
   }, []);
 
   //everytime the local theme changes, update the dropdown options
@@ -52,14 +61,22 @@ function ThemeController() {
         className="nav-button flex justify-center rounded-xl border-0 bg-(--nav-color) capitalize"
         onClick={() => handleChangeTheme(theme)}
         key={theme}
-        aria-label={`${theme} theme`}
+        aria-label={`${THEME_COLORS[theme].name} theme`}
       >
-        <h5 className="px-4">{`${theme} Mode`}</h5>
-        {theme === localTheme && <span className="mr-2">✓</span>}
+        <a
+          className="mr-2 h-5 w-5 rounded-full border-2"
+          style={{
+            borderColor: THEME_COLORS[theme].background,
+            backgroundColor: THEME_COLORS[theme].detail,
+          }}
+        />
+        {!mobileView && <p className="px-4">{THEME_COLORS[theme].name}</p>}
+
+        {theme === localTheme && <p>✓</p>}
       </button>
     ));
     setDropdownOps(newOps);
-  }, [localTheme]);
+  }, [localTheme, mobileView]);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -85,22 +102,55 @@ function ThemeController() {
     };
   }, []);
 
+  //check if we are in mobile view so we can change the structure of the element
+  useEffect(() => {
+    const handleResize = () => {
+      //close the menu
+      if (window.innerWidth >= 768) {
+        //greater than md breakpoint
+        setMobileView(false);
+      } else {
+        setMobileView(true);
+      }
+    };
+
+    // add event listener
+    window.addEventListener("resize", handleResize);
+    //run once initially
+    handleResize();
+
+    // cleanup on dismount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
-      <button
-        className="nav-button flex rounded-xl border-0 capitalize"
-        onClick={handleClick}
-        ref={buttonRef}
-        value={localTheme}
-        aria-label={`Button that says ${localTheme} theme. Click to open a dropdown to select a different site theme.`}
-      >
-        <h5 className="px-4">{`${localTheme} Mode`}</h5>
-        {isOpen ? <p>&#x25BC;</p> : <p>&#x25B6;</p>}
-      </button>
-      {isOpen ? (
+      {!mobileView && (
+        <>
+          <button
+            className={`nav-button flex items-center rounded-xl border-0 capitalize ${props.navClass}`}
+            onClick={handleClick}
+            ref={buttonRef}
+            value={localTheme}
+            aria-label={`Button that says ${localTheme} theme. Click to open a dropdown to select a different site theme.`}
+          >
+            <a
+              className="mr-2 h-5 w-5 rounded-full border-2"
+              style={{
+                borderColor: THEME_COLORS[localTheme].background,
+                backgroundColor: THEME_COLORS[localTheme].detail,
+              }}
+            />
+            <p className="px-4">{THEME_COLORS[localTheme].name}</p>
+            {!mobileView && (isOpen ? <p>&#x25BC;</p> : <p>&#x25B6;</p>)}
+          </button>
+        </>
+      )}
+
+      {(!mobileView && isOpen) || (mobileView && props.mobileMenuOpen) ? (
         <aside>
           <div
-            className="absolute flex flex-col rounded-xl border-2 bg-(--nav-color) capitalize"
+            className="relative flex flex-row rounded-xl bg-(--nav-color) capitalize md:absolute md:flex-col md:border-2"
             ref={dropdownRef}
           >
             {dropdownOps}

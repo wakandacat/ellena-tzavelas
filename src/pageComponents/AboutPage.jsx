@@ -7,9 +7,9 @@ function AboutPage() {
   return (
     <section
       id="about"
-      className="section-padding flex flex-col justify-between gap-10 bg-(--background-color) lg:flex-row lg:items-start lg:gap-20"
+      className="section-padding flex flex-col justify-between gap-6 bg-(--background-color) lg:flex-row lg:items-start lg:gap-20"
     >
-      <div className="flex flex-col items-start gap-6 lg:max-w-3xl lg:flex-1">
+      <div className="flex flex-col items-start gap-6 text-start lg:max-w-3xl lg:flex-1">
         <h2 className="heading">About Me</h2>
         <p className="body-text">
           Hi! I’m Ellena, a frontend developer and designer passionate about
@@ -28,7 +28,7 @@ function AboutPage() {
           gardening and cooking.
         </p>
       </div>
-      <div className="flex w-full flex-col items-center lg:w-80 lg:flex-shrink-0 xl:w-96">
+      <div className="flex w-full flex-col items-center gap-6 lg:w-80 lg:flex-shrink-0 xl:w-96">
         <img
           className="aspect-square w-64 rounded-xl border-4 border-(--detail-color-2) object-cover md:w-80 lg:w-full lg:min-w-80 xl:min-w-96"
           loading="lazy"
@@ -41,7 +41,7 @@ function AboutPage() {
           rel="noopener noreferrer"
           className="page-button"
         >
-          View Resume
+          <h5 className="px-4 whitespace-nowrap">View Resume</h5>
         </a>
       </div>
     </section>

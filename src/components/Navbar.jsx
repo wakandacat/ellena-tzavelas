@@ -2,6 +2,8 @@ import { useContext, useState, useEffect, useRef } from "react";
 import ThemeController from "./ThemeController.jsx";
 import GlobalContext from "./GlobalContext.jsx";
 import etIMG from "/et.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
   const { globalState, setGlobalState } = useContext(GlobalContext);
@@ -9,11 +11,18 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(0);
   const dropdownRef = useRef(null); //grab a reference to the dropdown to close it when the user clicks away
   const buttonRef = useRef(null); //reference to the dropdown button
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); //hamburger menu state
+  const navRef = useRef(null); //for mobile state
+  const [mobileView, setMobileView] = useState(false); //flag for if we're in mobile view
 
   //go back to the homepage from other pages if we click on the homepage scrollspy options
   const handleNavClick = (event, sectionID) => {
     if (sectionID === "projects") {
-      setIsOpen((prev) => !prev); //toggle the open state of the projects dropdown
+      if (mobileView === false) {
+        //if we are desktop view
+        event.preventDefault(); //don't use the href default behaviour
+        setIsOpen((prev) => !prev); //toggle the open state
+      }
     }
     if (globalState.currentPage !== "HomePage") {
       event.preventDefault(); //stop default behaviour of hrefs
@@ -28,11 +37,14 @@ function Navbar() {
           .scrollIntoView({ behavior: "smooth" });
       }, 100);
     }
+
+    //close mobile menu after clicking
+    setMobileMenuOpen(false);
   };
 
   useEffect(() => {
     function handleClickOutside(event) {
-      // close the dropdown if the user clicks outside
+      // close the dropdown if the user clicks outside or scrolling
       if (
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target) &&
@@ -40,6 +52,10 @@ function Navbar() {
         !buttonRef.current.contains(event.target)
       ) {
         setIsOpen(false);
+      }
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        //close mobile menu after clicking off or scrolling
+        setMobileMenuOpen(false);
       }
     }
 
@@ -52,6 +68,28 @@ function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("scroll", handleClickOutside);
     };
+  }, []);
+
+  //ensure the mobile menu is closed when resizing to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      //close the menu
+      if (window.innerWidth >= 768) {
+        //greater than md breakpoint
+        setMobileView(false);
+        setMobileMenuOpen(false);
+      } else {
+        setMobileView(true);
+      }
+    };
+
+    // add event listener
+    window.addEventListener("resize", handleResize);
+    //run once initially
+    handleResize();
+
+    // cleanup on dismount
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   //detect which section is currently in view
@@ -87,13 +125,28 @@ function Navbar() {
 
   return (
     <nav
-      className="sm:no-wrap relative top-0 right-0 left-0 z-2000 flex flex-row flex-wrap items-center justify-center bg-(--nav-color) px-5 py-2 text-white sm:fixed"
+      id="navbar"
+      className={`sm:no-wrap fixed top-0 right-0 left-0 z-50 flex items-center justify-center bg-(--nav-color) px-5 py-2 text-white ${mobileMenuOpen ? "flex-col" : "flex-row"}`}
       role="navigation"
       aria-label="Main Navigation Bar"
+      ref={navRef}
     >
-      <img className="m-2 w-[40px]" src={etIMG} alt="Ellena's site logo" />
+      <div className="md:ustify-start flex w-full items-center justify-between md:w-fit">
+        <img className="m-2 w-[40px]" src={etIMG} alt="Ellena's site logo" />
+        {/* hamburger menu button */}
+        <a
+          className="nav-button flex-inline text-end md:hidden"
+          aria-label="Open navigation menu"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <FontAwesomeIcon
+            className="button-transition px-2 py-1 text-2xl hover:text-(--detail-color)"
+            icon={mobileMenuOpen ? faX : faBars}
+          />
+        </a>
+      </div>
       <a
-        className={`nav-button ${activeSection === "banner" ? "current-nav-button" : ""}`}
+        className={`nav-button ${activeSection === "banner" ? "current-nav-button" : ""} ${mobileMenuOpen ? "flex" : "hidden"} md:flex`}
         aria-label="Travel to the Home section"
         href="#banner"
         onClick={(e) => handleNavClick(e, "banner")}
@@ -101,7 +154,7 @@ function Navbar() {
         Home
       </a>
       <a
-        className={`nav-button ${activeSection === "about" ? "current-nav-button" : ""}`}
+        className={`nav-button ${activeSection === "about" ? "current-nav-button" : ""} ${mobileMenuOpen ? "flex" : "hidden"} md:flex`}
         aria-label="Travel to the About section"
         href="#about"
         onClick={(e) => handleNavClick(e, "about")}
@@ -109,7 +162,7 @@ function Navbar() {
         About
       </a>
       <a
-        className={`nav-button ${activeSection === "skills" ? "current-nav-button" : ""}`}
+        className={`nav-button ${activeSection === "skills" ? "current-nav-button" : ""} ${mobileMenuOpen ? "flex" : "hidden"} md:flex`}
         aria-label="Travel to the Skills section"
         href="#skills"
         onClick={(e) => handleNavClick(e, "skills")}
@@ -118,14 +171,15 @@ function Navbar() {
       </a>
       <div className="relative">
         <a
-          className={`nav-button flex ${activeSection === "projects" ? "current-nav-button" : ""}`}
+          className={`nav-button flex ${activeSection === "projects" ? "current-nav-button" : ""} ${mobileMenuOpen ? "flex" : "hidden"} md:flex`}
           value="Project"
-          // onClick={handleClick}
+          href="#projects" /* to allow scrolling in mobile view */
           ref={buttonRef}
           onClick={(e) => handleNavClick(e, "projects")}
           aria-label="Travel to the Project section"
         >
-          {isOpen ? <p>Projects &#x25BC;</p> : <p>Projects &#x25B6;</p>}
+          <p className="md:pr-4">Projects</p>
+          {!mobileView && (isOpen ? <p>&#x25BC;</p> : <p>&#x25B6;</p>)}
         </a>
         {isOpen ? (
           <aside>
@@ -162,7 +216,7 @@ function Navbar() {
         )}
       </div>
       <a
-        className={`nav-button ${activeSection === "contact" ? "current-nav-button" : ""}`}
+        className={`nav-button ${activeSection === "contact" ? "current-nav-button" : ""} ${mobileMenuOpen ? "flex" : "hidden"} md:flex`}
         value="Contact"
         aria-label="Travel to the Contact section"
         href="#contact"
@@ -171,7 +225,10 @@ function Navbar() {
         Contact
       </a>
       <div className="ml-0 sm:ml-auto">
-        <ThemeController />
+        <ThemeController
+          navClass={`${mobileMenuOpen ? "flex" : "hidden"} md:flex`}
+          mobileMenuOpen={mobileMenuOpen}
+        />
       </div>
     </nav>
   );

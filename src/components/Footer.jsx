@@ -16,7 +16,7 @@ function Footer() {
       <div className="flex items-center justify-center gap-2">
         <a
           href="https://github.com/wakandacat"
-          target="blank"
+          target="_blank"
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon
@@ -28,7 +28,7 @@ function Footer() {
         </a>
         <a
           href="https://www.linkedin.com/in/ellenatzavelas/"
-          target="blank"
+          target="_blank"
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon

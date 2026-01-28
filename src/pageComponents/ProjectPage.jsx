@@ -34,7 +34,7 @@ function ProjectPage() {
     Desc: "",
     Image: [{ image: "", alt: "" }],
     Year: "",
-    Res: "",
+    LiveURL: "",
   }); // a project object
 
   const arrowLeft = useRef();
@@ -162,7 +162,7 @@ function ProjectPage() {
       Desc: element.Desc,
       Image: images,
       Year: element.Year,
-      Res: element.Res,
+      LiveURL: element.LiveURL,
     });
 
     setCurrImageIndex(0);
@@ -227,8 +227,8 @@ function ProjectPage() {
           <h3 className="sub-title text-(--detail-color-2)">
             {currentProject.Year || `2020 - ${currYear}`}
           </h3>
-          <a href={currentProject.Res || ""} target="_blank">
-            {currentProject.Res || ""}
+          <a href={currentProject.LiveURL || ""} target="_blank">
+            {currentProject.LiveURL || ""}
             <span className="sr-only">
               Visit an external resource that is either the live project or the
               codebase.
