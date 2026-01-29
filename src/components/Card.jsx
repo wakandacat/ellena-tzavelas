@@ -19,17 +19,19 @@ function Card(props) {
           ))}
         </div>
         <div className="flex gap-4">
-          <a
-            id="liveLink"
-            href={props.liveButtonVal}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="page-button"
-            value={props.liveButtonVal}
-            aria-label="Travel to the Live Application of the Project"
-          >
-            <h5 className="px-4 whitespace-nowrap">Live App</h5>
-          </a>
+          {props.liveButtonVal !== "" ? (
+            <a
+              id="liveLink"
+              href={props.liveButtonVal}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="page-button"
+              value={props.liveButtonVal}
+              aria-label="Travel to the Live Application of the Project"
+            >
+              <h5 className="px-4 whitespace-nowrap">Live App</h5>
+            </a>
+          ) : null}
           {props.codeButtonVal !== "" ? (
             <a
               id="codeLink"

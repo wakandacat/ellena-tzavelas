@@ -131,7 +131,7 @@ function Navbar() {
       aria-label="Main Navigation Bar"
       ref={navRef}
     >
-      <div className="md:ustify-start flex w-full items-center justify-between md:w-fit">
+      <div className="flex w-full items-center justify-between md:w-fit">
         <img className="m-2 w-[40px]" src={etIMG} alt="Ellena's site logo" />
         {/* hamburger menu button */}
         <a
@@ -224,7 +224,7 @@ function Navbar() {
       >
         Contact
       </a>
-      <div className="ml-0 sm:ml-auto">
+      <div className="ml-0 md:ml-auto">
         <ThemeController
           navClass={`${mobileMenuOpen ? "flex" : "hidden"} md:flex`}
           mobileMenuOpen={mobileMenuOpen}

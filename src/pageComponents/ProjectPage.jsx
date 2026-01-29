@@ -118,7 +118,7 @@ function ProjectPage() {
       {/* overlay when image is clicked */}
       <div
         id="overlay"
-        className={`fixed top-0 left-0 z-5000 ${overlayVisible ? "flex" : "hidden"} h-[100vh] w-[100%] cursor-pointer flex-col items-center justify-center gap-6 bg-black/80 p-8`}
+        className={`fixed top-0 left-0 z-5000 ${overlayVisible ? "flex" : "hidden"} h-[100vh] w-full cursor-pointer flex-col items-center justify-center gap-6 bg-black/80 p-8`}
       >
         <div className="flex w-full justify-end px-4">
           <FontAwesomeIcon
@@ -178,16 +178,18 @@ function ProjectPage() {
               ))}
             </div>
             <div className="flex gap-4">
-              <a
-                id="liveLink"
-                href={currentProject.LiveURL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="page-button"
-                aria-label="Travel to the Live Application of the Project"
-              >
-                <h5 className="px-4 whitespace-nowrap">Live App</h5>
-              </a>
+              {currentProject.LiveURL !== "" ? (
+                <a
+                  id="liveLink"
+                  href={currentProject.LiveURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="page-button"
+                  aria-label="Travel to the Live Application of the Project"
+                >
+                  <h5 className="px-4 whitespace-nowrap">Live App</h5>
+                </a>
+              ) : null}
               {currentProject.GithubURL !== "" ? (
                 <a
                   id="codeLink"

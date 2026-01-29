@@ -54,9 +54,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+  overscroll-behavior-x: none;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Prevent all elements from overflowing */
+* {
+  box-sizing: border-box;
+}
+
 /*scrollbar*/
 body::-webkit-scrollbar {
-  width: auto;
+  width: 12px;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -111,7 +129,7 @@ h5 {
 }
 
 .body-text {
-  @apply  lg:text-xl md:text-lg text-base leading-loose;
+  @apply lg:text-xl md:text-lg text-base leading-loose;
 }
 
 .heading {
