@@ -47,15 +47,29 @@ function Card(props) {
           ) : null}
         </div>
       </div>
-      <img
-        className="aspect-video w-full rounded-xl border-4 border-(--detail-color-2) bg-gray-700 object-cover lg:w-[50%]"
-        loading="lazy"
-        width="1200"
-        height="675"
-        src={ImageProvider[props.image]}
-        alt={props.alt}
-        onLoad={() => setLoaded(true)}
-      />
+      {ImageProvider[props.image].endsWith(".mp4") ? (
+        <video
+          className="aspect-video w-full rounded-xl border-4 border-(--detail-color-2) bg-gray-700 object-cover lg:w-[50%]"
+          loading="lazy"
+          width="1200"
+          height="675"
+          src={ImageProvider[props.image]}
+          alt={props.alt}
+          autoPlay
+          loop
+          muted
+        />
+      ) : (
+        <img
+          className="aspect-video w-full rounded-xl border-4 border-(--detail-color-2) bg-gray-700 object-cover lg:w-[50%]"
+          loading="lazy"
+          width="1200"
+          height="675"
+          src={ImageProvider[props.image]}
+          alt={props.alt}
+          onLoad={() => setLoaded(true)}
+        />
+      )}
     </div>
   );
 }

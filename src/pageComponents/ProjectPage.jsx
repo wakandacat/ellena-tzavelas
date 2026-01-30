@@ -261,12 +261,24 @@ function ProjectPage() {
             >
               {/*project image */}
               <div className="relative aspect-video overflow-hidden">
-                <img
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                  src={ImageProvider[project.Image[0].img]}
-                  alt={project.Image[0].alt}
-                />
+                {project.Image[0].img.endsWith(".mp4") ? (
+                  <video
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                    src={ImageProvider[project.Image[0].img]}
+                    alt={project.Image[0].alt}
+                    autoPlay
+                    loop
+                    muted
+                  />
+                ) : (
+                  <img
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                    src={ImageProvider[project.Image[0].img]}
+                    alt={project.Image[0].alt}
+                  />
+                )}
               </div>
 
               {/* project info */}
