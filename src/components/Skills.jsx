@@ -23,6 +23,7 @@ function Skills() {
             <div className="flex flex-wrap gap-4">
               <p className="skill-pill">Figma</p>
               <p className="skill-pill">Tailwind CSS</p>
+              <p className="skill-pill">Material UI</p>
               <p className="skill-pill">BootStrap CSS</p>
               <p className="skill-pill">WCAG</p>
             </div>
@@ -33,7 +34,8 @@ function Skills() {
               <p className="skill-pill">GitHub</p>
               <p className="skill-pill">JIRA</p>
               <p className="skill-pill">Agile</p>
-              <p className="skill-pill">Google Analytics</p>
+              <p className="skill-pill">Netlify</p>
+              <p className="skill-pill">Google Analytics 4</p>
             </div>
           </div>
         </div>

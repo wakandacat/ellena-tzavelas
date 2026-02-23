@@ -1,33 +1,29 @@
 {
-  "Projects": [
-       {
-      "Title": "AHEPA Website Redesign",
-      "Desc": "I redesigned the website for the Ottawa chapter of AHEPA (American Hellenic Educational Progressive Association) to modernize their online presence and better serve their mission of promoting Hellenism in Ottawa. I worked from the ground up, identifying core requirements with stakeholders, providing various design alternatives in Figma, implementing the redesign using Square Online, iterating based on stakeholder feedback, and creating documentation for future upkeep.",
-      "ShortDesc": "Redesigned the Ottawa AHEPA chapter website to modernize their digital presence.",
+  "Projects": [     
+    {
+      "Title": "Ottawa Greek Business Directory",
+      "Desc": "I created a custom directory for Greek-owned businesses in Ottawa to support my community with a focus on simplicity and responsiveness. The directory was built using React, Typescript, Material UI and deployed through Netlify to leverage their form capabilities. Custom events are logged with Google Analytics 4 to inform business engagement.",
+      "ShortDesc": "Created a custom directory for Greek-owned businesses in Ottawa.",
       "Featured": true,
       "Image": [
         {
-          "img": "ahepa.jpg",
-          "alt": "The redesigned AHEPA Ottawa homepage now features a modern layout with improved navigation and upcoming events posted front and center."
+          "img": "greek-business.mp4",
+          "alt": "The site provides a list of businesses with filtering options and a search bar to easily find businesses of interest."
         },
         {
-          "img": "ahepa2.jpg",
-          "alt": "Figma design alternatives for the site banner, colour palettes and typography were presented to stakeholders."
+          "img": "greek-business-3.jpg",
+          "alt": "The site leverages Netlify form handling for users to submit their businesses to be added to the directory."
         },
         {
-          "img": "ahepa3.jpg",
-          "alt": "Mockups of site pages with notes were created in Figma to demonstrate information architecture."
-        },
-        {
-          "img": "ahepa4.jpg",
-          "alt": "Documentation guide created for stakeholders outlining key Square Online features and best practices for future site upkeep."
+          "img": "greek-business-2.jpg",
+          "alt": "Preliminary designs were created in Figma to establish the style and layout of the directory."
         }
       ],
-      "Year": "2025",
-      "LiveURL": "https://www.ahepaottawa.ca/",
-      "GithubURL": "",
-      "Filters": ["UX", "Web"],
-      "Skills": ["Figma", "Square Online"]
+      "Year": "2026",
+      "LiveURL": "https://ottawa-greek-business-directory.netlify.app/",
+      "GithubURL": "https://github.com/wakandacat/greek-business-directory",
+      "Filters": ["Web", "UX"],
+      "Skills": ["TypeScript", "Material UI", "Netlify", "Figma", "Google Analytics 4", "React"]
     },
     {
       "Title": "The Little Robot",
@@ -68,11 +64,11 @@
           "img": "port-old-homepage.mp4",
           "alt": "The previous homepage of my portfolio simply served as a landing page, and forced the user to navigate through different pages with the top navbar."
         },
-{
+      {
           "img": "port-new-mobile.jpg", 
           "alt": "The responsive design of the site was taken into consideration."
         },
-{
+      {
           "img": "port-new-figma.jpg", 
           "alt": "Mockups were created in Figma, and were used as a basis for iteration during the development phase."
         }
@@ -82,6 +78,35 @@
       "GithubURL": "https://github.com/wakandacat/ellena-tzavelas",
       "Filters": [ "Web", "UX"],
       "Skills": ["Figma", "JavaScript", "React", "Tailwind CSS", "GitHub"]
+    },
+    {
+      "Title": "AHEPA Website Redesign",
+      "Desc": "I redesigned the website for the Ottawa chapter of AHEPA (American Hellenic Educational Progressive Association) to modernize their online presence and better serve their mission of promoting Hellenism in Ottawa. I worked from the ground up, identifying core requirements with stakeholders, providing various design alternatives in Figma, implementing the redesign using Square Online, iterating based on stakeholder feedback, and creating documentation for future upkeep.",
+      "ShortDesc": "Redesigned the Ottawa AHEPA chapter website to modernize their digital presence.",
+      "Featured": true,
+      "Image": [
+        {
+          "img": "ahepa.jpg",
+          "alt": "The redesigned AHEPA Ottawa homepage now features a modern layout with improved navigation and upcoming events posted front and center."
+        },
+        {
+          "img": "ahepa2.jpg",
+          "alt": "Figma design alternatives for the site banner, colour palettes and typography were presented to stakeholders."
+        },
+        {
+          "img": "ahepa3.jpg",
+          "alt": "Mockups of site pages with notes were created in Figma to demonstrate information architecture."
+        },
+        {
+          "img": "ahepa4.jpg",
+          "alt": "Documentation guide created for stakeholders outlining key Square Online features and best practices for future site upkeep."
+        }
+      ],
+      "Year": "2025",
+      "LiveURL": "https://www.ahepaottawa.ca/",
+      "GithubURL": "",
+      "Filters": ["UX", "Web"],
+      "Skills": ["Figma", "Square Online"]
     },
     {
       "Title": "Crab Cove",
@@ -112,7 +137,7 @@
       "Title": "Garden Planner",
       "Desc": "I created the Garden Planner in university with a Django backend and a React frontend. It allows users to plan out their gardens by specifying the dimensions and amount of sun and using the OpenFarm API to suggest possible plants to grow. Users can then save these plants to their gardens and be notified when they should be watered and harvested. User accounts are also saved to the database so that users can login and logout at any time.",
       "ShortDesc": "Created a garden planner with Django and React that allows users to manage plants in gardens with specified criteria.",
-      "Featured": true,
+      "Featured": false,
       "Image": [
         {
           "img": "garden2.png",
