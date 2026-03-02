@@ -36,7 +36,7 @@ function About() {
           alt="Ellena pictured in a brightly-lit area and she is smiling. She is a thin girl with shoulder-length brown hair, gray eyes, and glasses."
         />
         <a
-          href="https://wakandacat.github.io/resume/TzavelasEllenaPostGradResume.pdf"
+          href="https://wakandacat.github.io/resume/EllenaTzavelasFrontendResume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="page-button"
