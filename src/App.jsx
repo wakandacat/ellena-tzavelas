@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import HomePage from "./pageComponents/HomePage";
 import ProjectPage from "./pageComponents/ProjectPage";
 import { useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -35,6 +35,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectPage />} />
+        {/* Default route */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Footer />
     </>

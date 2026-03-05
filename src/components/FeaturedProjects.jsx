@@ -1,9 +1,11 @@
 import Card from "../components/Card";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function FeaturedProjects() {
   const currYear = new Date().getFullYear();
   const [projects, setProjects] = useState([]);
+  const navigate = useNavigate();
 
   //grab the featured project data
   useEffect(() => {
@@ -45,10 +47,7 @@ function FeaturedProjects() {
       <button
         className="page-button flex justify-center rounded-xl border-0 bg-(--nav-color) capitalize"
         onClick={() => {
-          setGlobalState((prevState) => ({
-            ...prevState,
-            currentPage: "Project",
-          }));
+          navigate("/projects");
         }}
         aria-label={"Go to the All Projects page"}
       >
