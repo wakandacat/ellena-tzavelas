@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
-import GlobalProvider from "./components/GlobalProvider.jsx";
 
 /*TO DEPLOY TO GITHUB PAGES
   npm run build
@@ -11,8 +11,8 @@ import GlobalProvider from "./components/GlobalProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <GlobalProvider>
+    <BrowserRouter>
       <App />
-    </GlobalProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 );

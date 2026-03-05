@@ -1,5 +1,5 @@
 import Banner from "../components/Banner";
-import About from "./About";
+import About from "../components/About";
 import Skills from "../components/Skills";
 import FeaturedProjects from "../components/FeaturedProjects";
 

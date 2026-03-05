@@ -1,11 +1,10 @@
-import { useContext, useState } from "react";
-import GlobalContext from "./GlobalContext.jsx";
+import { useState } from "react";
+
 import ImageProvider from "./ImageProvider.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 
 function Card(props) {
-  const { globalState, setGlobalState } = useContext(GlobalContext);
   const [loaded, setLoaded] = useState(false);
   const [overlayVisible, setOverlayVisible] = useState(false);
 

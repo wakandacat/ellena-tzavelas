@@ -16,7 +16,7 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content="https://wakandacat.github.io/ellena-tzavelas/"
+      content="https://ellenatzavelas.com/"
     />
     <meta property="og:title" content="Ellena Tzavelas' Portfolio" />
     <meta
@@ -25,7 +25,7 @@
     />
     <meta
       property="og:image"
-      content="https://wakandacat.github.io/ellena-tzavelas/port1.jpg"
+      content="https://ellenatzavelas.com/port1.jpg"
     />
 
     <style>
@@ -53,6 +53,20 @@
 
     <link rel="preload" href="/src/styles.css" as="style" onload="this.rel='stylesheet'" />
     <link href="/src/styles.css" rel="stylesheet" />
+
+    <!-- 404 spa redirect solution referenced from here: https://github.com/rafgraph/spa-github-pages -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
 
   </head>
   <!--Google Analytics-->

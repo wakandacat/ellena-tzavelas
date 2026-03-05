@@ -1,12 +1,13 @@
-import { useContext, useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import ThemeController from "./ThemeController.jsx";
-import GlobalContext from "./GlobalContext.jsx";
 import etIMG from "/et.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
-  const { globalState, setGlobalState } = useContext(GlobalContext);
+  const navigate = useNavigate();
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState("banner"); //banner, about, skills, projects, contact
   const [isOpen, setIsOpen] = useState(0);
   const dropdownRef = useRef(null); //grab a reference to the dropdown to close it when the user clicks away
@@ -24,17 +25,14 @@ function Navbar() {
         setIsOpen((prev) => !prev); //toggle the open state
       }
     }
-    if (globalState.currentPage !== "HomePage") {
+    if (location.pathname !== "/") {
       event.preventDefault(); //stop default behaviour of hrefs
-      setGlobalState((prevState) => ({
-        ...prevState,
-        currentPage: "HomePage",
-      }));
+      navigate("/");
       setTimeout(() => {
         //after page loads, scroll to section
         document
           .getElementById(sectionID)
-          .scrollIntoView({ behavior: "smooth" });
+          ?.scrollIntoView({ behavior: "smooth" });
       }, 100);
     }
 
@@ -200,10 +198,7 @@ function Navbar() {
                 className="nav-button flex justify-center rounded-xl border-0 bg-(--nav-color) capitalize"
                 onClick={() => {
                   setIsOpen(false);
-                  setGlobalState((prevState) => ({
-                    ...prevState,
-                    currentPage: "Project",
-                  }));
+                  navigate("/projects");
                 }}
                 aria-label={"Go to the All Projects page"}
               >
@@ -220,7 +215,6 @@ function Navbar() {
         value="Contact"
         aria-label="Travel to the Contact section"
         href="#contact"
-        // onClick={(e) => handleNavClick(e, "contact")}
       >
         Contact
       </a>

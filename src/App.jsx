@@ -1,23 +1,19 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pageComponents/HomePage";
-import About from "./pageComponents/About";
 import ProjectPage from "./pageComponents/ProjectPage";
-import { useContext, useEffect, useState } from "react";
-import GlobalContext from "./components/GlobalContext";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
-  const { globalState, setGlobalState } = useContext(GlobalContext);
-
-  const [localPage, setLocalPage] = useState(<HomePage />);
-
-  //map the strings to the page components
-  const componentMapping = {
-    HomePage: HomePage,
-    About: About,
-    Project: ProjectPage,
-  };
-
   //loading spinner management
   useEffect(() => {
     const loader = document.getElementById("loading-screen");
@@ -32,19 +28,14 @@ function App() {
     }, 1000);
   }, []);
 
-  //update the current page and force scroll to top effect
-  useEffect(() => {
-    const PageComponent = componentMapping[globalState.currentPage];
-    setLocalPage(<PageComponent />);
-    //force page to top
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }, [globalState.currentPage]);
-
   return (
     <>
+      <ScrollToTop />
       <Navbar />
-      {localPage}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<ProjectPage />} />
+      </Routes>
       <Footer />
     </>
   );

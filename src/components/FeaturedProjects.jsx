@@ -1,11 +1,9 @@
 import Card from "../components/Card";
 import { useEffect, useState, useContext } from "react";
-import GlobalContext from "./GlobalContext.jsx";
 
 function FeaturedProjects() {
   const currYear = new Date().getFullYear();
   const [projects, setProjects] = useState([]);
-  const { globalState, setGlobalState } = useContext(GlobalContext);
 
   //grab the featured project data
   useEffect(() => {

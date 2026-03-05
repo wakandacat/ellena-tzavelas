@@ -12,15 +12,15 @@ function About() {
       <div className="flex flex-col items-start gap-6 text-start lg:max-w-3xl lg:flex-1">
         <h2 className="heading">About Me</h2>
         <p className="body-text">
-          Hi! I’m Ellena, a frontend developer and designer passionate about
+          Hi! I'm Ellena, a frontend developer and designer passionate about
           creating responsive, user-focused web applications. I specialize in
           React, modern CSS, and web accessibility to build engaging experiences
           that look good and feel better.{" "}
         </p>
         <p className="body-text">
-          I graduated from Carleton’s Interactive Multimedia and Design program
-          with a Bachelor’s in IT, where I discovered the fascinating
-          intersection of art and technology. I’m driven by my love of helping
+          I graduated from Carleton's Interactive Multimedia and Design program
+          with a Bachelor's in IT, where I discovered the fascinating
+          intersection of art and technology. I'm driven by my love of helping
           people, and I believe good design should be for everyone.{" "}
         </p>
         <p className="body-text">
