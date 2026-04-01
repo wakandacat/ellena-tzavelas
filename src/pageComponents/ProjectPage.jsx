@@ -253,7 +253,7 @@ function ProjectPage() {
             <button
               key={index}
               onClick={() => handleProjectClick(project)}
-              className={`cursor-pointer overflow-hidden rounded-lg border-4 border-(--detail-color-2) bg-white text-left text-(--nav-color) transition-all hover:scale-105 ${
+              className={`flex flex-col cursor-pointer overflow-hidden rounded-lg border-4 border-(--detail-color-2) bg-white text-left text-(--nav-color) transition-all hover:scale-105 ${
                 project.Title === currentProject.Title
                   ? "!border-(--detail-color) !text-(--detail-color)"
                   : ""

@@ -145,7 +145,7 @@ h5 {
 }
 
 .base-card {
-  @apply flex gap-6 bg-(--background-color-2) px-10 py-8 my-2 lg:px-20 text-start items-start;
+  @apply flex gap-6 bg-(--background-color-2) px-10 py-8 my-2 lg:px-20 text-start items-start justify-between;
 }
 
 .even-card {

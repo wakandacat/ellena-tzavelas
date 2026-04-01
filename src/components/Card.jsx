@@ -44,7 +44,7 @@ function Card(props) {
         <p className="px-12 text-lg text-white">{props.alt}</p>
       </div>
 
-      <div className="flex flex-col items-center gap-4 lg:items-start">
+      <div className="flex flex-col items-center gap-4 lg:items-start flex-1 min-w-0">
         <h3 className="sub-heading">{props.title}</h3>
         <p className="body-text">{props.blurb}</p>
         <div className="flex flex-wrap gap-4">
@@ -85,7 +85,7 @@ function Card(props) {
       </div>
 
       <div
-        className="aspect-video w-full cursor-pointer overflow-hidden rounded-xl border-4 border-(--detail-color-2) bg-gray-700 transition-all hover:scale-105 lg:w-[50%]"
+        className="aspect-video w-full cursor-pointer overflow-hidden rounded-xl border-4 border-(--detail-color-2) bg-gray-700 transition-all hover:scale-105 lg:w-[50%] lg:shrink-0"
         onClick={() => setOverlayVisible(true)}
       >
         {isVideo ? (
